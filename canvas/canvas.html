@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="canvas.css">
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="component-canvas">
+                    <div class="component-canvas-image">
+                        <!-- <img src="../images/1200px_568px.png" class="" alt="emotional image"> -->
+                        <picture>
+                            <source 
+                                media="(max-width: 768px)"
+                                srcset="../images/608px_350px.png">
+                            <source 
+                                media="(max-width: 989px)"
+                                srcset="../images/989px_568px.png">
+                            <source 
+                                media="(max-width:1200px)"
+                                srcset="../images/1200px_568px.png">
+                            <img 
+                                src="../images/1920px_588px.png" 
+                                alt="canvas image">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+
+</html>
