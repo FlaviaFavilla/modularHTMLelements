@@ -1,0 +1,20 @@
+
+/* Mobiles (Viewport below 768px) */
+@media only screen and (max-width: 768px) {
+    
+} 
+
+/* Tablet Portrait (Viewport between 769px and 989px) */
+@media only screen and (min-width: 769px) and (max-width : 989px) {
+    
+} 
+
+/* Tablet landscape (Viewport between 990px and 1199px) */
+@media only screen and (min-width: 990px) and (max-width : 1199px) {
+    
+} 
+
+/* Desktop (Viewport above 1200px) */
+@media only screen and (min-width: 1200px) {
+    
+} 
