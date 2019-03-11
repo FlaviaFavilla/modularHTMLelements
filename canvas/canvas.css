@@ -1,39 +1,54 @@
 .component-canvas{
 }
 .component-canvas-image{
+    width: 100vw;
     position: relative;
+    margin-left: -50vw;
+    left: 50%;
 }
 .component-canvas-image img{
     max-width: 100%;
 }
-.component-canvas-txtReview{
+.component-canvas-image-txtReview{
     position: absolute;
     bottom: 15px;
     right: 60px;
 }
-.component-canvas-txtReview p{
+.component-canvas-image-txtReview p{
     color: #333333 100%;
     font-face: OpenSans;
     font-size: 20px;
     margin: 0;
 }
-.component-canvas-txtReview p span{
+.component-canvas-image-txtReview p span{
     font-face: OpenSans-Bold;
 }
 
+.component-canvas-text{
+    position: relative;
+    top: 600px;
+}
 /* Mobiles (Viewport below 768px) */
 @media only screen and (max-width: 768px) {
-
+    .component-canvas-image-txtReview{
+        display: none;
+    }
 } 
 
 /* Tablet Portrait (Viewport between 769px and 989px) */
 @media only screen and (min-width: 769px) and (max-width : 989px) {
-
+    .component-canvas-image-txtReview{
+        bottom: 15px;
+        right: 25px;
+    }
 } 
 
 /* Tablet landscape (Viewport between 990px and 1199px) */
 @media only screen and (min-width: 990px) and (max-width : 1199px) {
-
+    .component-canvas-image-txtReview{
+        bottom: 14px;
+        right: 20px;
+    }
 } 
 
 /* Desktop (Viewport above 1200px) */

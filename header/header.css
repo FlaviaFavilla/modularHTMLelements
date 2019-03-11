@@ -1,5 +1,9 @@
 .component-header{
     max-height: 80px;
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
 }
 .component-header-logo img{
     height: 62px;
