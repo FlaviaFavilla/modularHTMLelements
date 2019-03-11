@@ -1,9 +1,24 @@
 .component-canvas{
-    max-height: 80px;
 }
-.component-canvas-logo img{
-    height: 62px;
-    margin: calc((80px - 62px)/2) 60px;
+.component-canvas-image{
+    position: relative;
+}
+.component-canvas-image img{
+    max-width: 100%;
+}
+.component-canvas-txtReview{
+    position: absolute;
+    bottom: 15px;
+    right: 60px;
+}
+.component-canvas-txtReview p{
+    color: #333333 100%;
+    font-face: OpenSans;
+    font-size: 20px;
+    margin: 0;
+}
+.component-canvas-txtReview p span{
+    font-face: OpenSans-Bold;
 }
 
 /* Mobiles (Viewport below 768px) */
