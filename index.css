@@ -25,8 +25,12 @@ body{
     box-shadow: 0px 1.7px 3.3px #333333;
     text-align: left;
 }
+.cta-button p{
+    margin-top: 8px;
+    font-size: 14px;
+}
 .cta-button img{
-    margin-top: 6px;
+    margin-top: 9px;
 }
 .cta-button:hover{
     background: #840A27;
