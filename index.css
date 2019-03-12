@@ -35,29 +35,37 @@ body{
 
 
 
-/* Mobiles (Viewport below 768px) */
+/*  ------------------------  ////  MEDIA QUERY  \\\\  ------------------------   */
+
+/* ----- Mobiles (Viewport below 768px) ----- */
 @media only screen and (max-width: 768px) {
     .cta-button{
         width: 220px;
         height: 40px;
-        margin: 40px auto 0;
         font-size: 12px;
     }
 } 
 
-/* Tablet Portrait (Viewport between 769px and 989px) */
+/* ----- Tablet Portrait & Mobile (Viewport below 989px) ----- */
+@media only screen and (max-width : 989px) {
+    .cta-button{
+        margin: 40px auto 0;
+    }
+} 
+
+/* ----- Tablet Portrait (Viewport between 769px and 989px) ----- */
 @media only screen and (min-width: 769px) and (max-width : 989px) {
     .cta-button{
         margin: 40px auto 0;
     }
 } 
 
-/* Tablet landscape (Viewport between 990px and 1199px) */
+/* ----- Tablet landscape (Viewport between 990px and 1199px) ----- */
 @media only screen and (min-width: 990px) and (max-width : 1199px) {
     
 } 
 
-/* Desktop (Viewport above 1200px) */
+/* ----- Desktop (Viewport above 1200px) ----- */
 @media only screen and (min-width: 1200px) {
     
 } 

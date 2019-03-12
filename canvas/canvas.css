@@ -11,6 +11,7 @@
 .component-canvas-image-txtReview p span{
     font-family: OpenSans-Bold;
 }
+
 /* descrizione offerta */
 .component-canvas-text{
     margin: 30px 0 80px;
@@ -25,24 +26,33 @@
     margin-top: 30px;
 }
 
-/* Mobiles (Viewport below 768px) */
+
+/*  ------------------------  ////  MEDIA QUERY  \\\\  ------------------------   */
+
+/* ----- Mobiles (Viewport below 768px) ----- */
 @media only screen and (max-width: 768px) {
-    .vdivide{
-        min-height: auto;
-        border-right: none;
-        margin-top: 0;
-    }
     .component-canvas-text{
         margin: 20px 0 0;
     }
     .component-canvas-text p{
         max-width: 315px;
+    }
+} 
+
+/* ----- Tablet Portrait & Mobile (Viewport below 989px) ----- */
+@media only screen and (max-width : 989px) {
+    .vdivide{
+        min-height: auto;
+        border-right: none;
+        margin-top: 0;
+    }
+    .component-canvas-text p{
         font-size: 15px;
         margin: auto;
     }
 } 
 
-/* Tablet Portrait (Viewport between 769px and 989px) */
+/* ----- Tablet Portrait (Viewport between 769px and 989px) ----- */
 @media only screen and (min-width: 769px) and (max-width : 989px) {
     .component-canvas-image-txtReview{
         bottom: 15px;
@@ -51,22 +61,15 @@
     .component-canvas-image-txtReview p{
         font-size: 15px;
     }
-    .vdivide{
-        min-height: auto;
-        border-right: none;
-        margin-top: 0;
-    }
     .component-canvas-text{
         margin: 20px 0 80px;
     }
     .component-canvas-text p{
         max-width: 594px;
-        font-size: 15px;
-        margin: auto;
     }
 } 
 
-/* Tablet landscape (Viewport between 990px and 1199px) */
+/* ----- Tablet landscape (Viewport between 990px and 1199px) ----- */
 @media only screen and (min-width: 990px) and (max-width : 1199px) {
     .component-canvas-image-txtReview{
         bottom: 14px;
@@ -74,10 +77,6 @@
     }
     .component-canvas-text p{
         max-width: 374px;
-    }
-    .vdivide{
-        min-height: 70px;
-        margin-top: 30px;
     }
 } 
 
