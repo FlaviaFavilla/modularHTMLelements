@@ -1,59 +1,24 @@
-.component-canvas{
-}
-.component-canvas-image{
-    width: 100vw;
-    position: relative;
-    margin-left: -50vw;
-    left: 50%;
-}
-.component-canvas-image img{
-    max-width: 100%;
-    border-bottom: 1px solid red;
-}
+/* Immagine e testo su immagine */
 .component-canvas-image-txtReview{
     position: absolute;
     bottom: 15px;
     right: 60px;
 }
 .component-canvas-image-txtReview p{
-    color: #333333 100%;
-    font-family: OpenSans;
     font-size: 20px;
     margin: 0;
 }
 .component-canvas-image-txtReview p span{
     font-family: OpenSans-Bold;
 }
-
+/* descrizione offerta */
 .component-canvas-text{
     margin: 30px 0 80px;
 }
 .component-canvas-text p{
     max-width: 445px;
-    font-family: OpenSans;
-    color: #333333;
     font-size: 18px;
 }
-.cta-button{
-    width: 250px;
-    height: 50px;
-    margin: 20px auto;
-    color:#ffffff;
-    font-family: OpenSans-Bold;
-    font-size: 14px;
-    background: #AD0C33 100%;
-    border-radius: 5px;
-    box-shadow: 0px 1.7px 3.3px;
-    text-align: left;
-}
-.cta-button img{
-    margin-top: 6px;
-}
-.cta-button:hover{
-    background: #840A27 100%;
-    color:#ffffff;
-}
-
 .vdivide{
     min-height: 70px;
     border-right: 1.2px solid #999999;
@@ -62,8 +27,18 @@
 
 /* Mobiles (Viewport below 768px) */
 @media only screen and (max-width: 768px) {
-    .component-canvas-image-txtReview{
-        display: none;
+    .vdivide{
+        min-height: auto;
+        border-right: none;
+        margin-top: 0;
+    }
+    .component-canvas-text{
+        margin: 20px 0 0;
+    }
+    .component-canvas-text p{
+        max-width: 315px;
+        font-size: 15px;
+        margin: auto;
     }
 } 
 
@@ -73,6 +48,22 @@
         bottom: 15px;
         right: 25px;
     }
+    .component-canvas-image-txtReview p{
+        font-size: 15px;
+    }
+    .vdivide{
+        min-height: auto;
+        border-right: none;
+        margin-top: 0;
+    }
+    .component-canvas-text{
+        margin: 20px 0 80px;
+    }
+    .component-canvas-text p{
+        max-width: 594px;
+        font-size: 15px;
+        margin: auto;
+    }
 } 
 
 /* Tablet landscape (Viewport between 990px and 1199px) */
@@ -80,6 +71,13 @@
     .component-canvas-image-txtReview{
         bottom: 14px;
         right: 20px;
+    }
+    .component-canvas-text p{
+        max-width: 374px;
+    }
+    .vdivide{
+        min-height: 70px;
+        margin-top: 30px;
     }
 } 
 
