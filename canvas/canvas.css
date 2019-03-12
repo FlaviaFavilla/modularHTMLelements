@@ -17,12 +17,12 @@
 }
 .component-canvas-image-txtReview p{
     color: #333333 100%;
-    font-face: OpenSans;
+    font-family: OpenSans;
     font-size: 20px;
     margin: 0;
 }
 .component-canvas-image-txtReview p span{
-    font-face: OpenSans-Bold;
+    font-family: OpenSans-Bold;
 }
 
 .component-canvas-text{
@@ -30,13 +30,16 @@
 }
 .component-canvas-text p{
     max-width: 445px;
+    font-family: OpenSans;
+    color: #333333;
+    font-size: 18px;
 }
 .cta-button{
     width: 250px;
     height: 50px;
     margin: 20px auto;
     color:#ffffff;
-    font-face: opensSans-Bold;
+    font-family: OpenSans-Bold;
     font-size: 14px;
     background: #AD0C33 100%;
     border-radius: 5px;
