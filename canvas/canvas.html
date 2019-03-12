@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+       <!-- CSS NESESSARI per CANVAS !!  -->
+        <link rel="stylesheet" href="canvas.css">
+        <link rel="stylesheet" href="../index.css">
+        <link rel="stylesheet" href="../fonts.css">
+        <!-- fine CSS NESESSARI !!  -->
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="component-canvas">
+                    <div class="row component-canvas-image row-fullWitdh">
+                        <picture>
+                            <source 
+                                media="(max-width: 768px)"
+                                srcset="../images/608px_350px.png">
+                            <source 
+                                media="(max-width: 989px)"
+                                srcset="../images/989px_568px.png">
+                            <source 
+                                media="(max-width:1200px)"
+                                srcset="../images/1200px_568px.png">
+                            <img 
+                                src="../images/1920px_588px.png" 
+                                alt="canvas image"
+                                class="img-responsive">
+                        </picture>
+                        <div  class="component-canvas-image-txtReview text-right hidden-xs">
+                            <p><span>"Lorem ipsum dorel sit amet"</span></p> 
+                            <p>consectetur.com</p>
+                        </div>
+                    </div>
+                    <div class="row component-canvas-text">
+                        <div class="col-xs-12 col-md-5">
+                            <p>
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+                                aliqua. <br> <br>
+                                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                        <div class="hidden-xs col-md-1 vdivide"></div>
+                        <div class="hidden-xs col-md-1"></div>
+                        <div class="col-xs-12 col-md-5">
+                            <p>
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                            </p>
+                            <button class="btn center-block cta-button">
+                                CTA <img src="../images/Canvas_Arrow.svg" class="pull-right"></img>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </body>
+
+</html>

@@ -1,0 +1,85 @@
+/* Immagine e testo su immagine */
+.component-canvas-image-txtReview{
+    position: absolute;
+    bottom: 15px;
+    right: 60px;
+}
+.component-canvas-image-txtReview p{
+    font-size: 20px;
+    margin: 0;
+}
+.component-canvas-image-txtReview p span{
+    font-family: OpenSans-Bold;
+}
+
+/* descrizione offerta */
+.component-canvas-text{
+    margin: 30px 0 80px;
+}
+.component-canvas-text p{
+    max-width: 445px;
+    font-size: 18px;
+}
+.vdivide{
+    min-height: 70px;
+    border-right: 1.2px solid #999999;
+    margin-top: 30px;
+}
+
+
+/*  ------------------------  ////  MEDIA QUERY  \\\\  ------------------------   */
+
+/* ----- Mobiles (Viewport below 768px) ----- */
+@media only screen and (max-width: 768px) {
+    .component-canvas-text{
+        margin: 20px 0 0;
+    }
+    .component-canvas-text p{
+        max-width: 315px;
+    }
+} 
+
+/* ----- Tablet Portrait & Mobile (Viewport below 989px) ----- */
+@media only screen and (max-width : 989px) {
+    .vdivide{
+        min-height: auto;
+        border-right: none;
+        margin-top: 0;
+    }
+    .component-canvas-text p{
+        font-size: 15px;
+        margin: auto;
+    }
+} 
+
+/* ----- Tablet Portrait (Viewport between 769px and 989px) ----- */
+@media only screen and (min-width: 769px) and (max-width : 989px) {
+    .component-canvas-image-txtReview{
+        bottom: 15px;
+        right: 25px;
+    }
+    .component-canvas-image-txtReview p{
+        font-size: 15px;
+    }
+    .component-canvas-text{
+        margin: 20px 0 80px;
+    }
+    .component-canvas-text p{
+        max-width: 594px;
+    }
+} 
+
+/* ----- Tablet landscape (Viewport between 990px and 1199px) ----- */
+@media only screen and (min-width: 990px) and (max-width : 1199px) {
+    .component-canvas-image-txtReview{
+        bottom: 14px;
+        right: 20px;
+    }
+    .component-canvas-text p{
+        max-width: 374px;
+    }
+} 
+
+/* Desktop (Viewport above 1200px) */
+/* @media only screen and (min-width: 1200px) {
+}  */
