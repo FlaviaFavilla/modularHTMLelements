@@ -1,3 +1,27 @@
+.component-galleryRoll{
+    margin: 40px auto;
+}
+.component-galleryRoll-row{
+    margin: 40px auto;
+}
+.component-galleryRoll-row-img{
+
+}
+.component-galleryRoll-row-text{
+    padding: 0;
+}
+.component-galleryRoll-row-text h2{
+    font-family: OpenSans-Bold;
+    font-size: 28px;
+    margin: 0 0 20px;
+}
+.component-galleryRoll-row-text p{
+    font-size: 16px;
+    width: 445px;
+}
+.toLeft{ background: pink;}
+.toRight{ background: lightskyblue;}
+
 /*  ------------------------  ////  MEDIA QUERY  \\\\  ------------------------   */
 
 /* ----- Mobiles (Viewport below 768px) ----- */
