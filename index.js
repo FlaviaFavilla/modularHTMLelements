@@ -1,22 +1,15 @@
 $(document).ready(function(){
 
-    // Add smooth scrolling to anchor button
-    $("a.cta-button").on('click', function(event) {  
-      // Make sure this.hash has a value before overriding default behavior
-      if (this.hash !== "") {
-        // Prevent default anchor click behavior
+    //  -------------  Add smooth scrolling to anchor button  ----------------------
+    $("a.cta-button[href^='#']").on('click', function(event) {  
         event.preventDefault();
-        // Store hash
-        var hash = this.hash;
-  
-        // Using jQuery's animate() method to add smooth page scroll
+
         $('html, body').animate({
-          scrollTop: $(hash).offset().top
-        }, 800, function(){
-     
-          // Add hash (#) to URL when done scrolling (default click behavior)
-          window.location.hash = hash;
-        });
-      } // End if
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 500);
     });
+    //  -------------  END smooth scrolling to anchor button  ----------------------
+
+
+
   });

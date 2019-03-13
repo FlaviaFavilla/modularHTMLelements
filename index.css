@@ -21,7 +21,7 @@ body{
 
 
 /* BOTTONE CALL-TO-ACTION */
-.cta-button{
+.cta-button, .cta-button:focus{
     width: 250px;
     height: 50px;
     margin: 20px auto 0;
@@ -40,7 +40,7 @@ body{
 .cta-button img{
     margin-top: 9px;
 }
-.cta-button:hover, .cta-button:focus{
+.cta-button:hover{
     background: #840A27;
     color:#ffffff;
 }
