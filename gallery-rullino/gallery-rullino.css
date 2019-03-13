@@ -53,6 +53,11 @@
 .pippo{
     float: left;
 }
+.carousel-fullWitdh {
+    width: 100vw;
+    position: relative;
+}
+
 
 .carousel-showmanymoveone .carousel-control {
     position: relative;
