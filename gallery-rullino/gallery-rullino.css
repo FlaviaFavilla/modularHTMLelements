@@ -50,10 +50,14 @@
 
 
 
-
+.pippo{
+    float: left;
+}
 
 .carousel-showmanymoveone .carousel-control {
-    width: 4%;
+    position: relative;
+    top: 20px;
+    left: 20px;
     background-image: none;
   }
   .carousel-showmanymoveone .carousel-control.left {

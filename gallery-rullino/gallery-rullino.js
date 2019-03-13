@@ -14,7 +14,7 @@ $(document).ready(function(){
       
             // grab item, clone, add marker class, add to collection
             itemToClone.children(':first-child').clone()
-              .addClass("cloneditem-"+(i))
+              .addClass("pippo cloneditem-"+(i) )
               .appendTo($(this));
           }
         });
