@@ -20,4 +20,9 @@ $(document).ready(function(){
         });
       }());
 
+
+      $(".component-galleryRoll-row").on("click", function(){
+        console.log('ciao');
+    });
+
 });
