@@ -20,9 +20,15 @@ $(document).ready(function(){
         });
       }());
 
-
-      $(".component-galleryRoll-row").on("click", function(){
+var textLenght;
+      $(".component-galleryRoll-row-arrow").on("click", function(){
         console.log('ciao');
+        textLenght = $(".component-galleryRoll-row-text").width();
+        console.log(textLenght);
+        // transform: translate(-585px);
+        // component-galleryRoll-row-img
+
+        $(this).parent().css({'transform': 'translate(-'+ textLenght +'px)', 'transition': '2s'});
     });
 
 });
