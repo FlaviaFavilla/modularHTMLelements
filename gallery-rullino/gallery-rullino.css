@@ -63,18 +63,24 @@
 }
 
 .component-galleryRoll-row-img::before { 
-  content: url(../images/Gallery_Arrow_Open.svg);
   width: 36px;
   height: 36px; 
   background: #AD0C33;
-  border-radius: 5px 0 0px 5px;
   display: block;
   text-align: center;
   padding-top: 7px;
-  display: block;
   position: absolute;
   bottom: 0;
+}
+.component-galleryRoll-row.toLeft .component-galleryRoll-row-img::before { 
+  content: url(../images/Gallery_Arrow_Open.svg);
+  border-radius: 5px 0 0px 5px;
   left: -21px;
+}
+.component-galleryRoll-row.toRight .component-galleryRoll-row-img::before { 
+  content: url(../images/Gallery_Arrow_Open.svg);
+  border-radius: 0 5px 5px 0;
+  right: -6px;
 }
 
 .carousel-showmanymoveone .carousel-control {
