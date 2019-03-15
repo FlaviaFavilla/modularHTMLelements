@@ -20,15 +20,21 @@ $(document).ready(function(){
         });
       }());
 
-var textLenght;
-      $(".component-galleryRoll-row-arrow").on("click", function(){
-        console.log('ciao');
-        textLenght = $(".component-galleryRoll-row-text").width();
-        console.log(textLenght);
-        // transform: translate(-585px);
-        // component-galleryRoll-row-img
 
-        $(this).parent().css({'transform': 'translate(-'+ textLenght +'px)', 'transition': '2s'});
+      $(".component-galleryRoll-row-arrow").on("click", function(){
+        var textLenght;
+        var parent = $(this).parents();
+        
+        // calcolo spostastamento dello slider e direzione
+        textLenght = $(".component-galleryRoll-row-text").width();
+        textLenght = parent.hasClass('toRight') ? textLenght : "-" + textLenght;
+        // translazione al click
+        $(this).parent().css({
+          'transform': 'translate( '+ textLenght +'px)', 
+          'transition': '2s'
+        });
+
+        
     });
 
 });
