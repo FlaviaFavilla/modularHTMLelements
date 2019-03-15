@@ -61,13 +61,15 @@
 
 .carousel-close{
   position: absolute;
-  bottom: 20px;
+  bottom: 56px;
   width: 37px;
   height: 37px;
   text-align: center;
   padding-top: 9px;
   background: #ffffff;
   border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  z-index: 1000;
 }
 .component-galleryRoll-row-arrow { 
   width: 36px;
@@ -87,6 +89,19 @@
 .component-galleryRoll-row.toRight .component-galleryRoll-row-arrow { 
   border-radius: 0 5px 5px 0;
   right: -6px;
+}
+
+.transitionClassToRight{ 
+  transform: translate( 585px); 
+  transition: 2s;
+}
+.transitionClassToLeft{ 
+  transform: translate( -585px); 
+  transition: 2s;
+}
+.transitionClassReset{ 
+  transform: translate( 0px); 
+  transition: 2s;
 }
 
 .carousel-showmanymoveone .carousel-control {

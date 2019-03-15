@@ -3,7 +3,9 @@ $(document).ready(function(){
   var carouselOpen = $(".component-galleryRoll-row-arrow");
   var carouselControls = $(".carousel-controls");
   var carouselClose = $(".carousel-close");
-  var textLenght;
+  // var togleToLeft = function(parent){ return parent.toggleClass('transitionClassToLeft');}
+  // var togleToRight = function(parent){ return parent.toggleClass('transitionClassToRight');}
+  // var togleToRight = parent.toggleClass('transitionClassToRight');
 
       (function(){
         $('.carousel-showmanymoveone .item').each(function(){
@@ -25,14 +27,6 @@ $(document).ready(function(){
         });
       }());
 
-// -----------  animazione apertura/chiusura slider  -----------
-      var galleryOpening = function(parent,textLenght){
-          return parent.css({
-            'transform': 'translate( '+ textLenght +'px)', 
-            'transition': '2s'
-          })
-      };
-
 // -----------  a fine animazione modifica visibiltà elementi  -----------
       var galleryTransitionEnd = function(parent, carouselOpen, carouselControls){
         return  parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
@@ -40,38 +34,40 @@ $(document).ready(function(){
                               carouselOpen.toggleClass('hidden');
                               carouselControls.toggleClass('hidden');
                               carouselClose.toggleClass('hidden');
+                              return false;
                             });
       }
 
 // -----------  apertura slider -----------
-      carouselOpen.on("click", function(){
+      carouselOpen.on("click", function(e){
 
         var parent = $(this).parent(); 
+        var parents = $(this).parents(); 
         
-        // calcolo spostastamento dello slider e direzione
-        textLenght = $(".component-galleryRoll-row-text").width();
-        textLenght = parent.hasClass('toRight') ? textLenght : "-" + textLenght;
         // translazione al click
-        galleryOpening(parent, textLenght);
+        e.stopPropagation();
+        parents.hasClass('toLeft') ? parent.toggleClass('transitionClassToLeft') : parent.toggleClass('transitionClassToRight');
 
         // a fine animazione modifica visibiltà elementi
         galleryTransitionEnd(parent, carouselOpen, carouselControls);
+        
+        return false;
     });
 
 
     // -----------  chiusura slider -----------
-    carouselClose.on("click", function(){
+    carouselClose.on("click", function(e){
 
       var parent = $(this).parent(); 
-      
-      // calcolo spostastamento dello slider e direzione
-      textLenght = $(".component-galleryRoll-row-text").width();
-      textLenght = parent.hasClass('toRight') ?  "-" + textLenght : textLenght;
-      // translazione al click
-      galleryOpening(parent, textLenght);
+      var parents = $(this).parents(); 
+      e.stopPropagation();
+
+      parents.hasClass('toLeft') ? parent.addClass('transitionClassReset').removeClass('transitionClassToLeft') : parent.toggleClass('transitionClassToLeft');
 
       // a fine animazione modifica visibiltà elementi
       galleryTransitionEnd(parent, carouselOpen, carouselControls);
+      
+      return false;
   });
 
 });
