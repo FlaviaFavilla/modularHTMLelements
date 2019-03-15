@@ -46,7 +46,7 @@ $(document).ready(function(){
         
         // translazione al click
         e.stopPropagation();
-        parents.hasClass('toLeft') ? parent.toggleClass('transitionClassToLeft') : parent.toggleClass('transitionClassToRight');
+        parents.hasClass('toLeft') ? parent.addClass('transitionClassToLeft') : parent.addClass('transitionClassToRight');
 
         // a fine animazione modifica visibiltà elementi
         galleryTransitionEnd(parent, carouselOpen, carouselControls);
@@ -62,8 +62,11 @@ $(document).ready(function(){
       var parents = $(this).parents(); 
       e.stopPropagation();
 
-      parents.hasClass('toLeft') ? parent.addClass('transitionClassReset').removeClass('transitionClassToLeft') : parent.toggleClass('transitionClassToLeft');
-
+      parent.addClass('transitionClassReset');
+      parents.hasClass('toLeft') ? parent.removeClass('transitionClassToLeft') : parent.removeClass('transitionClassToLeft');
+      setTimeout(function() {
+        parent.removeClass('transitionClassReset');
+      }, 2050);     
       // a fine animazione modifica visibiltà elementi
       galleryTransitionEnd(parent, carouselOpen, carouselControls);
       
