@@ -5,7 +5,7 @@
     margin: 40px auto;
 }
 .component-galleryRoll-row-img{
-
+  padding: 0;
 }
 .component-galleryRoll-row-text{
     padding: 0;
@@ -55,16 +55,20 @@
     margin-right: 20px;
 }
 .carousel-fullWitdh {
-    width: 100vw;
+    width: 150vw;
     position: relative;
 }
-.cloneditem-2{
-  display:none!important;
-}
-/* .carousel-controls{
-  display:none;
-} */
 
+.carousel-close{
+  position: absolute;
+  bottom: 20px;
+  width: 37px;
+  height: 37px;
+  text-align: center;
+  padding-top: 9px;
+  background: #ffffff;
+  border-radius: 0 5px 5px 0;
+}
 .component-galleryRoll-row-arrow { 
   width: 36px;
   height: 36px; 
@@ -78,7 +82,7 @@
 }
 .component-galleryRoll-row.toLeft .component-galleryRoll-row-arrow { 
   border-radius: 5px 0 0px 5px;
-  left: -21px;
+  left: -36px;
 }
 .component-galleryRoll-row.toRight .component-galleryRoll-row-arrow { 
   border-radius: 0 5px 5px 0;

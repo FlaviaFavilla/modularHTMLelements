@@ -1,7 +1,8 @@
 $(document).ready(function(){
       
-  var openGallery = $(".component-galleryRoll-row-arrow");
+  var carouselOpen = $(".component-galleryRoll-row-arrow");
   var carouselControls = $(".carousel-controls");
+  var carouselClose = $(".carousel-close");
   var textLenght;
 
       (function(){
@@ -33,16 +34,17 @@ $(document).ready(function(){
       };
 
 // -----------  a fine animazione modifica visibiltà elementi  -----------
-      var galleryTransitionEnd = function(parent, openGallery, carouselControls){
+      var galleryTransitionEnd = function(parent, carouselOpen, carouselControls){
         return  parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
                             function(event) {
-                              openGallery.toggleClass('hidden');
+                              carouselOpen.toggleClass('hidden');
                               carouselControls.toggleClass('hidden');
+                              carouselClose.toggleClass('hidden');
                             });
       }
 
 // -----------  apertura slider -----------
-      openGallery.on("click", function(){
+      carouselOpen.on("click", function(){
 
         var parent = $(this).parent(); 
         
@@ -53,7 +55,24 @@ $(document).ready(function(){
         galleryOpening(parent, textLenght);
 
         // a fine animazione modifica visibiltà elementi
-        galleryTransitionEnd(parent, openGallery, carouselControls);
+        galleryTransitionEnd(parent, carouselOpen, carouselControls);
     });
 
+
+    // -----------  chiusura slider -----------
+    carouselClose.on("click", function(){
+
+      var parent = $(this).parent(); 
+      
+      // calcolo spostastamento dello slider e direzione
+      textLenght = $(".component-galleryRoll-row-text").width();
+      textLenght = parent.hasClass('toRight') ?  "-" + textLenght : textLenght;
+      // translazione al click
+      galleryOpening(parent, textLenght);
+
+      // a fine animazione modifica visibiltà elementi
+      galleryTransitionEnd(parent, carouselOpen, carouselControls);
+  });
+
 });
+
