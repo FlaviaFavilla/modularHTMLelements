@@ -1,5 +1,9 @@
 $(document).ready(function(){
       
+  var openGallery = $(".component-galleryRoll-row-arrow");
+  var carouselControls = $(".carousel-controls");
+  var textLenght;
+
       (function(){
         $('.carousel-showmanymoveone .item').each(function(){
           var itemToClone = $(this);
@@ -20,21 +24,36 @@ $(document).ready(function(){
         });
       }());
 
+// -----------  animazione apertura/chiusura slider  -----------
+      var galleryOpening = function(parent,textLenght){
+          return parent.css({
+            'transform': 'translate( '+ textLenght +'px)', 
+            'transition': '2s'
+          })
+      };
 
-      $(".component-galleryRoll-row-arrow").on("click", function(){
-        var textLenght;
-        var parent = $(this).parents();
+// -----------  a fine animazione modifica visibiltà elementi  -----------
+      var galleryTransitionEnd = function(parent, openGallery, carouselControls){
+        return  parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+                            function(event) {
+                              openGallery.toggleClass('hidden');
+                              carouselControls.toggleClass('hidden');
+                            });
+      }
+
+// -----------  apertura slider -----------
+      openGallery.on("click", function(){
+
+        var parent = $(this).parent(); 
         
         // calcolo spostastamento dello slider e direzione
         textLenght = $(".component-galleryRoll-row-text").width();
         textLenght = parent.hasClass('toRight') ? textLenght : "-" + textLenght;
         // translazione al click
-        $(this).parent().css({
-          'transform': 'translate( '+ textLenght +'px)', 
-          'transition': '2s'
-        });
+        galleryOpening(parent, textLenght);
 
-        
+        // a fine animazione modifica visibiltà elementi
+        galleryTransitionEnd(parent, openGallery, carouselControls);
     });
 
 });
