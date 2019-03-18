@@ -42,7 +42,8 @@ $(document).ready(function(){
       carouselOpen.on("click", function(e){
 
         var parent = $(this).parent(); 
-        var parents = $(this).parents('.toLeft'); 
+        var parents = $(this).parents().hasClass('toLeft'); 
+        // var parents = $(this).parents('.toLeft'); 
         
         // translazione al click
         e.stopPropagation();
