@@ -42,11 +42,11 @@ $(document).ready(function(){
       carouselOpen.on("click", function(e){
 
         var parent = $(this).parent(); 
-        var parents = $(this).parents(); 
+        var parents = $(this).parents('.toLeft'); 
         
         // translazione al click
         e.stopPropagation();
-        parents.hasClass('toLeft') ? parent.addClass('transitionClassToLeft') : parent.addClass('transitionClassToRight');
+        parents ? parent.addClass('transitionClassToLeft') : parent.addClass('transitionClassToRight');
 
         // a fine animazione modifica visibiltà elementi
         galleryTransitionEnd(parent, carouselOpen, carouselControls);
@@ -59,14 +59,11 @@ $(document).ready(function(){
     carouselClose.on("click", function(e){
 
       var parent = $(this).parent(); 
-      var parents = $(this).parents(); 
+      var parents = $(this).parents('.toLeft'); 
       e.stopPropagation();
 
-      parent.addClass('transitionClassReset');
-      parents.hasClass('toLeft') ? parent.removeClass('transitionClassToLeft') : parent.removeClass('transitionClassToLeft');
-      setTimeout(function() {
-        parent.removeClass('transitionClassReset');
-      }, 2050);     
+      parents ? parent.removeClass('transitionClassToLeft') : parent.removeClass('transitionClassToRight');
+
       // a fine animazione modifica visibiltà elementi
       galleryTransitionEnd(parent, carouselOpen, carouselControls);
       

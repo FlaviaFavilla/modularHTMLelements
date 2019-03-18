@@ -7,6 +7,13 @@
 .component-galleryRoll-row-img{
   padding: 0;
 }
+.component-galleryRoll-row.toRight > .component-galleryRoll-row-text{
+  float: right;
+}
+.component-galleryRoll-row.toRight .carousel-fullWitdh {
+  right: calc(100vw - 385px);
+}
+
 .component-galleryRoll-row-text{
     padding: 0;
 }
@@ -91,18 +98,16 @@
   right: -6px;
 }
 
+.transition{
+  transition: 2s;
+}
 .transitionClassToRight{ 
   transform: translate( 585px); 
-  transition: 2s;
 }
 .transitionClassToLeft{ 
   transform: translate( -585px); 
-  transition: 2s;
 }
-.transitionClassReset{ 
-  transform: translate( 0px); 
-  transition: 2s;
-}
+
 
 .carousel-showmanymoveone .carousel-control {
     position: relative;
