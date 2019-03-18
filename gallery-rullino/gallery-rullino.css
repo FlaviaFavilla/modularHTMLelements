@@ -1,8 +1,8 @@
-.component-galleryRoll{
+/* .component-galleryRoll{
     margin: 40px auto;
-}
+} */
 .component-galleryRoll-row{
-    margin: 40px auto;
+    margin: 80px auto;
 }
 .component-galleryRoll-row.toRight > .component-galleryRoll-row-img{
   padding-left: 0;
@@ -80,7 +80,7 @@
 
 .carousel-close{
   position: absolute;
-  bottom: 56px;
+  bottom: 20px;
   width: 37px;
   height: 37px;
   text-align: center;
@@ -89,6 +89,10 @@
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   z-index: 1000;
+}
+.component-galleryRoll-row.toRight .carousel-close{
+  border-radius: 5px 0 0 5px;
+  right: 15px;
 }
 .component-galleryRoll-row-arrow { 
   width: 36px;
@@ -121,24 +125,34 @@
   transform: translate( calc( -585px - 15px) ); 
 }
 
+.carousel-controls{
+  position: absolute;
+}
+.carousel-controls > .carousel-control {
+  background-image: none;
+  position: relative;
+  width: auto;
+  font-size: inherit;
+  top: 20px;
+  left: 20px;
+}
+.component-galleryRoll-row.toRight .carousel-controls > .carousel-control {
+  left: 20px;
+}
+.carousel-control.left {
 
-.carousel-showmanymoveone .carousel-control {
-    position: relative;
-    top: 20px;
-    left: 20px;
-    background-image: none;
-  }
-  .carousel-showmanymoveone .carousel-control.left {
-    margin-left: 15px;
-  }
-  .carousel-showmanymoveone .carousel-control.right {
-    margin-right: 15px;
-  }
-  .carousel-showmanymoveone .cloneditem-1,
-  .carousel-showmanymoveone .cloneditem-2,
-  .carousel-showmanymoveone .cloneditem-3 {
-    display: none;
-  }
+}
+.carousel-control.right {
+  margin-left: 22px;
+}
+.carousel-control.right > img{
+  transform: rotateY(180deg);
+}
+.carousel-showmanymoveone .cloneditem-1,
+.carousel-showmanymoveone .cloneditem-2,
+.carousel-showmanymoveone .cloneditem-3 {
+  display: none;
+}
   @media all and (min-width: 768px) {
     .carousel-showmanymoveone .carousel-inner > .active.left,
     .carousel-showmanymoveone .carousel-inner > .prev {
