@@ -12,9 +12,11 @@
 
     <body>
         <div class="container">                           
-            <!-- RULLINO -->
+<!--  -----------------  \\\\\\\ RULLINO  ///////  ------------------- -->
             <div class="row">
                 <div class="component-galleryRoll">
+
+<!-- -----------------  \\\\\\\  SINGLE IMAGE TEMPLATE  ///////  ------------------- -->
                     <div class="row component-galleryRoll-row toLeft">
                         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0 component-galleryRoll-row-text">
                             <div>
@@ -43,10 +45,12 @@
                             <img src="../images/540px_357px.png"  alt="immagine 1">
                         </div>
                     </div>
+<!-- -----------------  \\\\\\\  FINE SINGLE IMAGE TEMPLATE  ///////  ------------------- -->
 
 
+<!-- -----------------  \\\\\\\  SLIDER  TEMPLATE  ///////  ------------------- -->
                     <div class="row component-galleryRoll-row toLeft">
-                            <div class="col-xs-12 col-md-6 component-galleryRoll-row-text">
+                            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0 component-galleryRoll-row-text">
                                 <div>
                                     <h2>Titolo</h2>
                                     <p>
@@ -56,12 +60,12 @@
                                 </div>
                             </div>
 
-                            <div class="col-xs-12 col-md-6 component-galleryRoll-row-img transition">
-                                    <span class="component-galleryRoll-row-arrow">
+                            <div class="col-sm-12 col-md-6 component-galleryRoll-row-img transition">
+                                    <span class="component-galleryRoll-row-arrow hidden-xs hidden-sm">
                                         <img src="../images/Gallery_Arrow_Open.svg">
                                     </span>
                                     <!-- chiusura carosello -->
-                                    <div class="carousel-close hidden">
+                                    <div class="carousel-close hidden hidden-xs hidden-sm">
                                         <img src="../images/Gallery_Cross_Close.svg">
                                     </div>
                                     <div class="carousel carousel-showmanymoveone slide carousel-fullWitdh"  data-interval="false">
@@ -82,7 +86,7 @@
                                         </div>
 
                                         <!-- controlli carosello -->
-                                        <div class="carousel-controls hidden">
+                                        <div class="carousel-controls hidden hidden-xs hidden-sm">
                                             <a class="left carousel-control"  data-slide="prev">
                                                 <img src="../images/Gallery_Arrow_Navigate.svg" class="">
                                             </a>
@@ -92,7 +96,7 @@
                                         </div>
 
                                         <!-- Indicators -->
-                                        <ol class="carousel-indicators hidden">
+                                        <ol class="carousel-indicators hidden-ms hidden-lg">
                                             <li  data-slide-to="0" class="active"></li>
                                             <li  data-slide-to="1"></li>
                                             <li  data-slide-to="2"></li>
@@ -102,7 +106,7 @@
                             </div>
                     </div>
                     <div class="row component-galleryRoll-row toRight">
-                        <div class="col-xs-12 col-md-6 component-galleryRoll-row-text">
+                        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0 component-galleryRoll-row-text">
                             <div>
                                 <h2>Titolo</h2>
                                 <p>
@@ -112,12 +116,12 @@
                             </div>
                         </div>
 
-                        <div class="col-xs-12 col-md-6 component-galleryRoll-row-img transition">
-                                <span class="component-galleryRoll-row-arrow">
+                        <div class="col-sm-12 col-md-6 component-galleryRoll-row-img transition">
+                                <span class="component-galleryRoll-row-arrow hidden-xs hidden-sm">
                                         <img src="../images/Gallery_Arrow_Open.svg">
                                     </span>
                                     <!-- chiusura carosello -->
-                                    <div class="carousel-close hidden">
+                                    <div class="carousel-close hidden hidden-xs hidden-sm">
                                         <img src="../images/Gallery_Cross_Close.svg">
                                     </div>
                                 <div class="carousel carousel-showmanymoveone slide carousel-fullWitdh"  data-interval="false">
@@ -140,7 +144,7 @@
 
                         
                                     <!-- controlli carosello -->
-                                    <div class="carousel-controls hidden">
+                                    <div class="carousel-controls hidden hidden-xs hidden-sm">
                                         <a class="left carousel-control" data-slide="prev">
                                             <img src="../images/Gallery_Arrow_Navigate.svg" class="">
                                         </a>
@@ -149,7 +153,7 @@
                                         </a>
                                     </div>
                                     <!-- Indicators -->
-                                    <ol class="carousel-indicators hidden">
+                                    <ol class="carousel-indicators hidden-ms hidden-lg">
                                         <li data-slide-to="0" class="active"></li>
                                         <li data-slide-to="1"></li>
                                         <li data-slide-to="2"></li>
@@ -157,16 +161,12 @@
 
                                 </div>
                         </div>
-                </div>
+                    </div>
+<!-- -----------------  \\\\\\\  FINE SLIDER  TEMPLATE  ///////  ------------------- -->
 
-
-                </div>
-            </div>
-
-
- <!-- fine controlli carosello -->          
-
-            <!-- FINE RULLINO -->
+                </div> <!-- chiudo  component-galleryRoll-->
+            </div> <!-- chiudo  row -->
+<!--  -----------------  \\\\\\\ FINE RULLINO  ///////  ------------------- -->
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
