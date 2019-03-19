@@ -49,17 +49,35 @@
 } 
 
 /* ----- Tablet Portrait & Mobile (Viewport below 989px) ----- */
-@media only screen and (max-width : 989px) {
-
+@media only screen and (max-width : 992px) {
+  .component-galleryRoll-row {
+    flex-direction: column-reverse;
+    display: flex;
+  }
+  .component-galleryRoll-row-text > div {
+    width: 100%;
+  }
+  .component-galleryRoll-row-text > div > h2{
+    margin: 30px 0 10px;
+}
+.component-galleryRoll-row-text > div > p{
+    font-size: 15px;
+}
+  .component-galleryRoll-row > .component-galleryRoll-row-img {
+    text-align: center;
+  }
+  .component-galleryRoll-row-img > img {
+    max-width: 480px;
+  }
 } 
 
 /* ----- Tablet Portrait (Viewport between 769px and 989px) ----- */
-@media only screen and (min-width: 769px) and (max-width : 989px) {
+@media only screen and (min-width: 769px) and (max-width : 992px) {
 
 } 
 
 /* ----- Tablet landscape (Viewport between 990px and 1199px) ----- */
-@media only screen and (min-width: 990px) and (max-width : 1199px) {
+@media only screen and (min-width: 993px) and (max-width : 1199px) {
 
 } 
 
