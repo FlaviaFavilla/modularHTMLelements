@@ -23,7 +23,7 @@
   float: right;
 }
 .component-galleryRoll-row.toRight .carousel-fullWitdh {
-  right: calc(70vw + 15px);
+  /* right: calc(70vw + 15px); */
 }
 
 .component-galleryRoll-row-text > div{
@@ -45,7 +45,7 @@
 
 /* ----- Mobiles (Viewport below 768px) ----- */
 @media only screen and (max-width: 768px) {
-
+.carousel-controls{display:block!important;}
 } 
 
 /* ----- Tablet Portrait & Mobile (Viewport below 989px) ----- */
@@ -73,9 +73,20 @@
     float: left;
     margin-right: 20px;
 }
+.toRight .pippo{
+    float: right;
+}
+.pippo > img{
+  width: 540px;
+}
 .carousel-fullWitdh {
-    width: 150vw;
+    /* width: 150vw; */
+    width: 300%;
     position: relative;
+    /* transform: translate(50%); */
+}
+.toRight .carousel-fullWitdh {
+    transform: translate( calc( -65% - 7px));
 }
 
 .carousel-close{
@@ -108,11 +119,14 @@
 }
 .component-galleryRoll-row.toLeft .component-galleryRoll-row-arrow { 
   border-radius: 5px 0 0px 5px;
-  left: calc(15px - 36px);
+  left: -21px;
+}
+.component-galleryRoll-row.toLeft .component-galleryRoll-row-arrow > img { 
+  transform: rotateY(180deg);
 }
 .component-galleryRoll-row.toRight .component-galleryRoll-row-arrow { 
   border-radius: 0 5px 5px 0;
-  right: calc(15px - 36px);
+  right: -21px;
 }
 
 .transition{
