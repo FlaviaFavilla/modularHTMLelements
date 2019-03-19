@@ -133,10 +133,12 @@
   transition: 2s;
 }
 .transitionClassToRight{ 
-  transform: translate( calc( 585px + 15px) ); 
+  transform: translate( 600px ); 
+  /* transform: translate( calc( 585px + 15px) );  */
 }
 .transitionClassToLeft{ 
-  transform: translate( calc( -585px - 15px) ); 
+  transform: translate( -600px ); 
+  /* transform: translate( calc( -585px - 15px) );  */
 }
 
 .carousel-controls{

@@ -22,16 +22,25 @@ $(document).ready(function(){
   }());
 
 // -----------  SELEZIONE TUTTI gli slider, funzioni al clicl sul singolo  -----------
-  $('.component-galleryRoll-row-img.transition').each(function() {
+  $('.component-galleryRoll-row-img.transition').each(function(index) {
 
+    var carousel = $(this).find(".carousel.carousel-showmanymoveone");
     var carouselOpen = $(this).find(".component-galleryRoll-row-arrow");
     var carouselControls =  $(this).find(".carousel-controls");
+    var carouselControlsLink =  $(this).find(".carousel-controls > a");
+    var carouselIndicators =  $(this).find(".carousel-indicators li");
     var carouselClose =  $(this).find(".carousel-close");
     var carouselToSlide =  $(this);
 
     var parent = $(this).parent(); 
     var parents = $(this).parents().hasClass('toLeft'); 
     // console.log(parent, parents, carouselToSlide);
+
+    // ----------- Genera ID degli sliders  -----------
+console.log(index);
+    carousel.attr('id', 'slider-' + index);
+    carouselControlsLink.attr('href', '#slider-' + index);
+    carouselIndicators.attr('data-target', '#slider-' + index);
 
 
     // -----------  a fine animazione modifica visibiltà elementi  -----------
