@@ -144,6 +144,9 @@
 .carousel-controls{
   position: absolute;
 }
+.toRight .carousel-controls {
+  right: 55px;
+}
 .carousel-controls > .carousel-control {
   background-image: none;
   position: relative;
@@ -153,7 +156,7 @@
   left: 20px;
 }
 .component-galleryRoll-row.toRight .carousel-controls > .carousel-control {
-  left: 20px;
+  left: 0;
 }
 .carousel-control.left {
 

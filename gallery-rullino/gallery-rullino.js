@@ -37,29 +37,34 @@ $(document).ready(function(){
     // console.log(parent, parents, carouselToSlide);
 
     // ----------- Genera ID degli sliders  -----------
-console.log(index);
-    carousel.attr('id', 'slider-' + index);
-    carouselControlsLink.attr('href', '#slider-' + index);
-    carouselIndicators.attr('data-target', '#slider-' + index);
-
+      carousel.attr('id', 'slider-' + index);
+      carouselControlsLink.attr('href', '#slider-' + index);
+      carouselIndicators.attr('data-target', '#slider-' + index);
 
     // -----------  a fine animazione modifica visibiltà elementi  -----------
-        var galleryTransitionEnd = function(){
-          return  parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
-                              function(event) {
-                                carouselOpen.toggleClass('hidden');
-                                carouselControls.toggleClass('hidden');
-                                carouselClose.toggleClass('hidden');
-                                return false;
-                              });
-        }
+      // var galleryTransitionEnd = function(){
+      //   return  parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+      //                       function(event) {
+      //                         carouselOpen.addClass('hidden');
+      //                         carouselControls.removeClass('hidden');
+      //                         carouselClose.removeClass('hidden');
+      //                         // return false;
+      //                       });
+      // }
 
     // -----------  apertura slider -----------
       carouselOpen.on("click", function(e){
         e.stopPropagation();
         parents ? carouselToSlide.addClass('transitionClassToLeft') : carouselToSlide.addClass('transitionClassToRight');
 
-        galleryTransitionEnd();
+        // galleryTransitionEnd();
+        parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+          function(event) {
+            carouselOpen.addClass('hidden');
+            carouselControls.removeClass('hidden');
+            carouselClose.removeClass('hidden');
+            // return false;
+          });
       });
 
     // -----------  chiusura slider -----------
@@ -67,7 +72,14 @@ console.log(index);
         e.stopPropagation();
         parents ? carouselToSlide.removeClass('transitionClassToLeft') : carouselToSlide.removeClass('transitionClassToRight');
 
-        galleryTransitionEnd();
+        // galleryTransitionEnd();
+        parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+          function(event) {
+            carouselOpen.removeClass('hidden');
+            carouselControls.addClass('hidden');
+            carouselClose.addClass('hidden');
+            // return false;
+          });
       });
 
   });
