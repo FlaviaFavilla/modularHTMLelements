@@ -66,9 +66,35 @@
   .component-galleryRoll-row > .component-galleryRoll-row-img {
     text-align: center;
   }
-  .component-galleryRoll-row-img > img {
+  .component-galleryRoll-row-img > img, .pippo > img {
     max-width: 480px;
   }
+  .carousel-indicators {
+    position: relative;
+    z-index: 15;
+    width: 32%;
+    /* padding-left: 0; */
+    /* margin-left: -30%; */
+    text-align: center;
+    list-style: none;
+}
+.carousel-fullWitdh {
+  transform: translate(-17%);
+}
+.item{
+  display: flex;
+  flex-direction: row;
+}
+.pippo{
+  order: 2;
+}
+.pippo.cloneditem-1{
+  order: 3;
+}
+.pippo.cloneditem-2{
+  display:block!important;
+  order: 1;
+}
 } 
 
 /* ----- Tablet Portrait (Viewport between 769px and 989px) ----- */
