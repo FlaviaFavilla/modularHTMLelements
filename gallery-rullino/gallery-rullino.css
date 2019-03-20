@@ -1,6 +1,16 @@
 /* .component-galleryRoll{
     margin: 40px auto;
 } */
+
+.carousel-showmanymoveone .cloneditem-3, 
+.carousel-showmanymoveone .cloneditem-4,
+.carousel-showmanymoveone .cloneditem-5, 
+.carousel-showmanymoveone .cloneditem-6,
+.carousel-showmanymoveone .cloneditem-7, 
+.carousel-showmanymoveone .cloneditem-8,
+.carousel-showmanymoveone .cloneditem-9 {
+  display: none!important;
+}
 .component-galleryRoll-row{
     margin: 80px auto;
 }
@@ -287,11 +297,11 @@
   @media all and (min-width: 768px) {
     .carousel-showmanymoveone .carousel-inner > .active.left,
     .carousel-showmanymoveone .carousel-inner > .prev {
-      left: -50%;
+      left: 500px;
     }
     .carousel-showmanymoveone .carousel-inner > .active.right,
     .carousel-showmanymoveone .carousel-inner > .next {
-      left: 50%;
+      left: 500px;
     }
     .carousel-showmanymoveone .carousel-inner > .left,
     .carousel-showmanymoveone .carousel-inner > .prev.right,
@@ -305,14 +315,14 @@
   @media all and (min-width: 768px) and (transform-3d), all and (min-width: 768px) and (-webkit-transform-3d) {
     .carousel-showmanymoveone .carousel-inner > .item.active.right,
     .carousel-showmanymoveone .carousel-inner > .item.next {
-      -webkit-transform: translate3d(50%, 0, 0);
-              transform: translate3d(50%, 0, 0);
+      -webkit-transform: translate3d(500px, 0, 0);
+              transform: translate3d(500px, 0, 0);
       left: 0;
     }
     .carousel-showmanymoveone .carousel-inner > .item.active.left,
     .carousel-showmanymoveone .carousel-inner > .item.prev {
-      -webkit-transform: translate3d(-50%, 0, 0);
-              transform: translate3d(-50%, 0, 0);
+      -webkit-transform: translate3d(-500px, 0, 0);
+              transform: translate3d(-500px, 0, 0);
       left: 0;
     }
     .carousel-showmanymoveone .carousel-inner > .item.left,
