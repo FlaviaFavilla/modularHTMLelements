@@ -18,7 +18,7 @@ console.log(windowWidth);
   
         // grab item, clone, add marker class, add to collection
         itemToClone.children(':first-child').clone()
-          .addClass("pippo cloneditem-"+(i) )
+          .addClass("item-list cloneditem-"+(i) )
           .appendTo($(this));
       }
     });
