@@ -2,7 +2,7 @@
     margin: 40px auto;
 } */
 
-.carousel-showmanymoveone .cloneditem-3, 
+/* .carousel-showmanymoveone .cloneditem-3, 
 .carousel-showmanymoveone .cloneditem-4,
 .carousel-showmanymoveone .cloneditem-5, 
 .carousel-showmanymoveone .cloneditem-6,
@@ -10,7 +10,7 @@
 .carousel-showmanymoveone .cloneditem-8,
 .carousel-showmanymoveone .cloneditem-9 {
   display: none!important;
-}
+} */
 .component-galleryRoll-row{
     margin: 80px auto;
 }
@@ -20,9 +20,9 @@
 .component-galleryRoll-row.toLeft > .component-galleryRoll-row-img{
   padding-right: 0;
 }
-.component-galleryRoll-row-img > img{
+/* .component-galleryRoll-row-img > img{
   width: 100%;
-}
+} */
 .component-galleryRoll-row > .component-galleryRoll-row-text{
   padding: 0;
 }
@@ -55,25 +55,55 @@
   background: #8fe76c;
 }
 
+.carousel-indicators li {
+  background: #F2F2F2;
+  border: 1px solid #F2F2F2;
+}
+.carousel-indicators .active {
+  background: #AD0C33;
+  border: 1px solid #AD0C33;
+}
+
 /*  ------------------------  ////  MEDIA QUERY  \\\\  ------------------------   */
 
 /* ----- Mobiles (Viewport below 768px) ----- */
 @media only screen and (max-width: 768px) {
-.carousel-controls{display:block!important;}
-.pippo{
-  width: 100%;
-  }
-  .pippo > img{
+  .pippo{
     width: 100%;
+  }
+  .component-galleryRoll-row > .component-galleryRoll-row-img {
+    padding: 0;
+  }
+  .component-galleryRoll-row-img > img, .pippo > img {
+    width: 100%;
+    height: 248px;
+  }
+  .carousel-showmanymoveone .cloneditem-1, 
+  .carousel-showmanymoveone .cloneditem-2, 
+  .carousel-showmanymoveone .cloneditem-3, 
+  .carousel-showmanymoveone .cloneditem-4,
+  .carousel-showmanymoveone .cloneditem-5, 
+  .carousel-showmanymoveone .cloneditem-6,
+  .carousel-showmanymoveone .cloneditem-7, 
+  .carousel-showmanymoveone .cloneditem-8,
+  .carousel-showmanymoveone .cloneditem-9 {
+    display: none!important;
+  }
+  .carousel-indicators {
+    position: relative;
+    z-index: 15;
+    width: 32%;
+    top:20px;
+    /* padding-left: 0; */
+    /* margin-left: -30%; */
+    text-align: center;
+    list-style: none;
   }
 } 
 
 /* ----- Tablet Portrait & Mobile (Viewport below 989px) ----- */
 @media only screen and (max-width : 992px) {
-  .component-galleryRoll-row {
-    flex-direction: column-reverse;
-    display: flex;
-  }
+
   .component-galleryRoll-row-text > div {
     width: 100%;
   }
@@ -86,17 +116,37 @@
   .component-galleryRoll-row > .component-galleryRoll-row-img {
     text-align: center;
   }
-  .component-galleryRoll-row-img > img, .pippo > img {
-    max-width: 480px;
+} 
+
+/* ----- Tablet Portrait (Viewport between 769px and 989px) ----- */
+@media only screen and (min-width: 769px) and (max-width : 992px) {
+  .pippo{
+    width: 480px;
   }
-  .carousel-indicators {
-    position: relative;
-    z-index: 15;
-    width: 32%;
-    /* padding-left: 0; */
-    /* margin-left: -30%; */
-    text-align: center;
-    list-style: none;
+  .component-galleryRoll-row-img > img, .pippo > img{
+    width: 480px;
+    height: 317px;
+  }
+  .carousel-fullWitdh {
+    width: 350%;
+    /* transform: translate(50%); */
+  }
+  .item.active {
+    display: flex;
+    flex-direction: row;
+  }
+  .pippo{
+    order: 2;
+  }
+  .carousel-showmanymoveone .carousel-inner .cloneditem-1 {
+    order: 3;
+  }
+  .carousel-showmanymoveone .carousel-inner .cloneditem-2 {
+    display:none!important;
+  }
+  .carousel-showmanymoveone .carousel-inner .cloneditem-4 {
+    order: 1;
+    display: block!important;
   }
   .carousel-fullWitdh {
     transform: translate(-17%);
@@ -112,27 +162,16 @@
     order: 3;
   }
   .pippo.cloneditem-2{
-    display:block!important;
+    display:block;
     order: 1;
   }
   .carousel-fullWitdh {
     width: 350%;
     /* transform: translate(50%); */
   }
-
-} 
-
-/* ----- Tablet Portrait (Viewport between 769px and 989px) ----- */
-@media only screen and (min-width: 769px) and (max-width : 992px) {
-  .pippo{
-    width: 480px;
-  }
-  .pippo > img{
-    width: 480px;
-  }
-  .carousel-fullWitdh {
-    width: 350%;
-    /* transform: translate(50%); */
+  .component-galleryRoll-row {
+    flex-direction: column-reverse;
+    display: flex;
   }
 } 
 
@@ -143,6 +182,7 @@
   }
   .pippo > img{
     width: 480px;
+    height: 317px;
   }
   .carousel-fullWitdh {
     width: 350%;
@@ -169,6 +209,7 @@
   }
   .pippo > img{
     width: 540px;
+    height: 357px;
   }
   .carousel-fullWitdh {
     width: 300%;
