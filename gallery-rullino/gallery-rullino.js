@@ -1,6 +1,9 @@
 $(document).ready(function(){
 
 // -----------  generazione cloni immagine slider  -----------
+var windowWidth = $(window).width();
+console.log(windowWidth);
+
   (function(){
     $('.carousel-showmanymoveone .item').each(function(){
       var itemToClone = $(this);
@@ -34,36 +37,23 @@ $(document).ready(function(){
 
     var parent = $(this).parent(); 
     var parents = $(this).parents().hasClass('toLeft'); 
-    // console.log(parent, parents, carouselToSlide);
 
     // ----------- Genera ID degli sliders  -----------
       carousel.attr('id', 'slider-' + index);
       carouselControlsLink.attr('href', '#slider-' + index);
       carouselIndicators.attr('data-target', '#slider-' + index);
 
-    // -----------  a fine animazione modifica visibiltà elementi  -----------
-      // var galleryTransitionEnd = function(){
-      //   return  parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
-      //                       function(event) {
-      //                         carouselOpen.addClass('hidden');
-      //                         carouselControls.removeClass('hidden');
-      //                         carouselClose.removeClass('hidden');
-      //                         // return false;
-      //                       });
-      // }
 
     // -----------  apertura slider -----------
       carouselOpen.on("click", function(e){
         e.stopPropagation();
         parents ? carouselToSlide.addClass('transitionClassToLeft') : carouselToSlide.addClass('transitionClassToRight');
-
-        // galleryTransitionEnd();
+        // --- a fine animazione modifica visibiltà elementi  -----
         parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
           function(event) {
             carouselOpen.addClass('hidden');
             carouselControls.removeClass('hidden');
             carouselClose.removeClass('hidden');
-            // return false;
           });
       });
 
@@ -71,14 +61,12 @@ $(document).ready(function(){
       carouselClose.on("click", function(e){
         e.stopPropagation();
         parents ? carouselToSlide.removeClass('transitionClassToLeft') : carouselToSlide.removeClass('transitionClassToRight');
-
-        // galleryTransitionEnd();
+        // --- a fine animazione modifica visibiltà elementi  -----
         parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
           function(event) {
             carouselOpen.removeClass('hidden');
             carouselControls.addClass('hidden');
             carouselClose.addClass('hidden');
-            // return false;
           });
       });
 

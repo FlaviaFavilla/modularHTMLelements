@@ -118,7 +118,7 @@
     margin-right: 20px;
 }
 .toRight .pippo{
-    float: right;
+    /* float: right; */
 }
 .pippo > img{
   width: 540px;
