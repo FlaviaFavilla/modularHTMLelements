@@ -1,3 +1,13 @@
+
+/* da cancellare */
+.toLeft{ background: pink;}
+.toRight{ background: lightskyblue;}
+.carousel-inner {
+  background: #8fe76c;
+}
+/* fine da cancellare */
+
+
 .component-galleryRoll .component-galleryRoll-row{
   margin: 80px auto;
 }
@@ -14,7 +24,6 @@
   float: right;
 }
 
-
 .component-galleryRoll .component-galleryRoll-row-text > div{
     padding: 0;
     width: 445px;
@@ -28,32 +37,15 @@
     font-size: 16px;
 }
 
-/* da cancellare */
-.toLeft{ background: pink;}
-.toRight{ background: lightskyblue;}
-.carousel-inner {
-  background: #8fe76c;
+.component-galleryRoll .carousel-fullWitdh {
+  position: relative;
 }
-/* fine da cancellare */
-
-
-.component-galleryRoll .carousel-indicators li {
-  background: #F2F2F2;
-  border: 1px solid #F2F2F2;
-}
-.component-galleryRoll .carousel-indicators .active {
-  background: #AD0C33;
-  border: 1px solid #AD0C33;
-}
-
 .component-galleryRoll .item-list{
   float: left;
   margin-right: 20px;
 }
-.component-galleryRoll .carousel-fullWitdh {
-  position: relative;
-}
 
+/* -------------------controllo apertura-chiusura rullino ------------------- */
 .component-galleryRoll .carousel-close{
 position: absolute;
 bottom: 20px;
@@ -96,6 +88,7 @@ right: -21px;
 .component-galleryRoll .transition{
 transition: 2s;
 }
+/* ------------------- controlli mivimento slides carosello ------------------- */
 .component-galleryRoll .carousel-controls{
 position: absolute;
 }
@@ -116,11 +109,16 @@ margin-left: 22px;
 .component-galleryRoll .carousel-control.right > img{
 transform: rotateY(180deg);
 }
-.component-galleryRoll .carousel-showmanymoveone .cloneditem-1,
-.component-galleryRoll .carousel-showmanymoveone .cloneditem-2,
-.component-galleryRoll .carousel-showmanymoveone .cloneditem-3 {
-display: none;
+
+.component-galleryRoll .carousel-indicators li {
+  background: #F2F2F2;
+  border: 1px solid #F2F2F2;
 }
+.component-galleryRoll .carousel-indicators .active {
+  background: #AD0C33;
+  border: 1px solid #AD0C33;
+}
+
 
 /*  ------------------------  ////  MEDIA QUERY  \\\\  ------------------------   */
 
@@ -200,9 +198,19 @@ display: none;
       .component-galleryRoll .carousel-showmanymoveone .carousel-inner .cloneditem-1 {
         order: 3;
       }
-      .component-galleryRoll .carousel-showmanymoveone .carousel-inner .cloneditem-2 {
+
+      /* .component-galleryRoll .carousel-showmanymoveone .cloneditem-2, 
+      .component-galleryRoll .carousel-showmanymoveone .cloneditem-3,
+      .component-galleryRoll .carousel-showmanymoveone .cloneditem-5, 
+      .component-galleryRoll .carousel-showmanymoveone .cloneditem-6,
+      .component-galleryRoll .carousel-showmanymoveone .cloneditem-7, 
+      .component-galleryRoll .carousel-showmanymoveone .cloneditem-8,
+      .component-galleryRoll .carousel-showmanymoveone .cloneditem-9 {
+         display: none;
+       } */
+      /* .component-galleryRoll .carousel-showmanymoveone .carousel-inner .cloneditem-2 {
         display:none!important;
-      }
+      } */
       .component-galleryRoll .carousel-showmanymoveone .carousel-inner .cloneditem-4 {
         order: 1;
         display: block!important;
