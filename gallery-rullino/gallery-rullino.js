@@ -11,6 +11,7 @@ $(document).ready(function(){
     var carouselIndicators =  $(this).find(".carousel-indicators");
     var carouselClose =  $(this).find(".carousel-close");
     var carouselItems =  $(this).find(".carousel-inner > .item");
+    // var carouselItemList =  $(this).find(".carousel-inner > .item > .item-list");
     var carouselToSlide =  $(this);
 
     var parent = $(this).parent(); 
@@ -41,7 +42,11 @@ console.log(carouselItems.length);
       if(item === 0) {
         carouselIndicators.children().first().addClass('active');
       }
+      // segno l'ultimo elemento clonato per il positioning in tablet portrait
+      $(this).children().last().addClass('cloneditem-last');
     });
+
+
 
     // ----------- Genera ID degli sliders  -----------
     carousel.attr('id', 'slider-' + index);
