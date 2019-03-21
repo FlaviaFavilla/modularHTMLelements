@@ -4,6 +4,7 @@ $(document).ready(function(){
   $('.component-galleryRoll .component-galleryRoll-row-img.transition').each(function(index) {
 
     var carousel = $(this).find(".carousel.carousel-showmanymoveone");
+    var rowContainer = $(this).find(".carousel.carousel-showmanymoveone.carousel-fullWidth");
     var carouselOpen = $(this).find(".component-galleryRoll-row-arrow");
     var carouselControls =  $(this).find(".carousel-controls");
     var carouselControlsLink =  $(this).find(".carousel-controls > a");
@@ -15,7 +16,10 @@ $(document).ready(function(){
     var parent = $(this).parent(); 
     var parents = $(this).parents().hasClass('toLeft'); 
 
-console.log(carouselItems, carouselItems.length);
+console.log(carouselItems.length);
+    // -----------  genera la dimesione del container per le slides  -----------
+    rowContainer.addClass("carousel-fullWidth-"+ carouselItems.length );
+
     // -----------  generazione cloni immagine slider  -----------
     carouselItems.each(function(item){
       var itemToClone = $(this);
@@ -37,7 +41,6 @@ console.log(carouselItems, carouselItems.length);
       if(item === 0) {
         carouselIndicators.children().first().addClass('active');
       }
-      
     });
 
     // ----------- Genera ID degli sliders  -----------

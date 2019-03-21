@@ -37,7 +37,7 @@
     font-size: 16px;
 }
 
-.component-galleryRoll .carousel-fullWitdh {
+.component-galleryRoll .carousel-fullWidth {
   position: relative;
 }
 .component-galleryRoll .item-list{
@@ -185,10 +185,18 @@ transform: rotateY(180deg);
         width: 480px;
         height: 317px;
       }
-      .component-galleryRoll .carousel-fullWitdh {
-        width: 350%;
+      .component-galleryRoll .carousel-fullWidth {
+        /* width: 350%; */
         transform: translate(-17%);
       }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-2{ width: 200%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-3{ width: 300%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-4{ width: 400%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-5{ width: 500%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-6{ width: 600%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-7{ width: 700%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-8{ width: 800%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-9{ width: 900%; }
       .component-galleryRoll .item.active {
         display: flex;
         flex-direction: row;
@@ -256,17 +264,31 @@ transform: rotateY(180deg);
         width: 480px;
         height: 317px;
       }
-      .component-galleryRoll .carousel-fullWitdh {
-        width: 350%;
-      }
+      /* .component-galleryRoll .carousel-fullWidth {
+      } */
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-2{ width: 250%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-3{ width: 350%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-4{ width: 450%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-5{ width: 550%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-6{ width: 650%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-7{ width: 750%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-8{ width: 850%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-9{ width: 950%; }
+
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-2 { transform: translate(-1010px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-3 { transform: translate(-1010px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-4 { transform: translate(-1010px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-5 { transform: translate(-1010px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-6 { transform: translate(-1010px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-7 { transform: translate(-1010px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-8 { transform: translate(-1010px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-9 { transform: translate(-1010px); }
+
       .component-galleryRoll .transitionClassToRight{ 
         transform: translate( 500px ); 
       }
       .component-galleryRoll .transitionClassToLeft{ 
         transform: translate( -500px ); 
-      }
-      .component-galleryRoll .toRight .carousel-fullWitdh {
-        transform: translate(-1010px);
       }
       .component-galleryRoll .toRight .carousel-controls {
         right: 185px;
@@ -282,17 +304,29 @@ transform: rotateY(180deg);
         width: 540px;
         height: 357px;
       }
-      .component-galleryRoll .carousel-fullWitdh {
-        width: 300%;
-      }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-2{ width: 200%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-3{ width: 300%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-4{ width: 400%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-5{ width: 500%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-6{ width: 600%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-7{ width: 700%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-8{ width: 800%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-9{ width: 900%; }
+
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-2 { transform: translate(-1010px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-3 { transform: translate(-1090px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-4 { transform: translate(-1010px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-5 { transform: translate(-1010px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-6 { transform: translate(-1010px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-7 { transform: translate(-1010px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-8 { transform: translate(-1010px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-9 { transform: translate(-1010px); }
+
       .component-galleryRoll .transitionClassToRight{ 
         transform: translate( 600px ); 
       }
       .component-galleryRoll .transitionClassToLeft{ 
         transform: translate( -600px ); 
-      }
-      .component-galleryRoll .toRight .carousel-fullWitdh {
-        transform: translate(-1090px);
       }
       .component-galleryRoll .toRight .carousel-controls {
         right: 55px;
