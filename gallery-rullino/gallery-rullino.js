@@ -4,18 +4,23 @@ $(document).ready(function(){
   $('.component-galleryRoll .component-galleryRoll-row-img.transition').each(function(index) {
 
     var carousel = $(this).find(".carousel.carousel-showmanymoveone");
+    var rowContainer = $(this).find(".carousel.carousel-showmanymoveone.carousel-fullWidth");
     var carouselOpen = $(this).find(".component-galleryRoll-row-arrow");
     var carouselControls =  $(this).find(".carousel-controls");
     var carouselControlsLink =  $(this).find(".carousel-controls > a");
     var carouselIndicators =  $(this).find(".carousel-indicators");
     var carouselClose =  $(this).find(".carousel-close");
     var carouselItems =  $(this).find(".carousel-inner > .item");
+    // var carouselItemList =  $(this).find(".carousel-inner > .item > .item-list");
     var carouselToSlide =  $(this);
 
     var parent = $(this).parent(); 
     var parents = $(this).parents().hasClass('toLeft'); 
 
-console.log(carouselItems, carouselItems.length);
+console.log(carouselItems.length);
+    // -----------  genera la dimesione del container per le slides  -----------
+    rowContainer.addClass("carousel-fullWidth-"+ carouselItems.length );
+
     // -----------  generazione cloni immagine slider  -----------
     carouselItems.each(function(item){
       var itemToClone = $(this);
@@ -37,8 +42,11 @@ console.log(carouselItems, carouselItems.length);
       if(item === 0) {
         carouselIndicators.children().first().addClass('active');
       }
-      
+      // segno l'ultimo elemento clonato per il positioning in tablet portrait
+      $(this).children().last().addClass('cloneditem-last');
     });
+
+
 
     // ----------- Genera ID degli sliders  -----------
     carousel.attr('id', 'slider-' + index);
