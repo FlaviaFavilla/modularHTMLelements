@@ -187,6 +187,7 @@ transform: rotateY(180deg);
       }
       .component-galleryRoll .carousel-fullWitdh {
         width: 350%;
+        transform: translate(-17%);
       }
       .component-galleryRoll .item.active {
         display: flex;
@@ -215,9 +216,6 @@ transform: rotateY(180deg);
         order: 1;
         display: block!important;
       }
-      .component-galleryRoll .carousel-fullWitdh {
-        transform: translate(-17%);
-      }
       .component-galleryRoll .item{
         display: flex;
         flex-direction: row;
@@ -231,10 +229,6 @@ transform: rotateY(180deg);
       .component-galleryRoll .item-list.cloneditem-2{
         display:block;
         order: 1;
-      }
-      .component-galleryRoll .carousel-fullWitdh {
-        width: 350%;
-        /* transform: translate(50%); */
       }
       .component-galleryRoll .component-galleryRoll-row {
         flex-direction: column-reverse;
@@ -290,7 +284,6 @@ transform: rotateY(180deg);
       }
       .component-galleryRoll .carousel-fullWitdh {
         width: 300%;
-        /* transform: translate(50%); */
       }
       .component-galleryRoll .transitionClassToRight{ 
         transform: translate( 600px ); 
@@ -299,7 +292,6 @@ transform: rotateY(180deg);
         transform: translate( -600px ); 
       }
       .component-galleryRoll .toRight .carousel-fullWitdh {
-        /* transform: translate( calc( -65% - 7px)); */
         transform: translate(-1090px);
       }
       .component-galleryRoll .toRight .carousel-controls {

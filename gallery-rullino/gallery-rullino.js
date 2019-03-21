@@ -8,8 +8,6 @@ $(document).ready(function(){
     var carouselControls =  $(this).find(".carousel-controls");
     var carouselControlsLink =  $(this).find(".carousel-controls > a");
     var carouselIndicators =  $(this).find(".carousel-indicators");
-    var carouselIndicator =  $(this).find(".carousel-indicators li");
-    // var carouselIndicators =  $(this).find(".carousel-indicators li");
     var carouselClose =  $(this).find(".carousel-close");
     var carouselItems =  $(this).find(".carousel-inner > .item");
     var carouselToSlide =  $(this);
@@ -39,6 +37,7 @@ console.log(carouselItems, carouselItems.length);
       if(item === 0) {
         carouselIndicators.children().first().addClass('active');
       }
+      
     });
 
     // ----------- Genera ID degli sliders  -----------
