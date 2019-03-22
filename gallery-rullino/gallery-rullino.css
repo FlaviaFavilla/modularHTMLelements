@@ -26,16 +26,16 @@
 }
 
 .component-galleryRoll .component-galleryRoll-row-text > div{
-    padding: 0;
-    width: 445px;
+  padding: 0;
+  width: 445px;
 }
 .component-galleryRoll .component-galleryRoll-row-text > div > h2{
-    font-family: OpenSans-Bold;
-    font-size: 28px;
-    margin: 0 0 20px;
+  font-family: OpenSans-Bold;
+  font-size: 28px;
+  margin: 0 0 20px;
 }
 .component-galleryRoll .component-galleryRoll-row-text > div > p{
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .component-galleryRoll .carousel-fullWidth {
@@ -53,68 +53,69 @@
 
 /* -------------------controllo apertura-chiusura rullino ------------------- */
 .component-galleryRoll .carousel-close{
-position: absolute;
-bottom: 20px;
-width: 37px;
-height: 37px;
-text-align: center;
-padding-top: 9px;
-background: #ffffff;
-border-radius: 0 5px 5px 0;
-cursor: pointer;
-z-index: 1000;
-left: 45px;
+  position: absolute;
+  bottom: 20px;
+  width: 37px;
+  height: 37px;
+  text-align: center;
+  padding-top: 9px;
+  background: #ffffff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  z-index: 1000;
+  left: 44px;
 }
 .component-galleryRoll .component-galleryRoll-row.toRight .carousel-close{
-border-radius: 5px 0 0 5px;
-right: 45px;
+  border-radius: 5px 0 0 5px;
+  right: 45px;
+  left: auto;
 }
 .component-galleryRoll .component-galleryRoll-row-arrow { 
-width: 36px;
-height: 36px; 
-background: #AD0C33;
-display: block;
-text-align: center;
-position: absolute;
-bottom: 20px;
-cursor: pointer;
-padding-top: 7px;
-z-index: 200000;
+  width: 36px;
+  height: 36px; 
+  background: #AD0C33;
+  display: block;
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  cursor: pointer;
+  padding-top: 7px;
+  z-index: 200000;
 }
 .component-galleryRoll .component-galleryRoll-row.toLeft .component-galleryRoll-row-arrow { 
-border-radius: 5px 0 0px 5px;
-left: 9px;
+  border-radius: 5px 0 0px 5px;
+  left: 9px;
 }
 .component-galleryRoll .component-galleryRoll-row.toLeft .component-galleryRoll-row-arrow > img { 
-transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 .component-galleryRoll .component-galleryRoll-row.toRight .component-galleryRoll-row-arrow { 
-border-radius: 0 5px 5px 0;
-right: 9px;
+  border-radius: 0 5px 5px 0;
+  right: 9px;
 }
 .component-galleryRoll .transition{
-transition: 2s;
+  transition: 2s;
 }
 /* ------------------- controlli mivimento slides carosello ------------------- */
 .component-galleryRoll .carousel-controls{
-position: absolute;
+  position: absolute;
 }
 .component-galleryRoll .carousel-controls > .carousel-control {
-background-image: none;
-position: relative;
-width: auto;
-font-size: inherit;
-top: 20px;
-left: 20px;
+  background-image: none;
+  position: relative;
+  width: auto;
+  font-size: inherit;
+  top: 20px;
+  left: 20px;
 }
 .component-galleryRoll .component-galleryRoll-row.toRight .carousel-controls > .carousel-control {
-left: 0;
+  left: 0;
 }
 .component-galleryRoll .carousel-control.right {
-margin-left: 22px;
+  margin-left: 22px;
 }
 .component-galleryRoll .carousel-control.right > img{
-transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .component-galleryRoll .carousel-indicators li {
@@ -188,11 +189,17 @@ transform: rotateY(180deg);
       .component-galleryRoll .item-list{
         width: 480px;
       }
+      .component-galleryRoll .component-galleryRoll-row.toLeft > .component-galleryRoll-row-img {
+        text-align: center;
+      }
       .component-galleryRoll .component-galleryRoll-row-img > img, .component-galleryRoll .item-list > img{
         width: 480px;
         height: 317px;
       }
-      .component-galleryRoll .carousel-fullWidth {
+      .component-galleryRoll .component-galleryRoll-row.toLeft .carousel-fullWidth {
+        transform: translate(-19%);
+      }
+      .component-galleryRoll .component-galleryRoll-row.toRight .carousel-fullWidth {
         transform: translate(-17%);
       }
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-2{ width: 300%; }
@@ -203,21 +210,18 @@ transform: rotateY(180deg);
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-7{ width: 300%; }
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-8{ width: 300%; }
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-9{ width: 300%; }
-      /* .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-2 { transform: translate(-500px); }
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-3 { transform: translate(-1000px);}
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-4 { transform: translate(-1500px);}
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-5 { transform: translate(-2000px);}
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-6 { transform: translate(-2500px);}
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-7 { transform: translate(-3000px);}
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-8 { transform: translate(-3500px);}
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-9 { transform: translate(-4000px);} */
 
       .component-galleryRoll .item.active {
         display: flex;
         flex-direction: row;
       }
-      .component-galleryRoll .component-galleryRoll-row {
+      .component-galleryRoll .component-galleryRoll-row.toLeft,
+      .component-galleryRoll .component-galleryRoll-row.toRight.singleImg{
         flex-direction: column-reverse;
+        display: flex;
+      }
+      .component-galleryRoll .component-galleryRoll-row.toRight {
+        flex-direction: column;
         display: flex;
       }
       .component-galleryRoll .carousel-showmanymoveone .cloneditem-2, 
@@ -239,13 +243,13 @@ transform: rotateY(180deg);
         display: block!important;
         order: 1;
       }
-
       .component-galleryRoll .carousel-indicators {
         position: relative;
         left: 0;
         bottom: -20px;
         width: 100%;
-        margin-left: -20%;
+        margin-left: -17%;
+        margin-bottom: 15px;
       }
 } 
 
@@ -254,6 +258,13 @@ transform: rotateY(180deg);
       .component-galleryRoll .component-galleryRoll-row-img > img, .component-galleryRoll .item-list > img{
         width: 480px;
         height: 317px;
+      }
+      .component-galleryRoll .component-galleryRoll-row.toLeft .component-galleryRoll-row-arrow {
+        left: -20px;
+      }
+      .component-galleryRoll .toLeft .carousel-fullWidth {
+        left: 0;
+        right: 0;
       }
       .component-galleryRoll .item-list{
         width: 480px;
@@ -289,6 +300,15 @@ transform: rotateY(180deg);
       }
       .component-galleryRoll .toRight .carousel-controls {
         right: 185px;
+      }
+      .component-galleryRoll .component-galleryRoll-row.toRight .component-galleryRoll-row-arrow { 
+        right: -30px;
+      }
+      .component-galleryRoll .component-galleryRoll-row.toRight .carousel-close {
+        right: 5px;
+      }
+      .component-galleryRoll .component-galleryRoll-row.toLeft .carousel-close{
+        left: 15px;
       }
 } 
 
