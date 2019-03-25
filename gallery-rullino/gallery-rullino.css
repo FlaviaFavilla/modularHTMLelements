@@ -1,0 +1,498 @@
+
+/* da cancellare */
+.toLeft{ background: pink;}
+.toRight{ background: lightskyblue;}
+.carousel-inner {
+  background: #8fe76c;
+}
+/* fine da cancellare */
+
+
+.component-galleryRoll .component-galleryRoll-row{
+  margin: 80px auto;
+}
+.component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-img{
+  padding-left: 0;
+}
+.component-galleryRoll .component-galleryRoll-row.toLeft > .component-galleryRoll-row-img{
+  padding-right: 0;
+  text-align: right;
+}
+.component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-text{
+  float: right;
+}
+.component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-text > div{
+  float: right;
+}
+
+.component-galleryRoll .component-galleryRoll-row-text > div{
+  padding: 0;
+  width: 445px;
+}
+.component-galleryRoll .component-galleryRoll-row-text > div > h2{
+  font-family: OpenSans-Bold;
+  font-size: 28px;
+  margin: 0 0 20px;
+}
+.component-galleryRoll .component-galleryRoll-row-text > div > p{
+  font-size: 16px;
+}
+
+.component-galleryRoll .carousel-fullWidth {
+  position: relative;
+}
+.component-galleryRoll .toLeft .carousel-fullWidth {
+  left: 30px;
+}
+.component-galleryRoll .toRight .carousel-fullWidth {
+}
+.component-galleryRoll .item-list{
+  float: left;
+  margin-right: 20px;
+}
+
+/* -------------------controllo apertura-chiusura rullino ------------------- */
+.component-galleryRoll .carousel-close{
+  position: absolute;
+  bottom: 20px;
+  width: 37px;
+  height: 37px;
+  text-align: center;
+  padding-top: 9px;
+  background: #ffffff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  z-index: 1000;
+  left: 44px;
+}
+.component-galleryRoll .component-galleryRoll-row.toRight .carousel-close{
+  border-radius: 5px 0 0 5px;
+  right: 45px;
+  left: auto;
+}
+.component-galleryRoll .component-galleryRoll-row-arrow { 
+  width: 36px;
+  height: 36px; 
+  background: #AD0C33;
+  display: block;
+  text-align: center;
+  position: absolute;
+  bottom: 20px;
+  cursor: pointer;
+  padding-top: 7px;
+  z-index: 200000;
+}
+.component-galleryRoll .component-galleryRoll-row.toLeft .component-galleryRoll-row-arrow { 
+  border-radius: 5px 0 0px 5px;
+  left: 9px;
+}
+.component-galleryRoll .component-galleryRoll-row.toLeft .component-galleryRoll-row-arrow > img { 
+  transform: rotateY(180deg);
+}
+.component-galleryRoll .component-galleryRoll-row.toRight .component-galleryRoll-row-arrow { 
+  border-radius: 0 5px 5px 0;
+  right: 9px;
+}
+.component-galleryRoll .transition{
+  transition: 2s;
+}
+/* ------------------- controlli mivimento slides carosello ------------------- */
+.component-galleryRoll .carousel-controls{
+  position: absolute;
+}
+.component-galleryRoll .carousel-controls > .carousel-control {
+  background-image: none;
+  position: relative;
+  width: auto;
+  font-size: inherit;
+  top: 20px;
+  left: 20px;
+}
+.component-galleryRoll .component-galleryRoll-row.toRight .carousel-controls > .carousel-control {
+  left: 0;
+}
+.component-galleryRoll .carousel-control.right {
+  margin-left: 22px;
+}
+.component-galleryRoll .carousel-control.right > img{
+  transform: rotateY(180deg);
+}
+.component-galleryRoll .carousel-indicators {
+  position: relative;
+  left: 0;
+  bottom: -20px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.component-galleryRoll .carousel-indicators li {
+  background: #F2F2F2;
+  border: 1px solid #F2F2F2;
+}
+.component-galleryRoll .carousel-indicators .active {
+  background: #AD0C33;
+  border: 1px solid #AD0C33;
+}
+
+
+/*  ------------------------  ////  MEDIA QUERY  \\\\  ------------------------   */
+
+/* ----- Mobiles (Viewport below 768px) ----- */
+@media only screen and (max-width: 768px) {
+      .component-galleryRoll .item-list{
+        width: 100%;
+      }
+      .component-galleryRoll .component-galleryRoll-row.toLeft,
+      .component-galleryRoll .component-galleryRoll-row.toRight.singleImg{
+        flex-direction: column-reverse;
+        display: flex;
+      }
+      .component-galleryRoll .component-galleryRoll-row.toRight {
+        flex-direction: column;
+        display: flex;
+      }
+      .component-galleryRoll .component-galleryRoll-row > .component-galleryRoll-row-img {
+        padding: 0;
+      }
+      .component-galleryRoll .component-galleryRoll-row-img > img, 
+      .component-galleryRoll .component-galleryRoll-row-img > iframe,
+      .component-galleryRoll .item-list > img,
+      .component-galleryRoll .item-list > iframe {
+        width: 100%;
+        height: 248px;
+      }
+     .component-galleryRoll .carousel-showmanymoveone .cloneditem-1, 
+     .component-galleryRoll .carousel-showmanymoveone .cloneditem-2, 
+     .component-galleryRoll .carousel-showmanymoveone .cloneditem-3, 
+     .component-galleryRoll .carousel-showmanymoveone .cloneditem-4,
+     .component-galleryRoll .carousel-showmanymoveone .cloneditem-5, 
+     .component-galleryRoll .carousel-showmanymoveone .cloneditem-6,
+     .component-galleryRoll .carousel-showmanymoveone .cloneditem-7, 
+     .component-galleryRoll .carousel-showmanymoveone .cloneditem-8,
+     .component-galleryRoll .carousel-showmanymoveone .cloneditem-9 {
+        display: none;
+      }
+      .component-galleryRoll .carousel-indicators {
+        margin-left: -7%;
+      }
+      .component-galleryRoll .toLeft .carousel-fullWidth {
+        left: 0;
+    }
+
+} 
+
+/* ----- Tablet Portrait & Mobile (Viewport below 989px) ----- */
+@media only screen and (max-width : 992px) {
+  .component-galleryRoll .component-galleryRoll-row-text > div {
+        width: 100%;
+      }
+      .component-galleryRoll .component-galleryRoll-row-text > div > h2{
+        margin: 30px 0 10px;
+      }
+      .component-galleryRoll .component-galleryRoll-row-text > div > p{
+          font-size: 15px;
+      }
+      .component-galleryRoll .component-galleryRoll-row > .component-galleryRoll-row-img {
+        text-align: center;
+      }
+} 
+/* ----- FROM Tablet Portrait to UP (Viewport more 989px) ----- */
+@media only screen and (min-width : 992px) {
+  .component-galleryRoll .component-galleryRoll-row > .component-galleryRoll-row-text{
+        padding: 0;
+      }
+} 
+
+/* ----- Tablet Portrait (Viewport between 769px and 989px) ----- */
+@media only screen and (min-width: 769px) and (max-width : 992px) {
+      .component-galleryRoll .item-list{
+        width: 480px;
+      }
+      .component-galleryRoll .component-galleryRoll-row.toLeft > .component-galleryRoll-row-img {
+        text-align: center;
+      }
+      .component-galleryRoll .component-galleryRoll-row-img > img, 
+      .component-galleryRoll .component-galleryRoll-row-img > iframe,
+      .component-galleryRoll .item-list > img,
+      .component-galleryRoll .item-list > iframe{
+        width: 480px;
+        height: 317px;
+      }
+      .component-galleryRoll .component-galleryRoll-row.toLeft .carousel-fullWidth {
+        transform: translate(-19%);
+      }
+      .component-galleryRoll .component-galleryRoll-row.toRight .carousel-fullWidth {
+        transform: translate(-17%);
+      }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-2{ width: 300%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-3{ width: 300%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-4{ width: 300%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-5{ width: 300%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-6{ width: 300%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-7{ width: 300%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-8{ width: 300%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-9{ width: 300%; }
+
+      .component-galleryRoll .item.active {
+        display: flex;
+        flex-direction: row;
+      }
+      .component-galleryRoll .component-galleryRoll-row.toLeft,
+      .component-galleryRoll .component-galleryRoll-row.toRight.singleImg{
+        flex-direction: column-reverse;
+        display: flex;
+      }
+      .component-galleryRoll .component-galleryRoll-row.toRight {
+        flex-direction: column;
+        display: flex;
+      }
+      .component-galleryRoll .carousel-showmanymoveone .cloneditem-2, 
+      .component-galleryRoll .carousel-showmanymoveone .cloneditem-3,
+      .component-galleryRoll .carousel-showmanymoveone .cloneditem-5, 
+      .component-galleryRoll .carousel-showmanymoveone .cloneditem-6,
+      .component-galleryRoll .carousel-showmanymoveone .cloneditem-7, 
+      .component-galleryRoll .carousel-showmanymoveone .cloneditem-8,
+      .component-galleryRoll .carousel-showmanymoveone .cloneditem-9 {
+         display: none;
+       }
+      .component-galleryRoll .item-list{
+        order: 2;
+      }
+      .component-galleryRoll .carousel-showmanymoveone .carousel-inner .cloneditem-1 {
+        order: 3;
+      }
+      .component-galleryRoll .carousel-showmanymoveone .carousel-inner .cloneditem-last {
+        display: block!important;
+        order: 1;
+      }
+      .component-galleryRoll .carousel-indicators {
+        margin-left: -17%;
+      }
+} 
+
+/* ----- Tablet landscape (Viewport between 990px and 1199px) ----- */
+@media only screen and (min-width: 993px) and (max-width : 1199px) {
+      .component-galleryRoll .component-galleryRoll-row-img > img, 
+      .component-galleryRoll .component-galleryRoll-row-img > iframe,
+      .component-galleryRoll .item-list > img,
+      .component-galleryRoll .item-list > iframe{
+        width: 480px;
+        height: 317px;
+      }
+      .component-galleryRoll .component-galleryRoll-row.toLeft .component-galleryRoll-row-arrow {
+        left: -20px;
+      }
+      .component-galleryRoll .toLeft .carousel-fullWidth {
+        left: 0;
+        right: 0;
+      }
+      .component-galleryRoll .item-list{
+        width: 480px;
+      }
+      .component-galleryRoll .item-list > img{
+        width: 480px;
+        height: 317px;
+      }
+
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-2{ width: 250%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-3{ width: 350%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-4{ width: 450%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-5{ width: 550%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-6{ width: 650%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-7{ width: 750%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-8{ width: 900%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-9{ width: 1000%; }
+
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-2 { transform: translate(-500px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-3 { transform: translate(-1000px);}
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-4 { transform: translate(-1500px);}
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-5 { transform: translate(-2000px);}
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-6 { transform: translate(-2500px);}
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-7 { transform: translate(-3000px);}
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-8 { transform: translate(-3500px);}
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-9 { transform: translate(-4000px);}
+
+      .component-galleryRoll .transitionClassToRight{ 
+        transform: translate( 500px ); 
+      }
+      .component-galleryRoll .transitionClassToLeft{ 
+        transform: translate( -500px ); 
+      }
+      .component-galleryRoll .toRight .carousel-controls {
+        right: 185px;
+      }
+      .component-galleryRoll .component-galleryRoll-row.toRight .component-galleryRoll-row-arrow { 
+        right: -30px;
+      }
+      .component-galleryRoll .component-galleryRoll-row.toRight .carousel-close {
+        right: 5px;
+      }
+      .component-galleryRoll .component-galleryRoll-row.toLeft .carousel-close{
+        left: 15px;
+      }
+} 
+
+/* Desktop (Viewport above 1200px) */
+@media only screen and (min-width: 1200px) {
+      .component-galleryRoll .item-list{
+        width: 540px;
+      }
+      .component-galleryRoll .component-galleryRoll-row-img > img,
+      .component-galleryRoll .component-galleryRoll-row-img > iframe, 
+      .component-galleryRoll .item-list > img,
+      .component-galleryRoll .item-list > iframe{
+        width: 540px;
+        height: 357px;
+      }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-2{ width: 200%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-3{ width: 300%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-4{ width: 400%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-5{ width: 500%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-6{ width: 600%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-7{ width: 700%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-8{ width: 800%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-9{ width: 900%; }
+
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-2 { transform: translate(-560px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-3 { transform: translate(-1120px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-4 { transform: translate(-1680px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-5 { transform: translate(-2240px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-6 { transform: translate(-2800px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-7 { transform: translate(-3360px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-8 { transform: translate(-3920px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-9 { transform: translate(-4480px); }
+
+      .component-galleryRoll .transitionClassToRight{ 
+        transform: translate( 630px ); 
+      }
+      .component-galleryRoll .transitionClassToLeft{ 
+        transform: translate( -630px ); 
+      }
+      .component-galleryRoll .toRight .carousel-controls {
+        right: 70px;
+      }
+} 
+
+
+
+  @media all and (min-width: 768px) {
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.left,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .prev {
+      left: 500px;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.right,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .next {
+      left: 500px;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .left,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .prev.right,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active {
+      left: 0;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner .cloneditem-1 {
+      display: block;
+    }
+  }
+  @media all and (min-width: 768px) and (transform-3d), all and (min-width: 768px) and (-webkit-transform-3d) {
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.active.right,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.next {
+      -webkit-transform: translate3d(500px, 0, 0);
+              transform: translate3d(500px, 0, 0);
+      left: 0;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.active.left,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.prev {
+      -webkit-transform: translate3d(-500px, 0, 0);
+              transform: translate3d(-500px, 0, 0);
+      left: 0;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.left,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.prev.right,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.active {
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+      left: 0;
+    }
+  }
+  @media all and (min-width: 992px) {
+   .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.left,
+   .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .prev {
+      left: -500px;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.right,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .next {
+      left: 500px;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .left,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .prev.right,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active {
+      left: 0;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner .cloneditem-2,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner .cloneditem-3 {
+      display: block;
+    }
+  }
+  @media all and (min-width: 992px) and (transform-3d), all and (min-width: 992px) and (-webkit-transform-3d) {
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.active.right,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.next {
+      -webkit-transform: translate3d(500px, 0, 0);
+              transform: translate3d(500px, 0, 0);
+      left: 0;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.active.left,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.prev {
+      -webkit-transform: translate3d(-500px, 0, 0);
+              transform: translate3d(-500px, 0, 0);
+      left: 0;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.left,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.prev.right,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.active {
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+      left: 0;
+    }
+  }
+  @media all and (min-width: 1200px) {
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.left,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .prev {
+      left: -560px;
+      /* left: -25%; */
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.right,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .next {
+      left: 560px;
+      /* left: 25%; */
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .left,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .prev.right,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active {
+      left: 0;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner .cloneditem-2,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner .cloneditem-3 {
+      display: block;
+    }
+  }
+  @media all and (min-width: 1200px) and (transform-3d), all and (min-width: 1200px) and (-webkit-transform-3d) {
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.active.right,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.next {
+      -webkit-transform: translate3d(560px, 0, 0);
+              transform: translate3d(560px, 0, 0);
+      left: 0;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.active.left,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.prev {
+      -webkit-transform: translate3d(-560px, 0, 0);
+              transform: translate3d(-560px, 0, 0);
+      left: 0;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.left,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.prev.right,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.active {
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+      left: 0;
+    }
+  }

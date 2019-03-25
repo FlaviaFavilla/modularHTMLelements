@@ -1,7 +1,9 @@
 body{
     color: #333333;
     font-family: OpenSans;
+    overflow-x: hidden;
 }
+
 .target{
     -webkit-transform: translateZ( 0 );
     transform: translateZ( 0 );
