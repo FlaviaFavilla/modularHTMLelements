@@ -154,7 +154,10 @@
       .component-galleryRoll .component-galleryRoll-row > .component-galleryRoll-row-img {
         padding: 0;
       }
-      .component-galleryRoll .component-galleryRoll-row-img > img, .component-galleryRoll .item-list > img {
+      .component-galleryRoll .component-galleryRoll-row-img > img, 
+      .component-galleryRoll .component-galleryRoll-row-img > iframe,
+      .component-galleryRoll .item-list > img,
+      .component-galleryRoll .item-list > iframe {
         width: 100%;
         height: 248px;
       }
@@ -208,7 +211,10 @@
       .component-galleryRoll .component-galleryRoll-row.toLeft > .component-galleryRoll-row-img {
         text-align: center;
       }
-      .component-galleryRoll .component-galleryRoll-row-img > img, .component-galleryRoll .item-list > img{
+      .component-galleryRoll .component-galleryRoll-row-img > img, 
+      .component-galleryRoll .component-galleryRoll-row-img > iframe,
+      .component-galleryRoll .item-list > img,
+      .component-galleryRoll .item-list > iframe{
         width: 480px;
         height: 317px;
       }
@@ -266,7 +272,10 @@
 
 /* ----- Tablet landscape (Viewport between 990px and 1199px) ----- */
 @media only screen and (min-width: 993px) and (max-width : 1199px) {
-      .component-galleryRoll .component-galleryRoll-row-img > img, .component-galleryRoll .item-list > img{
+      .component-galleryRoll .component-galleryRoll-row-img > img, 
+      .component-galleryRoll .component-galleryRoll-row-img > iframe,
+      .component-galleryRoll .item-list > img,
+      .component-galleryRoll .item-list > iframe{
         width: 480px;
         height: 317px;
       }
@@ -328,7 +337,10 @@
       .component-galleryRoll .item-list{
         width: 540px;
       }
-      .component-galleryRoll .component-galleryRoll-row-img > img, .component-galleryRoll .item-list > img{
+      .component-galleryRoll .component-galleryRoll-row-img > img,
+      .component-galleryRoll .component-galleryRoll-row-img > iframe, 
+      .component-galleryRoll .item-list > img,
+      .component-galleryRoll .item-list > iframe{
         width: 540px;
         height: 357px;
       }
