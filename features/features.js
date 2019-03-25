@@ -26,12 +26,17 @@ $(document).ready(function(){
             if (!itemToClone.length) {
               itemToClone = $(this).siblings(':first');
             }
+            
+            // nascondo gli elementi da non visalizzare in portrait
+            var smHidden = i > 2 ? "hidden-sm" : "";
+
             // grab item, clone, add marker class, add to collection
             itemToClone.children(':first-child').clone()
-              .addClass("item-list cloneditem-"+(i) )
+              .addClass(smHidden + " item-list hidden-xs cloneditem-"+(i) )
               .appendTo($(this));
           }
-    
+
+
           // ----------- Genera gli Indicators dello slider  -----------
           carouselIndicators.append("<li data-slide-to='"+ item +"' data-target='#slider-"+ index +"'></li>" );
           if(item === 0) {
@@ -42,7 +47,7 @@ $(document).ready(function(){
 
         // ----------- Nascondo gli slider indicators in eccesso  -----------
         carouselIndicators.children().each(function(index){
-          if(index > 1) $(this).addClass('hidden-sm');
+          if(index > carouselIndicators.children().length-3) $(this).addClass('hidden-sm');
         });
 
         // ----------- Genera ID degli sliders  -----------
