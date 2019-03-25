@@ -1,0 +1,131 @@
+.component-features{
+  margin: 80px auto;
+}
+.component-features > h3.component-features-title{
+    margin: 80px auto 40px;
+    font-family: OpenSans-Bold;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #333333;
+    text-align: center;
+}
+.component-features .item > .item-list{
+    text-align: center;
+}
+.component-features .item > .item-list > img{
+    width: 88px;
+    margin: 20px auto;
+}
+.component-features .item > .item-list > h4{
+    margin: 20px auto 10px;
+    font-family: OpenSans-Bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #AD0C33;
+}
+.component-features .item > .item-list > p{
+    max-width: 255px;
+    height: 60px;
+    margin: auto;
+    font-family: OpenSans;
+    font-size: 16px;
+    color: #333333;
+}
+
+
+/* ------------------- controlli mivimento slides carosello ------------------- */
+
+.component-features .carousel-indicators {
+  position: relative;
+  margin: 40px auto 0;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.component-features .carousel-indicators li {
+  background: #DDDDDD;
+  border: 1px solid #DDDDDD;
+  width: 12px;
+  margin: 15px;
+}
+.component-features .carousel-indicators .active {
+  background: #AD0C33;
+  border: 1px solid #AD0C33;
+}
+
+
+/*  ------------------------  ////  MEDIA QUERY  \\\\  ------------------------   */
+
+/* ----- Mobiles (Viewport below 768px) ----- */
+@media only screen and (max-width: 768px) {
+    .component-features .item > .item-list > p{
+        height: auto;
+    }
+} 
+
+
+/* ----- Tablet Portrait (Viewport between 769px and 989px) ----- */
+@media only screen and (min-width: 769px) and (max-width : 992px) {
+    .component-features .item > .item-list > p{
+        max-width: 212px;
+        height: auto;
+    }
+    .carousel-showmanymoveone .cloneditem-3 {
+        display: none;
+    }
+
+    .carousel-showmanymoveone .cloneditem-3 {
+        display: none;
+    }
+} 
+
+/* ----- Tablet landscape (Viewport between 990px and 1199px) ----- */
+/* @media only screen and (min-width: 993px) and (max-width : 1199px) {
+}  */
+
+/* Desktop (Viewport above 1200px) */
+/* @media only screen and (min-width: 1200px) {
+}  */
+
+
+@media all and (min-width: 768px) {
+    .carousel-showmanymoveone .carousel-inner > .active.left,
+    .carousel-showmanymoveone .carousel-inner > .prev {
+      left: -33.33333333%;
+    }
+    .carousel-showmanymoveone .carousel-inner > .active.right,
+    .carousel-showmanymoveone .carousel-inner > .next {
+      left: 33.33333333%;
+    }
+    .carousel-showmanymoveone .carousel-inner > .left,
+    .carousel-showmanymoveone .carousel-inner > .prev.right,
+    .carousel-showmanymoveone .carousel-inner > .active {
+      left: 0;
+    }
+    .carousel-showmanymoveone .carousel-inner .cloneditem-1 {
+      display: block;
+    }
+  }
+  @media all and (min-width: 768px) and (transform-3d), all and (min-width: 768px) and (-webkit-transform-3d) {
+    .carousel-showmanymoveone .carousel-inner > .item.active.right,
+    .carousel-showmanymoveone .carousel-inner > .item.next {
+      -webkit-transform: translate3d(33.33333333%, 0, 0);
+              transform: translate3d(33.33333333%, 0, 0);
+      left: 0;
+    }
+    .carousel-showmanymoveone .carousel-inner > .item.active.left,
+    .carousel-showmanymoveone .carousel-inner > .item.prev {
+      -webkit-transform: translate3d(-33.33333333%, 0, 0);
+              transform: translate3d(-33.33333333%, 0, 0);
+      left: 0;
+    }
+    .carousel-showmanymoveone .carousel-inner > .item.left,
+    .carousel-showmanymoveone .carousel-inner > .item.prev.right,
+    .carousel-showmanymoveone .carousel-inner > .item.active {
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+      left: 0;
+    }
+  }
+ 
