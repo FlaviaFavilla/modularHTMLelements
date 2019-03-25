@@ -1,0 +1,136 @@
+.component-features{
+  margin: 80px auto;
+}
+.component-features > h3.component-features-title{
+    margin: 80px auto 40px;
+    font-family: OpenSans-Bold;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #333333;
+    text-align: center;
+}
+.component-features .item > .item-list{
+    text-align: center;
+}
+.component-features .item > .item-list > img{
+    width: 88px;
+    margin: 20px auto;
+}
+.component-features .item > .item-list > h4{
+    margin: 20px auto 10px;
+    font-family: OpenSans-Bold;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #AD0C33;
+}
+.component-features .item > .item-list > p{
+    width: 255px;
+    height: 60px;
+    margin: 0 auto 80px;
+    font-family: OpenSans;
+    font-size: 16px;
+    color: #333333;
+}
+
+
+/* ------------------- controlli mivimento slides carosello ------------------- */
+
+.component-galleryRoll .carousel-indicators {
+  position: relative;
+  left: 0;
+  bottom: -20px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.component-galleryRoll .carousel-indicators li {
+  background: #F2F2F2;
+  border: 1px solid #F2F2F2;
+}
+.component-galleryRoll .carousel-indicators .active {
+  background: #AD0C33;
+  border: 1px solid #AD0C33;
+}
+
+
+/*  ------------------------  ////  MEDIA QUERY  \\\\  ------------------------   */
+
+/* ----- Mobiles (Viewport below 768px) ----- */
+@media only screen and (max-width: 768px) {
+
+} 
+
+/* ----- Tablet Portrait & Mobile (Viewport below 989px) ----- */
+@media only screen and (max-width : 992px) {
+ 
+} 
+
+
+/* ----- Tablet Portrait (Viewport between 769px and 989px) ----- */
+@media only screen and (min-width: 769px) and (max-width : 992px) {
+
+} 
+
+/* ----- Tablet landscape (Viewport between 990px and 1199px) ----- */
+@media only screen and (min-width: 993px) and (max-width : 1199px) {
+  
+} 
+
+/* Desktop (Viewport above 1200px) */
+@media only screen and (min-width: 1200px) {
+
+} 
+
+
+
+  @media all and (min-width: 768px) {
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.left,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .prev {
+      left: 500px;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.right,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .next {
+      left: 500px;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .left,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .prev.right,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active {
+      left: 0;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner .cloneditem-1 {
+      display: block;
+    }
+  }
+  @media all and (min-width: 768px) and (transform-3d), all and (min-width: 768px) and (-webkit-transform-3d) {
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.active.right,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.next {
+      -webkit-transform: translate3d(500px, 0, 0);
+              transform: translate3d(500px, 0, 0);
+      left: 0;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.active.left,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.prev {
+      -webkit-transform: translate3d(-500px, 0, 0);
+              transform: translate3d(-500px, 0, 0);
+      left: 0;
+    }
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.left,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.prev.right,
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.active {
+      -webkit-transform: translate3d(0, 0, 0);
+              transform: translate3d(0, 0, 0);
+      left: 0;
+    }
+  }
+  @media all and (min-width: 992px) {
+
+  }
+  @media all and (min-width: 992px) and (transform-3d), all and (min-width: 992px) and (-webkit-transform-3d) {
+
+  }
+  @media all and (min-width: 1200px) {
+
+  }
+  @media all and (min-width: 1200px) and (transform-3d), all and (min-width: 1200px) and (-webkit-transform-3d) {
+
+  }
