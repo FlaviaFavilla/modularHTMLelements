@@ -6,6 +6,14 @@ $(document).ready(function(){
         var carousel = $(this);
         var carouselIndicators =  $(this).find(".carousel-indicators");
         var carouselItems =  $(this).find(".carousel-inner > .item");
+        var carouselItemList =  $(this).find(".carousel-inner > .item > .item-list");
+        var simpleItems =  $(this).parents().find(".simple-view.row");
+
+
+        // -----------  generazione degli elementi features per BIG device (senza slider)  -----------
+         carouselItemList.each(function(){
+          simpleItems.append( "<div class='col-xs-12 col-sm-4 col-md-3 item'><div class='item-list'>" + $(this).html() + " </div></div>" );
+         });
 
     
         // -----------  generazione cloni immagine slider  -----------
@@ -29,22 +37,18 @@ $(document).ready(function(){
           if(item === 0) {
             carouselIndicators.children().first().addClass('active');
           }
-          // console.log(carouselIndicators.children()[2], carouselIndicators.children()[3] );
-          // if(carouselIndicators.children()[2] || carouselIndicators.children()[3] ) {
-          //   carouselIndicators.children().addClass('hidden-sm');
-          // }
-          // segno l'ultimo elemento clonato per il positioning in tablet portrait
-          // $(this).children().last().addClass('cloneditem-last');
+
         });
-    
-    
-    
+
+        // ----------- Nascondo gli slider indicators in eccesso  -----------
+        carouselIndicators.children().each(function(index){
+          if(index > 1) $(this).addClass('hidden-sm');
+        });
+
         // ----------- Genera ID degli sliders  -----------
         carousel.attr('id', 'slider-' + index);    
     
       });
-    
-    
     
     });
     

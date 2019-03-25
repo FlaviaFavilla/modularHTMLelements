@@ -24,9 +24,9 @@
     color: #AD0C33;
 }
 .component-features .item > .item-list > p{
-    width: 255px;
+    max-width: 255px;
     height: 60px;
-    margin: 0 auto 80px;
+    margin: auto;
     font-family: OpenSans;
     font-size: 16px;
     color: #333333;
@@ -37,14 +37,15 @@
 
 .component-features .carousel-indicators {
   position: relative;
-  margin: 40px auto 80px;
+  margin: 40px auto 0;
   position: relative;
   left: 0;
+  top: 0;
 }
 
 .component-features .carousel-indicators li {
-  background: #F2F2F2;
-  border: 1px solid #F2F2F2;
+  background: #DDDDDD;
+  border: 1px solid #DDDDDD;
   width: 12px;
   margin: 15px;
 }
@@ -59,7 +60,6 @@
 /* ----- Mobiles (Viewport below 768px) ----- */
 @media only screen and (max-width: 768px) {
     .component-features .item > .item-list > p{
-        margin: 0 auto 40px;
         height: auto;
     }
     .carousel-showmanymoveone .cloneditem-1,
@@ -67,47 +67,33 @@
     .carousel-showmanymoveone .cloneditem-3 {
         display: none;
     }
-    .component-features .carousel-indicators {
-
-    }
-} 
-
-/* ----- Tablet Portrait & Mobile (Viewport below 989px) ----- */
-@media only screen and (max-width : 992px) {
- 
 } 
 
 
 /* ----- Tablet Portrait (Viewport between 769px and 989px) ----- */
 @media only screen and (min-width: 769px) and (max-width : 992px) {
     .component-features .item > .item-list > p{
-        width: 212px;
-        margin: 0 auto 40px;
+        max-width: 212px;
+        height: auto;
     }
     .carousel-showmanymoveone .cloneditem-3 {
         display: none;
-      }
+    }
 
-      .carousel-showmanymoveone .cloneditem-3 {
-          display: none;
-      }
+    .carousel-showmanymoveone .cloneditem-3 {
+        display: none;
+    }
 } 
 
 /* ----- Tablet landscape (Viewport between 990px and 1199px) ----- */
-@media only screen and (min-width: 993px) and (max-width : 1199px) {
-  
-} 
+/* @media only screen and (min-width: 993px) and (max-width : 1199px) {
+}  */
 
 /* Desktop (Viewport above 1200px) */
-@media only screen and (min-width: 1200px) {
+/* @media only screen and (min-width: 1200px) {
+}  */
 
-} 
 
-/* .carousel-showmanymoveone .cloneditem-1,
-.carousel-showmanymoveone .cloneditem-2,
-.carousel-showmanymoveone .cloneditem-3 {
-  display: none;
-} */
 @media all and (min-width: 768px) {
     .carousel-showmanymoveone .carousel-inner > .active.left,
     .carousel-showmanymoveone .carousel-inner > .prev {
@@ -147,45 +133,4 @@
       left: 0;
     }
   }
-  /* @media all and (min-width: 992px) {
-    .carousel-showmanymoveone .carousel-inner > .active.left,
-    .carousel-showmanymoveone .carousel-inner > .prev {
-      left: -25%;
-    }
-    .carousel-showmanymoveone .carousel-inner > .active.right,
-    .carousel-showmanymoveone .carousel-inner > .next {
-      left: 25%;
-    }
-    .carousel-showmanymoveone .carousel-inner > .left,
-    .carousel-showmanymoveone .carousel-inner > .prev.right,
-    .carousel-showmanymoveone .carousel-inner > .active {
-      left: 0;
-    }
-    .carousel-showmanymoveone .carousel-inner .cloneditem-2,
-    .carousel-showmanymoveone .carousel-inner .cloneditem-3 {
-      display: block;
-    }
-  } */
-  /* @media all and (min-width: 992px) and (transform-3d), all and (min-width: 992px) and (-webkit-transform-3d) {
-    .carousel-showmanymoveone .carousel-inner > .item.active.right,
-    .carousel-showmanymoveone .carousel-inner > .item.next {
-      -webkit-transform: translate3d(25%, 0, 0);
-              transform: translate3d(25%, 0, 0);
-      left: 0;
-    }
-    .carousel-showmanymoveone .carousel-inner > .item.active.left,
-    .carousel-showmanymoveone .carousel-inner > .item.prev {
-      -webkit-transform: translate3d(-25%, 0, 0);
-              transform: translate3d(-25%, 0, 0);
-      left: 0;
-    }
-    .carousel-showmanymoveone .carousel-inner > .item.left,
-    .carousel-showmanymoveone .carousel-inner > .item.prev.right,
-    .carousel-showmanymoveone .carousel-inner > .item.active {
-      -webkit-transform: translate3d(0, 0, 0);
-              transform: translate3d(0, 0, 0);
-      left: 0;
-    }
-  } */
-
-
+ 

@@ -126,8 +126,8 @@
 }
 
 .component-galleryRoll .carousel-indicators li {
-  background: #F2F2F2;
-  border: 1px solid #F2F2F2;
+  background: #DDDDDD;
+  border: 1px solid #DDDDDD;
 }
 .component-galleryRoll .carousel-indicators .active {
   background: #AD0C33;
