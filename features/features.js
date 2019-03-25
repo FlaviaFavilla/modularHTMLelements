@@ -29,8 +29,12 @@ $(document).ready(function(){
           if(item === 0) {
             carouselIndicators.children().first().addClass('active');
           }
+          // console.log(carouselIndicators.children()[2], carouselIndicators.children()[3] );
+          // if(carouselIndicators.children()[2] || carouselIndicators.children()[3] ) {
+          //   carouselIndicators.children().addClass('hidden-sm');
+          // }
           // segno l'ultimo elemento clonato per il positioning in tablet portrait
-          $(this).children().last().addClass('cloneditem-last');
+          // $(this).children().last().addClass('cloneditem-last');
         });
     
     
