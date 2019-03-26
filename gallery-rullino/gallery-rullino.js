@@ -9,6 +9,7 @@ $(document).ready(function(){
     var carouselControls =  $(this).find(".carousel-controls");
     var carouselControlsLink =  $(this).find(".carousel-controls > a");
     var carouselIndicators =  $(this).find(".carousel-indicators");
+    // var carouselIndicatorLink =  $(this).find(".carousel-indicators li");
     var carouselClose =  $(this).find(".carousel-close");
     var carouselItems =  $(this).find(".carousel-inner > .item");
     // var carouselItemList =  $(this).find(".carousel-inner > .item > .item-list");
@@ -17,7 +18,7 @@ $(document).ready(function(){
     var parent = $(this).parent(); 
     var parents = $(this).parents().hasClass('toLeft'); 
 
-console.log(carouselItems.length);
+// console.log(carouselItems.length);
     // -----------  genera la dimesione del container per le slides  -----------
     rowContainer.addClass("carousel-fullWidth-"+ carouselItems.length );
 
@@ -45,7 +46,6 @@ console.log(carouselItems.length);
       // segno l'ultimo elemento clonato per il positioning in tablet portrait
       $(this).children().last().addClass('cloneditem-last');
     });
-
 
 
     // ----------- Genera ID degli sliders  -----------
@@ -78,6 +78,10 @@ console.log(carouselItems.length);
           carouselClose.addClass('hidden');
         });
     });
+
+    carouselIndicators.on('click', function(){
+      console.log( $(this) );
+    })
 
   });
 
