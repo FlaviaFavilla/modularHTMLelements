@@ -35,7 +35,7 @@ body{
     box-shadow: 0px 1.7px 3.3px #333333;
     text-align: left;
 }
-.cta-button p{
+.cta-button span{
     margin-top: 8px;
     font-size: 14px;
 }
@@ -58,6 +58,9 @@ body{
         height: 40px;
         font-size: 12px;
     }
+    .component-canvas-image img{
+        max-height: 350px;
+    }
 } 
 
 /* ----- Tablet Portrait & Mobile (Viewport below 989px) ----- */
@@ -72,14 +75,21 @@ body{
     .cta-button{
         margin: 40px auto 0;
     }
+    .component-canvas-image img{
+        max-height: 568px;
+    }
 } 
 
 /* ----- Tablet landscape (Viewport between 990px and 1199px) ----- */
 @media only screen and (min-width: 990px) and (max-width : 1199px) {
-    
+    .component-canvas-image img{
+        max-height: 568px;
+    }
 } 
 
 /* ----- Desktop (Viewport above 1200px) ----- */
 @media only screen and (min-width: 1200px) {
-    
+    .component-canvas-image img{
+        max-height: 588px;
+    }
 } 
