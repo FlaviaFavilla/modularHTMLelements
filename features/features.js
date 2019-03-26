@@ -8,11 +8,19 @@ $(document).ready(function(){
         var carouselItems =  $(this).find(".carousel-inner > .item");
         var carouselItemList =  $(this).find(".carousel-inner > .item > .item-list");
         var simpleItems =  $(this).parents().find(".simple-view.row");
+        var simpleItemsClass;
 
 
         // -----------  generazione degli elementi features per BIG device (senza slider)  -----------
+          switch(carouselItemList.length) {
+            case 1: simpleItemsClass = "col-md-12";  break;
+            case 2: simpleItemsClass = "col-md-6";  break;
+            case 3: simpleItemsClass = "col-md-4";  break;
+            default: simpleItemsClass = "col-md-3";
+          }
+
          carouselItemList.each(function(){
-          simpleItems.append( "<div class='col-xs-12 col-sm-4 col-md-3 item'><div class='item-list'>" + $(this).html() + " </div></div>" );
+          simpleItems.append( "<div class='col-xs-12 col-sm-4 "+ simpleItemsClass +" item'><div class='item-list'>" + $(this).html() + " </div></div>" );
          });
 
     
