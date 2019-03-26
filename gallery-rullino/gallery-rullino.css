@@ -10,6 +10,7 @@
 
 .component-galleryRoll .component-galleryRoll-row{
   margin: 80px auto;
+  height: 357px;
 }
 .component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-img{
   padding-left: 0;
@@ -17,6 +18,8 @@
 .component-galleryRoll .component-galleryRoll-row.toLeft > .component-galleryRoll-row-img{
   padding-right: 0;
   text-align: right;
+  position: absolute;
+    right: 0;
 }
 .component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-text{
   float: right;
@@ -42,7 +45,7 @@
   position: relative;
 }
 .component-galleryRoll .toLeft .carousel-fullWidth {
-  left: 30px;
+  /* left: 30px; */
 }
 .component-galleryRoll .toRight .carousel-fullWidth {
 }
@@ -326,7 +329,8 @@
         transform: translate( 500px ); 
       }
       .component-galleryRoll .transitionClassToLeft{ 
-        transform: translate( -500px ); 
+        /* transform: translate( -500px );  */
+        left:-30px;
       }
       .component-galleryRoll .toRight .carousel-controls {
         right: 185px;
@@ -376,14 +380,21 @@
         transform: translate( 630px ); 
       }
       .component-galleryRoll .transitionClassToLeft{ 
-        transform: translate( -630px ); 
+        /* transform: translate( -630px );  */
+        left:-30px;
+        /* animation-name: example;
+        animation-duration: 1s; */
+
       }
       .component-galleryRoll .toRight .carousel-controls {
         right: 70px;
       }
 } 
 
-
+/* @keyframes example {
+  from {right: 0;}
+  to {left:-30px;}
+} */
 
   @media all and (min-width: 768px) {
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.left,

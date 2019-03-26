@@ -26,7 +26,7 @@ $(document).ready(function(){
     carouselItems.each(function(item){
       var itemToClone = $(this);
 
-      for (var i=1; i < carouselItems.length; i++) {
+      for (var i=1; i < 4; i++) {
         itemToClone = itemToClone.next();
         // wrap around if at end of item collection
         if (!itemToClone.length) {
