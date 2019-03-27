@@ -15,6 +15,12 @@ $(document).ready(function(){
     // var carouselItemList =  $(this).find(".carousel-inner > .item > .item-list");
     var carouselToSlide =  $(this);
 
+    var carouselItemsLeft =  $(this).find(".carousel-inner-toLeft > .item");
+    var carouselItemsRight =  $(this).find(".carousel-inner-toRight > .item").get().reverse();
+    // carouselItemsRight = carouselItemsRight.reverse();
+// carouselItems = carouselItemsLeft > 0 ? carouselItemsLeft : carouselItemsRight.get().reverse();
+console.log('left '+ carouselItemsLeft, 'right '+carouselItemsRight );
+
     var parent = $(this).parent(); 
     var parents = $(this).parents().hasClass('toLeft'); 
 
@@ -26,7 +32,7 @@ $(document).ready(function(){
     carouselItems.each(function(item){
       var itemToClone = $(this);
 
-      for (var i=1; i < carouselItems.length; i++) {
+      for (var i=1; i < 4; i++) {
         itemToClone = itemToClone.next();
         // wrap around if at end of item collection
         if (!itemToClone.length) {
@@ -34,7 +40,7 @@ $(document).ready(function(){
         }
         // grab item, clone, add marker class, add to collection
         itemToClone.children(':first-child').clone()
-          .addClass("item-list cloneditem-"+(i) )
+          .addClass("item-list cloneditem cloneditem-"+(i) )
           .appendTo($(this));
       }
 
@@ -43,10 +49,14 @@ $(document).ready(function(){
       if(item === 0) {
         carouselIndicators.children().first().addClass('active');
       }
+      if(item === carouselItems.length-1)  $(this).addClass('item-last');
+      if(item === carouselItems.length-2)  $(this).addClass('item-last2');
+      if(item === carouselItems.length-3)  $(this).addClass('item-last3');
+      if(item === carouselItems.length-4)  $(this).addClass('item-last4');
+
       // segno l'ultimo elemento clonato per il positioning in tablet portrait
       $(this).children().last().addClass('cloneditem-last');
     });
-
 
     // ----------- Genera ID degli sliders  -----------
     carousel.attr('id', 'slider-' + index);
@@ -93,8 +103,23 @@ $(document).ready(function(){
     })
 
 
+    // var next = carouselControls.find('[data-slide="next"]');
+    // var itemActiveLast3 =  $(this).find(".item-last3.active");
+    // var itemActiveLast3active =  $(this).find(".item-last3");
 
-
+    // next.on('click', function(){
+    //   var limitContainerWidth = $(".limit-container").width();
+    //   var itemActive3 = $(".carousel-inner > .item.item-last3.active");
+    //   var itemActiveLast4 = $(".carousel-inner > .item.item-last4.active").length;
+    //   var itemActive4 = $(".carousel-inner > .item.item-last4.active");
+    //   console.log('3: ' + itemActiveLast3.length);
+    //   console.log('active: ' + itemActiveLast3active.length);
+    //   if(limitContainerWidth > 1680){
+    //     // if(itemActiveLast4 == 1)  console.log('4 ', itemActive4);
+    //     if(itemActiveLast3 == 1)  console.log('3 ', itemActive3);
+    //     // next.css('pointer-events','none');
+    //   }
+    // })
 
   });
 });

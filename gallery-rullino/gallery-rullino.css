@@ -140,6 +140,15 @@
   border: 1px solid #AD0C33;
 }
 
+ 
+.component-galleryRoll .carousel-showmanymoveone .cloneditem-4,
+.component-galleryRoll .carousel-showmanymoveone .cloneditem-5, 
+.component-galleryRoll .carousel-showmanymoveone .cloneditem-6,
+.component-galleryRoll .carousel-showmanymoveone .cloneditem-7, 
+.component-galleryRoll .carousel-showmanymoveone .cloneditem-8,
+.component-galleryRoll .carousel-showmanymoveone .cloneditem-9 {
+   display: none;
+ }
 
 /*  ------------------------  ////  MEDIA QUERY  \\\\  ------------------------   */
 
@@ -348,14 +357,8 @@
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-7 { transform: translate(-3000px);}
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-8 { transform: translate(-3500px);}
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-9 { transform: translate(-4000px);}
-/* 
-      .component-galleryRoll .transitionClassToRight{ 
-        transform: translate( 500px ); 
-      }
-      .component-galleryRoll .transitionClassToLeft{ 
-        transform: translate( -500px ); 
-        left:-30px;
-      } */
+
+
       .component-galleryRoll .toRight .carousel-controls {
         right: 185px;
       }
@@ -399,25 +402,21 @@
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-7 { transform: translate(-3360px); }
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-8 { transform: translate(-3920px); }
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-9 { transform: translate(-4480px); }
-/* 
-      .component-galleryRoll .transitionClassToRight{ 
-        transform: translate( 630px ); 
-      }
-      .component-galleryRoll .transitionClassToLeft{ 
-        transform: translate( -630px ); 
-      } */
+    
       .component-galleryRoll .toRight .carousel-controls {
         right: 70px;
       }
+       
+
+      .component-galleryRoll .carousel-showmanymoveone .item:nth-last-child(-n+3) .cloneditem-last,
+      .component-galleryRoll .carousel-showmanymoveone .item:nth-last-child(-n+2) .cloneditem-2 {
+        display: none;
+      }
+      .component-galleryRoll .carousel-showmanymoveone .item-last > .cloneditem {
+        display: none!important;
+      }
 } 
 
-/* @keyframes slide {
-  from { right: 0; }
-  to {
-    left: -30px;
-    transform: translateX(-100%);
-  } */
-}
 
   @media all and (min-width: 768px) {
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.left,
