@@ -18,14 +18,12 @@
 .component-galleryRoll .component-galleryRoll-row.toLeft > .component-galleryRoll-row-img{
   padding-right: 0;
   text-align: right;
+}
+.component-galleryRoll .component-galleryRoll-row.multImg.toLeft > .component-galleryRoll-row-img{
+  /* padding-right: 0;
+  text-align: right;
   position: absolute;
-    right: 0;
-}
-.component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-text{
-  float: right;
-}
-.component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-text > div{
-  float: right;
+  right: 0; */
 }
 
 .component-galleryRoll .component-galleryRoll-row-text > div{
@@ -145,7 +143,7 @@
       .component-galleryRoll .item-list{
         width: 100%;
       }
-      .component-galleryRoll .component-galleryRoll-row.toLeft,
+      /* .component-galleryRoll .component-galleryRoll-row.toLeft,
       .component-galleryRoll .component-galleryRoll-row.toRight.singleImg{
         flex-direction: column-reverse;
         display: flex;
@@ -153,7 +151,7 @@
       .component-galleryRoll .component-galleryRoll-row.toRight {
         flex-direction: column;
         display: flex;
-      }
+      } */
       .component-galleryRoll .component-galleryRoll-row > .component-galleryRoll-row-img {
         padding: 0;
       }
@@ -186,24 +184,27 @@
 
 /* ----- Tablet Portrait & Mobile (Viewport below 989px) ----- */
 @media only screen and (max-width : 992px) {
-  .component-galleryRoll .component-galleryRoll-row-text > div {
-        width: 100%;
-      }
-      .component-galleryRoll .component-galleryRoll-row-text > div > h2{
-        margin: 30px 0 10px;
-      }
-      .component-galleryRoll .component-galleryRoll-row-text > div > p{
-          font-size: 15px;
-      }
-      .component-galleryRoll .component-galleryRoll-row > .component-galleryRoll-row-img {
-        text-align: center;
-      }
+    .component-galleryRoll-row.singleImg{
+      height: auto;
+    }
+    .component-galleryRoll .component-galleryRoll-row-text > div {
+      width: 100%;
+    }
+    .component-galleryRoll .component-galleryRoll-row-text > div > h2{
+      margin: 30px 0 10px;
+    }
+    .component-galleryRoll .component-galleryRoll-row-text > div > p{
+        font-size: 15px;
+    }
+    .component-galleryRoll .component-galleryRoll-row > .component-galleryRoll-row-img {
+      text-align: center;
+    }
 } 
 /* ----- FROM Tablet Portrait to UP (Viewport more 989px) ----- */
 @media only screen and (min-width : 992px) {
-  .component-galleryRoll .component-galleryRoll-row > .component-galleryRoll-row-text{
-        padding: 0;
-      }
+    .component-galleryRoll .component-galleryRoll-row > .component-galleryRoll-row-text{
+      padding: 0;
+    }
 } 
 
 /* ----- Tablet Portrait (Viewport between 769px and 989px) ----- */
@@ -381,20 +382,24 @@
       }
       .component-galleryRoll .transitionClassToLeft{ 
         /* transform: translate( -630px );  */
-        left:-30px;
+        /* left:-30px; */
         /* animation-name: example;
         animation-duration: 1s; */
-
+        /* transition:left 1s linear; */
+        animation: 3s linear 0s slide;
       }
       .component-galleryRoll .toRight .carousel-controls {
         right: 70px;
       }
 } 
 
-/* @keyframes example {
-  from {right: 0;}
-  to {left:-30px;}
-} */
+@keyframes slide {
+  from { right: 0; }
+  to {
+    left: -30px;
+    transform: translateX(-100%);
+  }
+}
 
   @media all and (min-width: 768px) {
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.left,
