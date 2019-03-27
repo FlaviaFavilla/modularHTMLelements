@@ -26,7 +26,7 @@ $(document).ready(function(){
     carouselItems.each(function(item){
       var itemToClone = $(this);
 
-      for (var i=1; i < 4; i++) {
+      for (var i=1; i < carouselItems.length; i++) {
         itemToClone = itemToClone.next();
         // wrap around if at end of item collection
         if (!itemToClone.length) {
@@ -53,10 +53,20 @@ $(document).ready(function(){
     carouselControlsLink.attr('href', '#slider-' + index);
 
 
+    
+
+
     // -----------  apertura slider -----------
     carouselOpen.on("click", function(e){
       e.stopPropagation();
-      parents ? carouselToSlide.addClass('transitionClassToLeft') : carouselToSlide.addClass('transitionClassToRight');
+      
+      // --- calcolo la translazione in px  -----
+      var limitContainer = $(".limit-container").offset();
+      var limiTransition = $(".component-galleryRoll-row.multImg.toLeft .slide.carousel-fullWidth").offset();
+      var calc = Math.abs(limitContainer.left - limiTransition.left);
+
+      parents ? carouselToSlide.css('transform', 'translate( -'+ calc +'px )') : carouselToSlide.css('transform', 'translate( '+ calc +'px )');
+
       // --- a fine animazione modifica visibiltà elementi  -----
       parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
         function(event) {
@@ -69,7 +79,9 @@ $(document).ready(function(){
     // -----------  chiusura slider -----------
     carouselClose.on("click", function(e){
       e.stopPropagation();
-      parents ? carouselToSlide.removeClass('transitionClassToLeft') : carouselToSlide.removeClass('transitionClassToRight');
+
+      parents ? carouselToSlide.css('transform', '') : carouselToSlide.css('transform', '');
+
       // --- a fine animazione modifica visibiltà elementi  -----
       parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
         function(event) {
@@ -83,9 +95,10 @@ $(document).ready(function(){
       console.log( $(this) );
     })
 
+
+
+
+
   });
-
-
-
 });
 
