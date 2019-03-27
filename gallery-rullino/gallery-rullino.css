@@ -99,7 +99,8 @@
   right: 9px;
 }
 .component-galleryRoll .transition{
-  transition: 2s;
+  transition: 1s;
+  z-index: 10;
 }
 /* ------------------- controlli mivimento slides carosello ------------------- */
 .component-galleryRoll .carousel-controls{

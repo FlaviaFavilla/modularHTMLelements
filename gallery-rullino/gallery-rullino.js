@@ -53,9 +53,6 @@ $(document).ready(function(){
     carouselControlsLink.attr('href', '#slider-' + index);
 
 
-    
-
-
     // -----------  apertura slider -----------
     carouselOpen.on("click", function(e){
       e.stopPropagation();
