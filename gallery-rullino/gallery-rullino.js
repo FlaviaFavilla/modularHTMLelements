@@ -15,11 +15,11 @@ $(document).ready(function(){
     // var carouselItemList =  $(this).find(".carousel-inner > .item > .item-list");
     var carouselToSlide =  $(this);
 
-    var carouselItemsLeft =  $(this).find(".carousel-inner-toLeft > .item");
-    var carouselItemsRight =  $(this).find(".carousel-inner-toRight > .item").get().reverse();
+    // var carouselItemsLeft =  $(this).find(".carousel-inner-toLeft > .item");
+    // var carouselItemsRight =  $(this).find(".carousel-inner-toRight > .item");
     // carouselItemsRight = carouselItemsRight.reverse();
 // carouselItems = carouselItemsLeft > 0 ? carouselItemsLeft : carouselItemsRight.get().reverse();
-console.log('left '+ carouselItemsLeft, 'right '+carouselItemsRight );
+// console.log(carouselItemsLeft, carouselItemsRight );
 
     var parent = $(this).parent(); 
     var parents = $(this).parents().hasClass('toLeft'); 
@@ -31,7 +31,6 @@ console.log('left '+ carouselItemsLeft, 'right '+carouselItemsRight );
     // -----------  generazione cloni immagine slider  -----------
     carouselItems.each(function(item){
       var itemToClone = $(this);
-
       for (var i=1; i < 4; i++) {
         itemToClone = itemToClone.next();
         // wrap around if at end of item collection
