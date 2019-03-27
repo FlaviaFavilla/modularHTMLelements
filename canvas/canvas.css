@@ -20,6 +20,19 @@
     max-width: 445px;
     font-size: 18px;
 }
+.dueColonne{
+    column-count:1;
+    height: 150px;
+    column-gap: 248px;
+}
+.dueColonne::before{
+    min-height: 70px;
+    border-right: 1.2px solid #999999;
+    margin-top: 30px;
+    content: "";
+    position: absolute;
+    right: 50%;
+}
 .vdivide{
     min-height: 70px;
     border-right: 1.2px solid #999999;
