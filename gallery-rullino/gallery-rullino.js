@@ -64,16 +64,14 @@ $(document).ready(function(){
       // --- calcolo la translazione in px  -----
       var limitContainer = $(".limit-container").offset();
       var limitContainerWidth = $(".limit-container").width();
+
       var limiTransitiontoLeft = $(".component-galleryRoll-row.multImg.toLeft .slide.carousel-fullWidth").offset();
-      var limiTransitiontoRight = $(".component-galleryRoll-row.multImg.toRight > .transition > span.component-galleryRoll-row-arrow").offset();
+      var limiTransitiontoRight = $(".component-galleryRoll-row.multImg.toRight > .component-galleryRoll-row-text").offset();
       var calcToLef = Math.abs(limitContainer.left - limiTransitiontoLeft.left);
-      var calcToRight = Math.abs(limitContainerWidth - limiTransitiontoRight.left + 36);
-      var limitContainerWidth = $(".limit-container").width();
+      var calcToRight = Math.abs(limitContainer.left - limiTransitiontoRight.left -30);
 
       rowToLeft ? self.css('transform', 'translate( -'+ calcToLef +'px )') : self.css('transform', 'translate( '+ calcToRight +'px )');
-
       
-
       // --- a fine animazione modifica visibiltà elementi  -----
       parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
         function(event) {
@@ -103,8 +101,7 @@ $(document).ready(function(){
         });
     });
 
-    // var itemActiveLast3active =  self.find(".item-last3");
-
+    // -----------  gestione controller slider -----------
     next.on('click', function(){
       var itemActiveLast3 =  self.find(".item-last4.active");
       var itemActiveLast2 =  self.find(".item-last3.active");
