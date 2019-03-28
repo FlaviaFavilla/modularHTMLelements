@@ -10,6 +10,7 @@
   max-width: 1920px;
   overflow-x: hidden;
   margin: 0 auto;
+  background: antiquewhite;
 }
 
 .component-galleryRoll .component-galleryRoll-row{

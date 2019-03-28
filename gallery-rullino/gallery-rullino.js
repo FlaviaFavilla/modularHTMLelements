@@ -12,9 +12,12 @@ $(document).ready(function(){
     var carouselOpen = self.find(".component-galleryRoll-row-arrow");
     var carouselControls =  self.find(".carousel-controls");
     var carouselControlsLink =  self.find(".carousel-controls > a");
+    var next = carouselControls.find('.right.carousel-control');
+    var prev = carouselControls.find('.left.carousel-control');
     var carouselIndicators =  self.find(".carousel-indicators");
     var carouselClose =  self.find(".carousel-close");
     var carouselItems =  self.find(".carousel-inner > .item");
+
 
 
     // -----------  genera la dimesione del container per le slides  -----------
@@ -62,18 +65,26 @@ $(document).ready(function(){
       var limitContainer = $(".limit-container").offset();
       var limitContainerWidth = $(".limit-container").width();
       var limiTransitiontoLeft = $(".component-galleryRoll-row.multImg.toLeft .slide.carousel-fullWidth").offset();
-      var limiTransitiontoRight = $(".component-galleryRoll-row.multImg.toRight span.component-galleryRoll-row-arrow").offset();
+      var limiTransitiontoRight = $(".component-galleryRoll-row.multImg.toRight > .transition > span.component-galleryRoll-row-arrow").offset();
       var calcToLef = Math.abs(limitContainer.left - limiTransitiontoLeft.left);
-      var calcToRight = Math.abs(limitContainerWidth - limiTransitiontoRight.left);
+      var calcToRight = Math.abs(limitContainerWidth - limiTransitiontoRight.left + 36);
+      var limitContainerWidth = $(".limit-container").width();
 
       rowToLeft ? self.css('transform', 'translate( -'+ calcToLef +'px )') : self.css('transform', 'translate( '+ calcToRight +'px )');
+
+      
 
       // --- a fine animazione modifica visibiltà elementi  -----
       parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
         function(event) {
           carouselOpen.addClass('hidden');
-          carouselControls.removeClass('hidden');
           carouselClose.removeClass('hidden');
+          if(limitContainerWidth >= 1680 && carouselItems.length > 3){
+            carouselControls.removeClass('hidden');
+          }
+          if(limitContainerWidth < 1680  && carouselItems.length > 2){
+            carouselControls.removeClass('hidden');
+          }
         });
     });
 
@@ -92,12 +103,7 @@ $(document).ready(function(){
         });
     });
 
-
-
-    var next = carouselControls.find('.right.carousel-control');
-    var prev = carouselControls.find('.left.carousel-control');
-
-    var itemActiveLast3active =  self.find(".item-last3");
+    // var itemActiveLast3active =  self.find(".item-last3");
 
     next.on('click', function(){
       var itemActiveLast3 =  self.find(".item-last4.active");
