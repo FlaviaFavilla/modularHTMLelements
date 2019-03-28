@@ -361,6 +361,10 @@
       .component-galleryRoll .carousel-showmanymoveone .item-last > .cloneditem {
         display: none!important;
       }
+      .carousel-inner-toRight, .carousel-inner-toRight .item{
+        display: flex;
+        flex-direction: row-reverse;
+      }
 } 
 
 
