@@ -101,22 +101,18 @@ $(document).ready(function(){
 
     next.on('click', function(){
       var itemActiveLast3 =  self.find(".item-last4.active");
-
+      var itemActiveLast2 =  self.find(".item-last3.active");
       var limitContainerWidth = $(".limit-container").width();
-      var itemActive3 = $(".carousel-inner > .item.item-last3.active");
-      var itemActiveLast4 = $(".carousel-inner > .item.item-last4.active").length;
-      var itemActive4 = $(".carousel-inner > .item.item-last4.active");
-      console.log('3: ' + itemActiveLast3.length);
-      console.log('active: ' + itemActiveLast3active.length);
-      console.log({limitContainerWidth,itemActiveLast3, self,next });
-
       
-      if(limitContainerWidth > 1680){
-        // if(itemActiveLast4 == 1)  console.log('4 ', itemActive4);
+      if(limitContainerWidth >= 1680){
         if(itemActiveLast3 && itemActiveLast3.length) {
           next.hide();
         }
-
+      }
+      if(limitContainerWidth < 1680){
+        if(itemActiveLast2 && itemActiveLast2.length) {
+          next.hide();
+        }
       }
 
     })
