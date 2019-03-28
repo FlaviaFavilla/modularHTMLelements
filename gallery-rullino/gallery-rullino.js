@@ -26,7 +26,7 @@ $(document).ready(function(){
     // -----------  generazione cloni immagine slider  -----------
     carouselItems.each(function(item){
       var itemToClone = $(this);
-      for (var i=1; i < 4; i++) {
+      for (var i=1; i < carouselItems.length; i++) {
         itemToClone = itemToClone.next();
         // wrap around if at end of item collection
         if (!itemToClone.length) {
@@ -71,7 +71,7 @@ $(document).ready(function(){
       var calcToRight = Math.abs(limitContainer.left - limiTransitiontoRight.left -30);
 
       rowToLeft ? self.css('transform', 'translate( -'+ calcToLef +'px )') : self.css('transform', 'translate( '+ calcToRight +'px )');
-      
+
       // --- a fine animazione modifica visibiltà elementi  -----
       parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
         function(event) {

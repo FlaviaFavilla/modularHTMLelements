@@ -227,11 +227,14 @@
 
 /* ----- Tablet Portrait (Viewport between 769px and 989px) ----- */
 @media only screen and (min-width: 769px) and (max-width : 992px) {
+      .carousel-inner {
+        overflow: visible;
+      }
       .component-galleryRoll .carousel-indicators{
         position: relative;
         left: 0;
         bottom: -20px;
-        width: auto;
+        width: 400px;
         margin-bottom: 15px;
         margin-left: 0;
       }
@@ -293,6 +296,11 @@
       .component-galleryRoll .carousel-showmanymoveone .cloneditem-8,
       .component-galleryRoll .carousel-showmanymoveone .cloneditem-9 {
          display: none!important;
+       }
+       .component-galleryRoll .carousel-showmanymoveone .item > .cloneditem-last {
+        display: block!important;
+        position: absolute;
+        left: -500px;
        }
        /* .slide {
         float: left;
