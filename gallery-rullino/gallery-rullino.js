@@ -16,6 +16,7 @@ $(document).ready(function(){
     var prev = carouselControls.find('.left.carousel-control');
     var carouselIndicators =  self.find(".carousel-indicators");
     var carouselClose =  self.find(".carousel-close");
+    var carouselInner = self.find(".carousel-inner");
     var carouselItems =  self.find(".carousel-inner > .item");
 
 
@@ -25,7 +26,9 @@ $(document).ready(function(){
 
     // -----------  generazione cloni immagine slider  -----------
     carouselItems.each(function(item){
+
       var itemToClone = $(this);
+
       for (var i=1; i < carouselItems.length; i++) {
         itemToClone = itemToClone.next();
         // wrap around if at end of item collection
@@ -50,7 +53,19 @@ $(document).ready(function(){
 
       // segno l'ultimo elemento clonato per il positioning in tablet portrait
       $(this).children().last().addClass('cloneditem-last');
+      
+
+      
     });
+    carouselItems.each(function(item){
+      var itemToClone = $(this);
+      if(carouselInner.is('.carousel-inner-toRight')){  
+        // console.log(itemToClone);           
+        carouselInner.prepend(itemToClone)
+      }
+    })
+
+
 
     // ----------- Genera ID degli sliders  -----------
     carousel.attr('id', 'slider-' + index);
