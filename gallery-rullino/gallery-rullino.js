@@ -110,11 +110,14 @@ $(document).ready(function(){
       if(limitContainerWidth >= 1680){
         if(itemActiveLast3 && itemActiveLast3.length) {
           next.hide();
+          self.find(".item-last3 .cloneditem-3").addClass("hidden");
         }
       }
       if(limitContainerWidth < 1680){
         if(itemActiveLast2 && itemActiveLast2.length) {
           next.hide();
+          self.find(".item-last3 .cloneditem-3").addClass("hidden");
+          self.find(".item-last2 .cloneditem-3").addClass("hidden");
         }
       }
 
