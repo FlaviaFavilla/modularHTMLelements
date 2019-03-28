@@ -3,8 +3,9 @@ $(document).ready(function(){
 // -----------  SELEZIONE TUTTI gli slider, funzioni al clicl sul singolo  -----------
   $('.component-galleryRoll .component-galleryRoll-row-img.transition').each(function(index) {
 
-    // var carouselToSlide =  $(this);
     var self = $(this);
+    var parent = self.parent(); 
+    var rowToLeft = self.parents().hasClass('toLeft'); 
 
     var carousel = self.find(".carousel.carousel-showmanymoveone");
     var rowContainer = self.find(".carousel.carousel-showmanymoveone.carousel-fullWidth");
@@ -12,21 +13,10 @@ $(document).ready(function(){
     var carouselControls =  self.find(".carousel-controls");
     var carouselControlsLink =  self.find(".carousel-controls > a");
     var carouselIndicators =  self.find(".carousel-indicators");
-    // var carouselIndicatorLink =  $(this).find(".carousel-indicators li");
     var carouselClose =  self.find(".carousel-close");
     var carouselItems =  self.find(".carousel-inner > .item");
-    // var carouselItemList =  $(this).find(".carousel-inner > .item > .item-list");
 
-    // var carouselItemsLeft =  $(this).find(".carousel-inner-toLeft > .item");
-    // var carouselItemsRight =  $(this).find(".carousel-inner-toRight > .item");
-    // carouselItemsRight = carouselItemsRight.reverse();
-// carouselItems = carouselItemsLeft > 0 ? carouselItemsLeft : carouselItemsRight.get().reverse();
-// console.log(carouselItemsLeft, carouselItemsRight );
 
-    var parent = self.parent(); 
-    var parents = self.parents().hasClass('toLeft'); 
-
-// console.log(carouselItems.length);
     // -----------  genera la dimesione del container per le slides  -----------
     rowContainer.addClass("carousel-fullWidth-"+ carouselItems.length );
 
@@ -70,10 +60,13 @@ $(document).ready(function(){
       
       // --- calcolo la translazione in px  -----
       var limitContainer = $(".limit-container").offset();
-      var limiTransition = $(".component-galleryRoll-row.multImg.toLeft .slide.carousel-fullWidth").offset();
-      var calc = Math.abs(limitContainer.left - limiTransition.left);
+      var limitContainerWidth = $(".limit-container").width();
+      var limiTransitiontoLeft = $(".component-galleryRoll-row.multImg.toLeft .slide.carousel-fullWidth").offset();
+      var limiTransitiontoRight = $(".component-galleryRoll-row.multImg.toRight span.component-galleryRoll-row-arrow").offset();
+      var calcToLef = Math.abs(limitContainer.left - limiTransitiontoLeft.left);
+      var calcToRight = Math.abs(limitContainerWidth - limiTransitiontoRight.left);
 
-      parents ? self.css('transform', 'translate( -'+ calc +'px )') : self.css('transform', 'translate( '+ calc +'px )');
+      rowToLeft ? self.css('transform', 'translate( -'+ calcToLef +'px )') : self.css('transform', 'translate( '+ calcToRight +'px )');
 
       // --- a fine animazione modifica visibiltà elementi  -----
       parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
@@ -88,7 +81,7 @@ $(document).ready(function(){
     carouselClose.on("click", function(e){
       e.stopPropagation();
 
-      parents ? self.css('transform', '') : self.css('transform', '');
+      rowToLeft ? self.css('transform', '') : self.css('transform', '');
 
       // --- a fine animazione modifica visibiltà elementi  -----
       parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
@@ -99,11 +92,7 @@ $(document).ready(function(){
         });
     });
 
-    carouselIndicators.on('click', function(){
-      console.log( $(this) );
-    })
 
-    // var self = $(this);
 
     var next = carouselControls.find('.right.carousel-control');
     var prev = carouselControls.find('.left.carousel-control');
