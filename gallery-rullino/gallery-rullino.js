@@ -20,6 +20,7 @@ $(document).ready(function(){
     var carouselIndicators =  self.find(".carousel-indicators");
     var carouselClose =  self.find(".carousel-close");
     var carouselInner = self.find(".carousel-inner");
+    var carouselInnerCloned = self.find(".carousel-inner-cloned");
     var carouselItems =  self.find(".carousel-inner > .item");
 
 
@@ -65,6 +66,7 @@ $(document).ready(function(){
       if(carouselInner.is('.carousel-inner-toRight')){  
         // console.log(itemToClone);           
         carouselInner.prepend(itemToClone)
+        // carouselInnerCloned.prepend(itemToClone)
       }
     })
 
