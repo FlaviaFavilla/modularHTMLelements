@@ -6,14 +6,17 @@ $(document).ready(function(){
     var self = $(this);
     var parent = self.parent(); 
     var rowToLeft = self.parents().hasClass('toLeft'); 
+    var rowToRight = self.parents().hasClass('toRight'); 
 
     var carousel = self.find(".carousel.carousel-showmanymoveone");
     var rowContainer = self.find(".carousel.carousel-showmanymoveone.carousel-fullWidth");
     var carouselOpen = self.find(".component-galleryRoll-row-arrow");
     var carouselControls =  self.find(".carousel-controls");
     var carouselControlsLink =  self.find(".carousel-controls > a");
-    var next = carouselControls.find('.right.carousel-control');
-    var prev = carouselControls.find('.left.carousel-control');
+    var nexToLeft = self.find('.carousel-controls-toLeft .right.carousel-control');
+    var prevToLeft = self.find('.carousel-controls-toLeft .left.carousel-control');
+    var nexToRight = self.find('.carousel-controls-toRight .right.carousel-control');
+    var prevToRight = self.find('.carousel-controls-toRight .left.carousel-control');
     var carouselIndicators =  self.find(".carousel-indicators");
     var carouselClose =  self.find(".carousel-close");
     var carouselInner = self.find(".carousel-inner");
@@ -116,31 +119,57 @@ $(document).ready(function(){
         });
     });
 
-    // -----------  gestione controller slider -----------
-    next.on('click', function(){
-      var itemActiveLast3 =  self.find(".item-last4.active");
-      var itemActiveLast2 =  self.find(".item-last3.active");
+    // -----------  gestione controller slider ToLeft -----------
+    nexToLeft.on('click', function(){
+      var itemActiveLast3 =  self.find(".carousel-inner-toLeft .item-last4.active");
+      var itemActiveLast2 =  self.find(".carousel-inner-toLeft .item-last3.active");
       var limitContainerWidth = $(".limit-container").width();
-      
+
       if(limitContainerWidth >= 1680){
         if(itemActiveLast3 && itemActiveLast3.length) {
-          next.hide();
+          nexToLeft.hide();
           self.find(".item-last3 .cloneditem-3").addClass("hidden");
         }
       }
       if(limitContainerWidth < 1680){
         if(itemActiveLast2 && itemActiveLast2.length) {
-          next.hide();
+          nexToLeft.hide();
           self.find(".item-last3 .cloneditem-3").addClass("hidden");
           self.find(".item-last2 .cloneditem-3").addClass("hidden");
         }
       }
 
     })
-    prev.on('click', function(){
-      next.show()
+    prevToLeft.on('click', function(){
+      nexToLeft.show()
     })
 
+    // -----------  gestione controller slider ToRight -----------
+    prevToRight.on('click', function(){
+      var itemActiveLast3 =  self.find(".carousel-inner-toRight .item-last3.active");
+      var itemActiveLast4 =  self.find(".carousel-inner-toRight .item-last4.active");
+      var limitContainerWidth = $(".limit-container").width();
+
+      console.log(itemActiveLast4, itemActiveLast3 );
+
+      if(limitContainerWidth >= 1680){
+        if(itemActiveLast4 && itemActiveLast4.length) {
+          prevToRight.hide();
+          // self.find(".item-last3 .cloneditem-3").addClass("hidden");
+        }
+      }
+      if(limitContainerWidth < 1680){
+        if(itemActiveLast3 && itemActiveLast3.length) {
+          prevToRight.hide();
+          // self.find(".item-last3 .cloneditem-3").addClass("hidden");
+          // self.find(".item-last2 .cloneditem-3").addClass("hidden");
+        }
+      }
+
+    })
+    nexToRight.on('click', function(){
+      prevToRight.show()
+    })
   });
 });
 
