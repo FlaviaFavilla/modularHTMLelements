@@ -83,7 +83,7 @@ $(document).ready(function(){
       var limiTransitiontoLeft = $(".component-galleryRoll-row.multImg.toLeft .slide.carousel-fullWidth").offset();
       var limiTransitiontoRight = $(".component-galleryRoll-row.multImg.toRight > .component-galleryRoll-row-text").offset();
       var calcToLef = Math.abs(limitContainer.left - limiTransitiontoLeft.left);
-      var calcToRight = Math.abs(limitContainer.left - limiTransitiontoRight.left -30);
+      var calcToRight = Math.abs(limitContainer.left - limiTransitiontoRight.left -30 - 15);
 
       rowToLeft ? self.css('transform', 'translate( -'+ calcToLef +'px )') : self.css('transform', 'translate( '+ calcToRight +'px )');
 

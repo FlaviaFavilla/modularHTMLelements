@@ -44,11 +44,14 @@
 .component-galleryRoll .toLeft .carousel-fullWidth {
   left: 30px;
 }
-.component-galleryRoll .toRight .carousel-fullWidth {
-}
-.component-galleryRoll .item-list{
+.component-galleryRoll .item-list {
   float: left;
+}
+.component-galleryRoll .toLeft .item-list{
   margin-right: 20px;
+}
+.component-galleryRoll .toRight .item-list{
+  margin-left: 20px;
 }
 
 /* -------------------controllo apertura-chiusura rullino ------------------- */
@@ -67,7 +70,7 @@
 }
 .component-galleryRoll .component-galleryRoll-row.toRight .carousel-close{
   border-radius: 5px 0 0 5px;
-  right: 45px;
+  right: 44px;
   left: auto;
 }
 .component-galleryRoll .component-galleryRoll-row-arrow { 
@@ -343,7 +346,7 @@
 
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-2 { transform: translate(-560px); }
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-3 { transform: translate(-1120px); }
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-4 { transform: translate(-1680px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-4 { transform: translate(-1740px); }
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-5 { transform: translate(-2240px); }
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-6 { transform: translate(-2800px); }
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-7 { transform: translate(-3360px); }
