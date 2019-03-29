@@ -46,7 +46,7 @@ $(document).ready(function(){
 
 
           // ----------- Genera gli Indicators dello slider  -----------
-          carouselIndicators.append("<li data-slide-to='"+ item +"' data-target='#slider-"+ index +"'></li>" );
+          carouselIndicators.append("<li data-slide-to='"+ item +"' data-target='#slider-features-"+ index +"'></li>" );
           if(item === 0) {
             carouselIndicators.children().first().addClass('active');
           }
@@ -59,7 +59,7 @@ $(document).ready(function(){
         });
 
         // ----------- Genera ID degli sliders  -----------
-        carousel.attr('id', 'slider-' + index);    
+        carousel.attr('id', 'slider-features-' + index);    
     
       });
     
