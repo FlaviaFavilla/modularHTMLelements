@@ -1,16 +1,16 @@
 
 /* da cancellare */
-.toLeft{ background: pink;}
+/* .toLeft{ background: pink;}
 .toRight{ background: lightskyblue;}
 .carousel-inner {
   background: #8fe76c;
-}
+} */
 /* fine da cancellare */
 .limit-container{
   max-width: 1920px;
   overflow-x: hidden;
   margin: 0 auto;
-  background: antiquewhite;
+  /* background: antiquewhite; */
 }
 
 .component-galleryRoll .component-galleryRoll-row{
