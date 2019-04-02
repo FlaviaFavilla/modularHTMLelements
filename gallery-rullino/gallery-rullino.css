@@ -138,6 +138,12 @@
   background: #DDDDDD;
   border: 1px solid #DDDDDD;
 }
+/* .component-galleryRoll .toRight .carousel-indicators li {
+  float: right;
+} */
+.carousel-inner-cloned, .carousel-inner-cloned  * {
+  display: none;
+}
 .component-galleryRoll .carousel-indicators .active {
   background: #AD0C33;
   border: 1px solid #AD0C33;
@@ -523,27 +529,4 @@
               transform: translate3d(0, 0, 0);
       left: 0;
     }
-
-    /* .carousel-inner-toRight > .item.active.right,
-    .carousel-inner-toRight > .item.next {
-      -webkit-transform: translate3d(-560px, 0, 0);
-              transform: translate3d(-560px, 0, 0);
-      left: 0;
-    }
-    .carousel-inner-toRight > .item.active.left,
-    .carousel-inner-toRight > .item.prev {
-      -webkit-transform: translate3d(560px, 0, 0);
-              transform: translate3d(560px, 0, 0);
-      left: 0;
-    }
-    .carousel-inner-toRight > .item.left,
-    .carousel-inner-toRight > .item.prev.right,
-    .carousel-inner-toRight > .item.active {
-      -webkit-transform: translate3d(0, 0, 0);
-              transform: translate3d(0, 0, 0);
-      left: 0; */
-    }
-
-
-    
-  }
+}

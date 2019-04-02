@@ -20,9 +20,9 @@ $(document).ready(function(){
     var carouselIndicators =  self.find(".carousel-indicators");
     var carouselClose =  self.find(".carousel-close");
     var carouselInner = self.find(".carousel-inner");
+    var carouselInneRight = self.find(".carousel-inner-toRight");
     var carouselInnerCloned = self.find(".carousel-inner-cloned");
     var carouselItems =  self.find(".carousel-inner > .item");
-
 
 
     // -----------  genera la dimesione del container per le slides  -----------
@@ -45,11 +45,10 @@ $(document).ready(function(){
           .appendTo($(this));
       }
 
-      // ----------- Genera gli Indicators dello slider  -----------
-      carouselIndicators.append("<li data-slide-to='"+ item +"' data-target='#slider-"+ index +"'></li>" );
-      if(item === 0) {
-        carouselIndicators.children().first().addClass('active');
-      }
+      // // ----------- Genera gli Indicators dello slider  -----------
+      generateIdicators(item);
+
+      // segno la posizione delle slides
       if(item === carouselItems.length-1)  $(this).addClass('item-last');
       if(item === carouselItems.length-2)  $(this).addClass('item-last2');
       if(item === carouselItems.length-3)  $(this).addClass('item-last3');
@@ -57,18 +56,76 @@ $(document).ready(function(){
 
       // segno l'ultimo elemento clonato per il positioning in tablet portrait
       $(this).children().last().addClass('cloneditem-last');
-      
-
-      
+    
     });
-    carouselItems.each(function(item){
-      var itemToClone = $(this);
-      if(carouselInner.is('.carousel-inner-toRight')){  
-        // console.log(itemToClone);           
-        carouselInner.prepend(itemToClone)
-        // carouselInnerCloned.prepend(itemToClone)
+
+
+
+    function generateIdicators(item){
+      // ----------- Genera gli Indicators dello slider  -----------
+      carouselIndicators.append("<li data-slide-to='"+ item +"' data-target='#slider-"+ index +"'></li>" );
+      if(item === 0) {
+        carouselIndicators.children().first().addClass('active');
       }
-    })
+    }
+
+    // inverto gli elementi clonati nello slider a destra
+    var stato = false;
+    function prependRowRight(){
+      carouselItems.each(function(item){
+        var itemToClone = $(this);
+        if(carouselInner.is('.carousel-inner-toRight')){  
+          carouselInner.prepend(itemToClone);
+        }
+      });
+    } 
+    function appendRowRight(){
+      carouselItems.each(function(item){
+        var itemToClone = $(this);
+        if(carouselInner.is('.carousel-inner-toRight')){  
+          carouselInner.append(itemToClone);
+        }
+      });
+    } 
+
+
+
+console.log($(".limit-container").width());
+
+    if($(".limit-container").width() > 993){
+      prependRowRight();
+      stato = true;
+    }
+
+
+    $(window).resize(function() {
+      if($(".limit-container").width() > 993){
+        // if(stato == true){
+        // }
+        if(stato == false){
+          // reverseRowRight();
+        }
+      }
+      if($(".limit-container").width() < 993){
+        if(stato == true){
+          appendRowRight();
+
+          // carouselItems.each(function(item){
+          //   var itemToClone = $(this);
+          //   if(carouselInner.is('.carousel-inner-toRight')){  
+          //     carouselInner.append(itemToClone);
+          //   }
+          // });
+        }
+        if(stato == false){
+
+          console.log('b');
+
+        }
+      }
+    });
+
+
 
 
 
@@ -152,7 +209,7 @@ $(document).ready(function(){
       var itemActiveLast4 =  self.find(".carousel-inner-toRight .item-last4.active");
       var limitContainerWidth = $(".limit-container").width();
 
-      console.log(itemActiveLast4, itemActiveLast3 );
+      // console.log(itemActiveLast4, itemActiveLast3 );
 
       if(limitContainerWidth >= 1680){
         if(itemActiveLast4 && itemActiveLast4.length) {
