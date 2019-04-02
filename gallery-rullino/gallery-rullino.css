@@ -1,15 +1,21 @@
 
 /* da cancellare */
-.toLeft{ background: pink;}
+/* .toLeft{ background: pink;}
 .toRight{ background: lightskyblue;}
 .carousel-inner {
   background: #8fe76c;
-}
+} */
 /* fine da cancellare */
-
+.limit-container{
+  max-width: 1920px;
+  overflow-x: hidden;
+  margin: 0 auto;
+  /* background: antiquewhite; */
+}
 
 .component-galleryRoll .component-galleryRoll-row{
   margin: 80px auto;
+  height: 357px;
 }
 .component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-img{
   padding-left: 0;
@@ -17,12 +23,6 @@
 .component-galleryRoll .component-galleryRoll-row.toLeft > .component-galleryRoll-row-img{
   padding-right: 0;
   text-align: right;
-}
-.component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-text{
-  float: right;
-}
-.component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-text > div{
-  float: right;
 }
 
 .component-galleryRoll .component-galleryRoll-row-text > div{
@@ -40,15 +40,19 @@
 
 .component-galleryRoll .carousel-fullWidth {
   position: relative;
+  background: #ffffff;
 }
 .component-galleryRoll .toLeft .carousel-fullWidth {
   left: 30px;
 }
-.component-galleryRoll .toRight .carousel-fullWidth {
-}
-.component-galleryRoll .item-list{
+.component-galleryRoll .item-list {
   float: left;
+}
+.component-galleryRoll .toLeft .item-list{
   margin-right: 20px;
+}
+.component-galleryRoll .toRight .item-list{
+  margin-left: 20px;
 }
 
 /* -------------------controllo apertura-chiusura rullino ------------------- */
@@ -67,7 +71,7 @@
 }
 .component-galleryRoll .component-galleryRoll-row.toRight .carousel-close{
   border-radius: 5px 0 0 5px;
-  right: 45px;
+  right: 44px;
   left: auto;
 }
 .component-galleryRoll .component-galleryRoll-row-arrow { 
@@ -94,7 +98,8 @@
   right: 9px;
 }
 .component-galleryRoll .transition{
-  transition: 2s;
+  transition: 1s;
+  z-index: 10;
 }
 /* ------------------- controlli mivimento slides carosello ------------------- */
 .component-galleryRoll .carousel-controls{
@@ -110,11 +115,15 @@
 }
 .component-galleryRoll .component-galleryRoll-row.toRight .carousel-controls > .carousel-control {
   left: 0;
+  margin-left: 22px;
 }
 .component-galleryRoll .carousel-control.right {
   margin-left: 22px;
 }
-.component-galleryRoll .carousel-control.right > img{
+.component-galleryRoll .toLeft .carousel-control.right > img{
+  transform: rotateY(180deg);
+}
+.component-galleryRoll .toRight .carousel-control.left > img{
   transform: rotateY(180deg);
 }
 .component-galleryRoll .carousel-indicators {
@@ -129,11 +138,26 @@
   background: #DDDDDD;
   border: 1px solid #DDDDDD;
 }
+/* .component-galleryRoll .toRight .carousel-indicators li {
+  float: right;
+} */
+.carousel-inner-cloned, .carousel-inner-cloned  * {
+  display: none;
+}
 .component-galleryRoll .carousel-indicators .active {
   background: #AD0C33;
   border: 1px solid #AD0C33;
 }
 
+ 
+.component-galleryRoll .carousel-showmanymoveone .cloneditem-4,
+.component-galleryRoll .carousel-showmanymoveone .cloneditem-5, 
+.component-galleryRoll .carousel-showmanymoveone .cloneditem-6,
+.component-galleryRoll .carousel-showmanymoveone .cloneditem-7, 
+.component-galleryRoll .carousel-showmanymoveone .cloneditem-8,
+.component-galleryRoll .carousel-showmanymoveone .cloneditem-9 {
+   display: none;
+ }
 
 /*  ------------------------  ////  MEDIA QUERY  \\\\  ------------------------   */
 
@@ -142,20 +166,12 @@
       .component-galleryRoll .item-list{
         width: 100%;
       }
-      .component-galleryRoll .component-galleryRoll-row.toLeft,
-      .component-galleryRoll .component-galleryRoll-row.toRight.singleImg{
-        flex-direction: column-reverse;
-        display: flex;
-      }
-      .component-galleryRoll .component-galleryRoll-row.toRight {
-        flex-direction: column;
-        display: flex;
-      }
       .component-galleryRoll .component-galleryRoll-row > .component-galleryRoll-row-img {
         padding: 0;
       }
       .component-galleryRoll .component-galleryRoll-row-img > img, 
       .component-galleryRoll .component-galleryRoll-row-img > iframe,
+      .component-galleryRoll .item-list,
       .component-galleryRoll .item-list > img,
       .component-galleryRoll .item-list > iframe {
         width: 100%;
@@ -183,28 +199,49 @@
 
 /* ----- Tablet Portrait & Mobile (Viewport below 989px) ----- */
 @media only screen and (max-width : 992px) {
-  .component-galleryRoll .component-galleryRoll-row-text > div {
-        width: 100%;
-      }
-      .component-galleryRoll .component-galleryRoll-row-text > div > h2{
-        margin: 30px 0 10px;
-      }
-      .component-galleryRoll .component-galleryRoll-row-text > div > p{
-          font-size: 15px;
-      }
-      .component-galleryRoll .component-galleryRoll-row > .component-galleryRoll-row-img {
-        text-align: center;
-      }
+  .component-galleryRoll .component-galleryRoll-row {
+    height: auto;
+  }
+    .component-galleryRoll-row.singleImg{
+      height: auto;
+    }
+    .component-galleryRoll .component-galleryRoll-row-text > div {
+      width: 100%;
+    }
+    .component-galleryRoll .component-galleryRoll-row-text > div > h2{
+      margin: 30px 0 10px;
+    }
+    .component-galleryRoll .component-galleryRoll-row-text > div > p{
+        font-size: 15px;
+    }
+    .component-galleryRoll .component-galleryRoll-row > .component-galleryRoll-row-img {
+      text-align: center;
+    }
 } 
 /* ----- FROM Tablet Portrait to UP (Viewport more 989px) ----- */
 @media only screen and (min-width : 992px) {
-  .component-galleryRoll .component-galleryRoll-row > .component-galleryRoll-row-text{
-        padding: 0;
-      }
+    .component-galleryRoll .component-galleryRoll-row > .component-galleryRoll-row-text{
+      padding: 0;
+    }
 } 
 
 /* ----- Tablet Portrait (Viewport between 769px and 989px) ----- */
 @media only screen and (min-width: 769px) and (max-width : 992px) {
+      .carousel-inner {
+        overflow: visible;
+      }
+      .component-galleryRoll .carousel-indicators{
+        position: relative;
+        left: 0;
+        bottom: -20px;
+        width: 400px;
+        margin-bottom: 15px;
+        margin-left: 0;
+      }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth {
+        width: 1000px;
+        transform: translate(110px);
+    }
       .component-galleryRoll .item-list{
         width: 480px;
       }
@@ -213,67 +250,36 @@
       }
       .component-galleryRoll .component-galleryRoll-row-img > img, 
       .component-galleryRoll .component-galleryRoll-row-img > iframe,
+      .component-galleryRoll .item-list,
       .component-galleryRoll .item-list > img,
       .component-galleryRoll .item-list > iframe{
         width: 480px;
         height: 317px;
       }
-      .component-galleryRoll .component-galleryRoll-row.toLeft .carousel-fullWidth {
-        transform: translate(-19%);
-      }
-      .component-galleryRoll .component-galleryRoll-row.toRight .carousel-fullWidth {
-        transform: translate(-17%);
-      }
-      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-2{ width: 300%; }
-      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-3{ width: 300%; }
-      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-4{ width: 300%; }
-      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-5{ width: 300%; }
-      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-6{ width: 300%; }
-      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-7{ width: 300%; }
-      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-8{ width: 300%; }
-      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-9{ width: 300%; }
+      .component-galleryRoll .carousel-fullWidth.carousel-fullWidth{ width: 400%; }
 
-      .component-galleryRoll .item.active {
-        display: flex;
-        flex-direction: row;
-      }
-      .component-galleryRoll .component-galleryRoll-row.toLeft,
-      .component-galleryRoll .component-galleryRoll-row.toRight.singleImg{
-        flex-direction: column-reverse;
-        display: flex;
-      }
-      .component-galleryRoll .component-galleryRoll-row.toRight {
-        flex-direction: column;
-        display: flex;
-      }
       .component-galleryRoll .carousel-showmanymoveone .cloneditem-2, 
       .component-galleryRoll .carousel-showmanymoveone .cloneditem-3,
+      .component-galleryRoll .carousel-showmanymoveone .cloneditem-4,
       .component-galleryRoll .carousel-showmanymoveone .cloneditem-5, 
       .component-galleryRoll .carousel-showmanymoveone .cloneditem-6,
       .component-galleryRoll .carousel-showmanymoveone .cloneditem-7, 
       .component-galleryRoll .carousel-showmanymoveone .cloneditem-8,
       .component-galleryRoll .carousel-showmanymoveone .cloneditem-9 {
-         display: none;
+         display: none!important;
        }
-      .component-galleryRoll .item-list{
-        order: 2;
-      }
-      .component-galleryRoll .carousel-showmanymoveone .carousel-inner .cloneditem-1 {
-        order: 3;
-      }
-      .component-galleryRoll .carousel-showmanymoveone .carousel-inner .cloneditem-last {
+       .component-galleryRoll .carousel-showmanymoveone .item > .cloneditem-last {
         display: block!important;
-        order: 1;
-      }
-      .component-galleryRoll .carousel-indicators {
-        margin-left: -17%;
-      }
+        position: absolute;
+        left: -500px;
+       }
 } 
 
 /* ----- Tablet landscape (Viewport between 990px and 1199px) ----- */
 @media only screen and (min-width: 993px) and (max-width : 1199px) {
       .component-galleryRoll .component-galleryRoll-row-img > img, 
       .component-galleryRoll .component-galleryRoll-row-img > iframe,
+      .component-galleryRoll .item-list,
       .component-galleryRoll .item-list > img,
       .component-galleryRoll .item-list > iframe{
         width: 480px;
@@ -305,19 +311,14 @@
 
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-2 { transform: translate(-500px); }
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-3 { transform: translate(-1000px);}
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-4 { transform: translate(-1500px);}
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-4 { transform: translate(-1636px);} /* +136px  */
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-5 { transform: translate(-2000px);}
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-6 { transform: translate(-2500px);}
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-7 { transform: translate(-3000px);}
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-8 { transform: translate(-3500px);}
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-9 { transform: translate(-4000px);}
 
-      .component-galleryRoll .transitionClassToRight{ 
-        transform: translate( 500px ); 
-      }
-      .component-galleryRoll .transitionClassToLeft{ 
-        transform: translate( -500px ); 
-      }
+
       .component-galleryRoll .toRight .carousel-controls {
         right: 185px;
       }
@@ -330,6 +331,26 @@
       .component-galleryRoll .component-galleryRoll-row.toLeft .carousel-close{
         left: 15px;
       }
+
+      .component-galleryRoll .toLeft .carousel-showmanymoveone .item:nth-last-child(-n+3) .cloneditem-last,
+      .component-galleryRoll .toLeft .carousel-showmanymoveone .item:nth-last-child(-n+2) .cloneditem-2 {
+        display: none;
+      }
+      .component-galleryRoll .toRight .carousel-showmanymoveone .item-last2 .cloneditem-2,
+      .component-galleryRoll .toRight .carousel-showmanymoveone .item-last2 .cloneditem-last,
+      .component-galleryRoll .toRight .carousel-showmanymoveone .item-last3 .cloneditem-last{
+        display: none;
+      }
+      .component-galleryRoll .carousel-showmanymoveone .item-last > .cloneditem {
+        display: none!important;
+      }
+      .carousel-inner-toRight .item{
+        flex-direction: row-reverse;
+        display:none;
+      }
+      .carousel-inner-toRight .item.active {
+        display: flex;
+      }
 } 
 
 /* Desktop (Viewport above 1200px) */
@@ -339,6 +360,7 @@
       }
       .component-galleryRoll .component-galleryRoll-row-img > img,
       .component-galleryRoll .component-galleryRoll-row-img > iframe, 
+      .component-galleryRoll .item-list,
       .component-galleryRoll .item-list > img,
       .component-galleryRoll .item-list > iframe{
         width: 540px;
@@ -355,30 +377,44 @@
 
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-2 { transform: translate(-560px); }
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-3 { transform: translate(-1120px); }
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-4 { transform: translate(-1680px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-4 { transform: translate(-1740px); }
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-5 { transform: translate(-2240px); }
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-6 { transform: translate(-2800px); }
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-7 { transform: translate(-3360px); }
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-8 { transform: translate(-3920px); }
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-9 { transform: translate(-4480px); }
-
-      .component-galleryRoll .transitionClassToRight{ 
-        transform: translate( 630px ); 
-      }
-      .component-galleryRoll .transitionClassToLeft{ 
-        transform: translate( -630px ); 
-      }
+    
       .component-galleryRoll .toRight .carousel-controls {
-        right: 70px;
+        right: 30px;
+      }
+       
+      .component-galleryRoll .toLeft .carousel-showmanymoveone .item:nth-last-child(-n+3) .cloneditem-last,
+      .component-galleryRoll .toLeft .carousel-showmanymoveone .item:nth-last-child(-n+2) .cloneditem-2 {
+        display: none;
+      }
+      .component-galleryRoll .toRight .carousel-showmanymoveone .item-last2 .cloneditem-2,
+      .component-galleryRoll .toRight .carousel-showmanymoveone .item-last2 .cloneditem-last,
+      .component-galleryRoll .toRight .carousel-showmanymoveone .item-last3 .cloneditem-last{
+        display: none;
+      }
+      .component-galleryRoll .carousel-showmanymoveone .item-last > .cloneditem {
+        display: none!important;
+      }
+      /* .carousel-inner-toRight .item.active*/
+      .carousel-inner-toRight .item{
+        flex-direction: row-reverse;
+        display:none;
+      }
+      .carousel-inner-toRight .item.active {
+        display: flex;
       }
 } 
-
 
 
   @media all and (min-width: 768px) {
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.left,
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .prev {
-      left: 500px;
+      left: -500px;
     }
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.right,
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .next {
@@ -458,12 +494,10 @@
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.left,
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .prev {
       left: -560px;
-      /* left: -25%; */
     }
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.right,
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .next {
       left: 560px;
-      /* left: 25%; */
     }
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .left,
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .prev.right,
@@ -495,4 +529,4 @@
               transform: translate3d(0, 0, 0);
       left: 0;
     }
-  }
+}
