@@ -70,7 +70,6 @@ $(document).ready(function(){
     }
 
     // inverto gli elementi clonati nello slider a destra
-    var stato = false;
     function prependRowRight(){
       carouselItems.each(function(item){
         var itemToClone = $(this);
@@ -90,38 +89,29 @@ $(document).ready(function(){
 
 
 
-console.log($(".limit-container").width());
 
-    if($(".limit-container").width() > 993){
-      prependRowRight();
-      stato = true;
-    }
+  var stato = false;
 
+  if($(".limit-container").width() > 993){
+    prependRowRight();
+    stato = true;
+  }
 
     $(window).resize(function() {
       if($(".limit-container").width() > 993){
         // if(stato == true){
         // }
         if(stato == false){
-          // reverseRowRight();
+          prependRowRight();
         }
       }
       if($(".limit-container").width() < 993){
         if(stato == true){
+          stato = false;
           appendRowRight();
-
-          // carouselItems.each(function(item){
-          //   var itemToClone = $(this);
-          //   if(carouselInner.is('.carousel-inner-toRight')){  
-          //     carouselInner.append(itemToClone);
-          //   }
-          // });
         }
-        if(stato == false){
-
-          console.log('b');
-
-        }
+        // if(stato == false){
+        // }
       }
     });
 
