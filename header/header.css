@@ -1,34 +1,37 @@
 .component-header{
     max-height: 80px;
 }
-.component-header-logo img{
+.component-header > .component-header-logo{
+    margin: 9px 60px;
+}
+.component-header > .component-header-logo img{
     height: 62px;
-    margin: calc((80px - 62px)/2) 60px;
 }
 
 /* Mobiles (Viewport below 768px) */
 @media only screen and (max-width: 768px) {
-    .component-header-logo img{
+    .component-header > .component-header-logo{
+        margin: 6px 20px;
+    }
+    .component-header > .component-header-logo img{
         height: 48px;
-        margin: calc((60px - 48px)/2) 20px;
     }
 } 
 
 /* Tablet Portrait (Viewport between 769px and 989px) */
 @media only screen and (min-width: 769px) and (max-width : 989px) {
-    .component-header-logo img{
+    .component-header > .component-header-logo{
+        margin: 6px 24px;
+    }
+    .component-header > .component-header-logo img{
         height: 48px;
-        margin: calc((60px - 48px)/2) 24px;
     }
 } 
 
 /* Tablet landscape (Viewport between 990px and 1199px) */
 @media only screen and (min-width: 990px) and (max-width : 1199px) {
-    .component-header-logo img{
-        margin: calc((80px - 62px)/2) 10px;
+    .component-header > .component-header-logo{
+        margin: 9px 10px;
     }
 } 
 
-/* Desktop (Viewport above 1200px) */
-/* @media only screen and (min-width: 1200px) {
-}  */
