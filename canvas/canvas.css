@@ -90,7 +90,7 @@
         max-height: 568px;
     }
     .component-canvas .component-canvas-text p a.cta-button{
-        margin: 40px auto 80px;
+        margin: 40px auto 0;
     }
     .component-canvas .dueColonne{
         column-count:1;
