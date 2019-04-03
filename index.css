@@ -36,8 +36,9 @@ body{
     text-align: left;
 }
 .cta-button span{
-    margin-top: 8px;
+    margin-top: 7px;
     font-size: 14px;
+    display: block;
 }
 .cta-button img{
     margin-top: 9px;
@@ -46,7 +47,9 @@ body{
     background: #840A27;
     color:#ffffff;
 }
-
+.cta-button svg #svg_canvas_arrow{
+    fill:#ffffff;
+}
 
 
 /*  ------------------------  ////  MEDIA QUERY  \\\\  ------------------------   */

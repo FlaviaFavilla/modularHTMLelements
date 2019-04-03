@@ -19,6 +19,7 @@
 .component-canvas .component-canvas-text p{
     max-width: 445px;
     font-size: 18px;
+    margin-bottom: 0;
 }
 .component-canvas .dueColonne{
     column-count:1;
@@ -89,9 +90,9 @@
     .component-canvas .component-canvas-image img{
         max-height: 568px;
     }
-    .component-canvas .component-canvas-text p a.cta-button{
-        margin: 40px auto 0;
-    }
+    /* .component-canvas .component-canvas-text p a.cta-button{
+
+    } */
     .component-canvas .dueColonne{
         column-count:1;
         max-height: 100%;
@@ -112,7 +113,10 @@
         max-height: 568px;
     }
     .component-canvas .component-canvas-text p a.cta-button{
-        margin: 20px auto;
+        margin: 20px auto 0;
+        position: absolute;
+        bottom: 0;
+        right: 85px;
     }
     .component-canvas .dueColonne{
         column-count:1;
