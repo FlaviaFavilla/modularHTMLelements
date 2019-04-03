@@ -55,17 +55,12 @@
         max-height: 100%;
     }
     .component-canvas .component-canvas-image img{
-        height: 290px;
+        max-height: 290px;
     }
 } 
 
 /* ----- Tablet Portrait & Mobile (Viewport below 989px) ----- */
 @media only screen and (max-width : 989px) {
-    /* .component-canvas .vdivide{
-        min-height: auto;
-        border-right: none;
-        margin-top: 0;
-    } */
     .component-canvas .component-canvas-text p{
         font-size: 15px;
         margin: auto;
@@ -92,7 +87,7 @@
         max-height: 296px;
     }
     .component-canvas .component-canvas-image img{
-        height: 568px;
+        max-height: 568px;
     }
     .component-canvas .component-canvas-text p a.cta-button{
         margin: 40px auto 80px;
@@ -114,15 +109,18 @@
         max-height: 169px;
     }
     .component-canvas .component-canvas-image img{
-        height: 568px;
+        max-height: 568px;
     }
     .component-canvas .component-canvas-text p a.cta-button{
-        margin: 40px auto 80px;
+        margin: 20px auto;
     }
     .component-canvas .dueColonne{
         column-count:1;
         max-height: 249px;
         column-gap: 170px;
+    }
+    .component-canvas .dueColonne::before{
+        min-height: 100px;
     }
 } 
 
