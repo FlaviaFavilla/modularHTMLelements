@@ -6,7 +6,6 @@ $(document).ready(function(){
     var self = $(this);
     var parent = self.parent(); 
     var rowToLeft = self.parents().hasClass('toLeft'); 
-    var rowToRight = self.parents().hasClass('toRight'); 
 
     var carousel = self.find(".carousel.carousel-showmanymoveone");
     var rowContainer = self.find(".carousel.carousel-showmanymoveone.carousel-fullWidth");
@@ -20,8 +19,6 @@ $(document).ready(function(){
     var carouselIndicators =  self.find(".carousel-indicators");
     var carouselClose =  self.find(".carousel-close");
     var carouselInner = self.find(".carousel-inner");
-    var carouselInneRight = self.find(".carousel-inner-toRight");
-    var carouselInnerCloned = self.find(".carousel-inner-cloned");
     var carouselItems =  self.find(".carousel-inner > .item");
 
     var limitContainerWidth = $(".limit-container").width();
@@ -92,21 +89,21 @@ $(document).ready(function(){
 
 
   var stato = false;
-
+  
   if(limitContainerWidth > 976){
     prependRowRight();
     stato = true;
   }
-
     $(window).resize(function() {
-      if(limitContainerWidth > 976){
+
+      if( $(".limit-container").width() > 976){
         // if(stato == true){
         // }
         if(stato == false){
           prependRowRight();
         }
       }
-      if(limitContainerWidth < 976){
+      if( $(".limit-container").width() < 976){
         if(stato == true){
           stato = false;
           appendRowRight();

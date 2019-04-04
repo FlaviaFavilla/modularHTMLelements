@@ -399,13 +399,14 @@
       }
       .component-galleryRoll .toRight .carousel-showmanymoveone .item-last2 .cloneditem-2,
       .component-galleryRoll .toRight .carousel-showmanymoveone .item-last2 .cloneditem-last,
-      .component-galleryRoll .toRight .carousel-showmanymoveone .item-last3 .cloneditem-last{
+      .component-galleryRoll .toRight .carousel-showmanymoveone .item-last3 .cloneditem-last,
+      .component-galleryRoll .toRight .carousel-showmanymoveone .carousel-inner-toRight >.item-last2.active > .cloneditem-3,
+      .component-galleryRoll .toRight .carousel-showmanymoveone .carousel-inner-toRight >.item-last3.active > .cloneditem-3{
         display: none;
       }
       .component-galleryRoll .carousel-showmanymoveone .item-last > .cloneditem {
         display: none!important;
       }
-      /* .carousel-inner-toRight .item.active*/
       .carousel-inner-toRight .item{
         flex-direction: row-reverse;
         display:none;
