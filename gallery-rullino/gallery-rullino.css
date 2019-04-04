@@ -301,14 +301,14 @@
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-8{ width: 900%; }
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-9{ width: 1000%; }
 
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-2 { transform: translate(-500px); }
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-3 { transform: translate(-1000px);}
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-4 { transform: translate(-1636px);} /* +136px  */
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-5 { transform: translate(-2000px);}
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-6 { transform: translate(-2500px);}
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-7 { transform: translate(-3000px);}
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-8 { transform: translate(-3500px);}
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-9 { transform: translate(-4000px);}
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-2 { transform: translate(-696px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-3 { transform: translate(-1165px);}
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-4 { transform: translate(-1636px);} 
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-5 { transform: translate(-2105px);}
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-6 { transform: translate(-2576px);}
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-7 { transform: translate(-3045px);}
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-8 { transform: translate(-3750px);}
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-9 { transform: translate(-4220px);}
 
 
       .component-galleryRoll .toRight .carousel-controls {
@@ -330,20 +330,21 @@
       }
       .component-galleryRoll .toRight .carousel-showmanymoveone .item-last2 .cloneditem-2,
       .component-galleryRoll .toRight .carousel-showmanymoveone .item-last2 .cloneditem-last,
-      .component-galleryRoll .toRight .carousel-showmanymoveone .item-last3 .cloneditem-last{
+      .component-galleryRoll .toRight .carousel-showmanymoveone .item-last3 .cloneditem-last,
+      .component-galleryRoll .toRight .carousel-showmanymoveone .carousel-inner-toRight > .item-last2.active > .cloneditem-3{
         display: none;
       }
+      
+
       .component-galleryRoll .carousel-showmanymoveone .item-last > .cloneditem {
         display: none!important;
       }
-      /* .carousel-inner-toRight .item{
-        flex-direction: row-reverse;
-        display:none;
+      .component-galleryRoll .toRight .carousel-fullWidth-2 .carousel-inner.carousel-inner-toRight > .item.active.item-last2 > .item-list.cloneditem.cloneditem-1.cloneditem-last,
+      .component-galleryRoll .toRight .carousel-fullWidth-3 .carousel-inner.carousel-inner-toRight > .item.item-last3.active > .item-list.cloneditem.cloneditem-2.cloneditem-last{
+        display: block;
       }
-      .carousel-inner-toRight .item.active {
-        display: flex;
-      } */
-            .carousel-inner-toRight .item{
+
+      .carousel-inner-toRight .item{
         -webkit-box-orient: horizontal;
         -webkit-box-direction: reverse;
             -ms-flex-direction: row-reverse;

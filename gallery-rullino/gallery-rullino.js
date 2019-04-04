@@ -24,6 +24,7 @@ $(document).ready(function(){
     var carouselInnerCloned = self.find(".carousel-inner-cloned");
     var carouselItems =  self.find(".carousel-inner > .item");
 
+    var limitContainerWidth = $(".limit-container").width();
 
     // -----------  genera la dimesione del container per le slides  -----------
     rowContainer.addClass("carousel-fullWidth-"+ carouselItems.length );
@@ -92,20 +93,20 @@ $(document).ready(function(){
 
   var stato = false;
 
-  if($(".limit-container").width() > 993){
+  if(limitContainerWidth > 976){
     prependRowRight();
     stato = true;
   }
 
     $(window).resize(function() {
-      if($(".limit-container").width() > 993){
+      if(limitContainerWidth > 976){
         // if(stato == true){
         // }
         if(stato == false){
           prependRowRight();
         }
       }
-      if($(".limit-container").width() < 993){
+      if(limitContainerWidth < 976){
         if(stato == true){
           stato = false;
           appendRowRight();
@@ -114,9 +115,6 @@ $(document).ready(function(){
         // }
       }
     });
-
-
-
 
 
     // ----------- Genera ID degli sliders  -----------
@@ -130,7 +128,8 @@ $(document).ready(function(){
       
       // --- calcolo la translazione in px  -----
       var limitContainer = $(".limit-container").offset();
-      var limitContainerWidth = $(".limit-container").width();
+      // var limitContainerWidth = $(".limit-container").width();
+
 
       var limiTransitiontoLeft = $(".component-galleryRoll-row.multImg.toLeft .slide.carousel-fullWidth").offset();
       var limiTransitiontoRight = $(".component-galleryRoll-row.multImg.toRight > .component-galleryRoll-row-text").offset();
@@ -203,19 +202,14 @@ $(document).ready(function(){
       var itemActiveLast4 =  self.find(".carousel-inner-toRight .item-last4.active");
       var limitContainerWidth = $(".limit-container").width();
 
-      // console.log(itemActiveLast4, itemActiveLast3 );
-
       if(limitContainerWidth >= 1680){
         if(itemActiveLast4 && itemActiveLast4.length) {
           prevToRight.hide();
-          // self.find(".item-last3 .cloneditem-3").addClass("hidden");
         }
       }
       if(limitContainerWidth < 1680){
         if(itemActiveLast3 && itemActiveLast3.length) {
           prevToRight.hide();
-          // self.find(".item-last3 .cloneditem-3").addClass("hidden");
-          // self.find(".item-last2 .cloneditem-3").addClass("hidden");
         }
       }
 
