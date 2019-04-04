@@ -7,6 +7,7 @@ $(document).ready(function(){
     var parent = self.parent(); 
     var rowToLeft = self.parents().hasClass('toLeft'); 
 
+    var rowImage =  self.parent().find(".component-galleryRoll-row-img");
     var carousel = self.find(".carousel.carousel-showmanymoveone");
     var rowContainer = self.find(".carousel.carousel-showmanymoveone.carousel-fullWidth");
     var carouselOpen = self.find(".component-galleryRoll-row-arrow");
@@ -57,7 +58,17 @@ $(document).ready(function(){
     
     });
 
-
+    // animazione all'Hover sull'imagine gallery in desktop
+    if(limitContainerWidth > 1182){
+      rowContainer.on({
+        mouseenter: function () {
+          rowImage.css("transform", "translate(-15px)");
+        },
+        mouseleave: function () {
+          rowImage.css("transform", "translate(15px)");
+        }
+      })
+    }
 
     function generateIdicators(item){
       // ----------- Genera gli Indicators dello slider  -----------
@@ -85,15 +96,12 @@ $(document).ready(function(){
       });
     } 
 
-
-
-
-  var stato = false;
-  
-  if(limitContainerWidth > 976){
-    prependRowRight();
-    stato = true;
-  }
+    var stato = false;
+    
+    if(limitContainerWidth > 976){
+      prependRowRight();
+      stato = true;
+    }
     $(window).resize(function() {
 
       if( $(".limit-container").width() > 976){
