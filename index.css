@@ -20,6 +20,11 @@ body{
     margin-left: -50vw;
     left: 50%;
 }
+.limit-container{
+    max-width: 1920px;
+    overflow-x: hidden;
+    margin: 0 auto;
+}
 
 
 /* BOTTONE CALL-TO-ACTION */
