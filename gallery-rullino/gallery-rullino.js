@@ -199,7 +199,6 @@ $(document).ready(function(){
       }
 
     })
-    console.log(nexToLeft.click());
     prevToLeft.on('click', function(){
       // nexToLeft.show();
       nexToLeft.css({"pointer-events" : "auto", "opacity" : "1"});
@@ -230,6 +229,33 @@ $(document).ready(function(){
       // prevToRight.show();
       prevToRight.css({"pointer-events" : "auto", "opacity" : "1"});
     })
+
+
+
+
+    
+  autoPlayYouTubeModal();
+  function autoPlayYouTubeModal() {
+    var trigger = self.find('[data-toggle="modal"]');
+    console.log(trigger);
+    trigger.click(function () {
+      var theModal = $(this).data("target");
+      var videoSRC = $(this).attr("data-theVideo");
+      var videoSRCauto = videoSRC + "?&theme=dark&autoplay=1&autohide=2&modestbranding=1&showinfo=0&rel=0";
+      console.log(theModal, videoSRC, videoSRCauto);
+      $(theModal + ' iframe').attr('src', videoSRCauto);
+      $(theModal + ' button.close').click(function () {
+        $(theModal + ' iframe').attr('src', videoSRC);
+      });
+      console.log(theModal);
+    });
+  }
+
+
   });
+
+
+
+
 });
 

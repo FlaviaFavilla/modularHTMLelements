@@ -159,7 +159,7 @@
                                     <div class="item active">
                                         <div class="item-list"><img src="../images/540px_357px.png" class="img-responsive"></div>
                                     </div>
-                                    <div class="item">
+                                    <!-- <div class="item">
                                         <div class="item-list"><img src="../images/480px_317px.png" class="img-responsive"></div>
                                     </div>
                                     <div class="item">
@@ -179,15 +179,22 @@
                                     </div>
                                     <div class="item">
                                         <div class="item-list"><img src="../images/608px_350px.png" class="img-responsive"></div>
-                                    </div> 
+                                    </div>  -->
                                     <div class="item">
-                                        <div class="item-list">
-                                            <iframe src="https://www.youtube.com/embed/FIAyz8DHGUA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        <div class="item-list"  data-toggle="modal" data-target="#videoModal" data-theVideo="http://www.youtube.com/embed/FIAyz8DHGUA" >
+                                            <iframe style="pointer-events: none" 
+                                                    src="https://www.youtube.com/embed/FIAyz8DHGUA" 
+                                                    frameborder="0" 
+                                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                                                    allowfullscreen
+                                            ></iframe>
                                         </div>
                                     </div>    
                                     
                                 </div>
-                    
+
+
+
                                 <!-- controlli carosello -->
                                 <div class="carousel-controls carousel-controls-toRight hidden hidden-xs hidden-sm">
                                     <a class="right carousel-control" data-slide="next">
@@ -225,6 +232,26 @@
                     </div>
 
 <!-- -----------------  \\\\\\\  FINE SLIDER  TEMPLATE  ///////  ------------------- -->
+
+<!-- -----------------  \\\\\\\  VIDEO MODAL  ///////  ------------------- -->
+<div class="modals-gallery">
+        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModal" >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <div>
+                                <iframe src="" frameborder="0" 
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</div>
+
+<!-- -----------------  \\\\\\\  FINE VIDEO MODAL  ///////  ------------------- -->
 
                 </div> <!-- chiudo  component-galleryRoll-->
             </div> <!-- chiudo  row -->
