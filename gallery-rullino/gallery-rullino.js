@@ -59,16 +59,16 @@ $(document).ready(function(){
     });
 
     // animazione all'Hover sull'imagine gallery in desktop
-    if(limitContainerWidth > 1182){
-      rowContainer.on({
-        mouseenter: function () {
-          rowImage.css("transform", "translate(-15px)");
-        },
-        mouseleave: function () {
-          rowImage.css("transform", "translate(15px)");
-        }
-      })
-    }
+    // if(limitContainerWidth > 1182){
+    //   rowContainer.on({
+    //     mouseenter: function () {
+    //       rowImage.css("transform", "translate(-15px)");
+    //     },
+    //     mouseleave: function () {
+    //       rowImage.css("transform", "translate(15px)");
+    //     }
+    //   })
+    // }
 
     function generateIdicators(item){
       // ----------- Genera gli Indicators dello slider  -----------
@@ -184,21 +184,26 @@ $(document).ready(function(){
 
       if(limitContainerWidth >= 1680){
         if(itemActiveLast3 && itemActiveLast3.length) {
-          nexToLeft.hide();
+          // nexToLeft.hide();
+          nexToLeft.css({"pointer-events" : "none", "opacity" : "0.5"});
           self.find(".item-last3 .cloneditem-3").addClass("hidden");
         }
       }
       if(limitContainerWidth < 1680){
         if(itemActiveLast2 && itemActiveLast2.length) {
-          nexToLeft.hide();
+          // nexToLeft.hide();
+          nexToLeft.css({"pointer-events" : "none", "opacity" : "0.5"});
           self.find(".item-last3 .cloneditem-3").addClass("hidden");
           self.find(".item-last2 .cloneditem-3").addClass("hidden");
         }
       }
 
     })
+    console.log(nexToLeft.click());
     prevToLeft.on('click', function(){
-      nexToLeft.show()
+      // nexToLeft.show();
+      nexToLeft.css({"pointer-events" : "auto", "opacity" : "1"});
+
     })
 
     // -----------  gestione controller slider ToRight -----------
@@ -209,18 +214,21 @@ $(document).ready(function(){
 
       if(limitContainerWidth >= 1680){
         if(itemActiveLast4 && itemActiveLast4.length) {
-          prevToRight.hide();
+          // prevToRight.hide();
+          prevToRight.css({"pointer-events" : "none", "opacity" : "0.5"});
         }
       }
       if(limitContainerWidth < 1680){
         if(itemActiveLast3 && itemActiveLast3.length) {
-          prevToRight.hide();
+          // prevToRight.hide();
+          prevToRight.css({"pointer-events" : "none", "opacity" : "0.5"});
         }
       }
 
     })
     nexToRight.on('click', function(){
-      prevToRight.show()
+      // prevToRight.show();
+      prevToRight.css({"pointer-events" : "auto", "opacity" : "1"});
     })
   });
 });

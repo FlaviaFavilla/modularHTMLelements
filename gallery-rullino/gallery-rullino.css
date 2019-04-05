@@ -105,6 +105,9 @@
   top: 20px;
   left: 20px;
 }
+.carousel-control, .carousel-control:focus, .carousel-control:hover {
+  opacity: 1;
+}
 .component-galleryRoll .component-galleryRoll-row.toRight .carousel-controls > .carousel-control {
   left: 0;
   margin-left: 22px;
