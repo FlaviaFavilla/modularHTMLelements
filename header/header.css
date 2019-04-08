@@ -8,6 +8,13 @@
     height: 62px;
 }
 
+.row-fullWitdh-header{
+    width: 100vw;
+    position: relative;
+    margin-left: -50vw;
+    left: 50%;
+}
+
 /* Mobiles (Viewport below 768px) */
 @media only screen and (max-width: 768px) {
     .component-header > .component-header-logo{
@@ -34,4 +41,12 @@
         margin: 9px 10px;
     }
 } 
-
+/* ----- Desktop (Viewport above 1920px) ----- */
+@media only screen and (min-width: 1919px) {
+    .row-fullWitdh-header{
+        position: relative;
+        left: -31%;
+        max-width: 1920px;
+        margin-left: inherit;
+    }
+} 
