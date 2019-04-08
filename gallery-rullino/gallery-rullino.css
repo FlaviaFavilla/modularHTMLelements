@@ -577,7 +577,6 @@
 .modals-gallery iframe{
   width: 900px;
   height: 529px;
-  pointer-events: none
 }
 .modals-gallery iframe.size{
 width: 100%;
