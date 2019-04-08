@@ -1,7 +1,17 @@
 $(document).ready(function(){
 
+  var modalsGallery = $(".modals-gallery");
+  var modalGallery = $(".modals-gallery > .modal");
+
+$(".item-list-video").each(function(item){
+    var video = $(this);
+    video.attr('data-target', '#videoModal-' + item);
+    $(modalGallery).clone().appendTo(modalsGallery).attr("id", "videoModal-" + item);
+});
+
+
 // -----------  SELEZIONE TUTTI gli slider, funzioni al clicl sul singolo  -----------
-  $('.component-galleryRoll .component-galleryRoll-row-img.transition').each(function(index) {
+  $('.component-galleryRoll .component-galleryRoll-row-img').each(function(index) {
 
     var self = $(this);
     var parent = self.parent(); 
@@ -237,7 +247,7 @@ $(document).ready(function(){
   autoPlayYouTubeModal();
   function autoPlayYouTubeModal() {
     var trigger = self.find('[data-toggle="modal"]');
-    console.log(trigger);
+    // console.log(trigger);
     trigger.click(function () {
       var theModal = $(this).data("target");
       var videoSRC = $(this).attr("data-theVideo");
@@ -247,7 +257,7 @@ $(document).ready(function(){
       $(theModal + ' button.close').click(function () {
         $(theModal + ' iframe').attr('src', videoSRC);
       });
-      console.log(theModal);
+      // console.log(theModal);
     });
   }
 
@@ -255,7 +265,20 @@ $(document).ready(function(){
   });
 
 
+  $('.component-galleryRoll-row.singleImg .item-list-video').on('click', function(e){
+    var self = $(this);
+    autoPlayYouTubeModal2(self);
+  });
 
+  var autoPlayYouTubeModal2 = function(self) {
+      var theModal = self.data("target");
+      var videoSRC = self.attr("data-theVideo");
+      var videoSRCauto = videoSRC + "?&theme=dark&autoplay=1&autohide=2&modestbranding=1&showinfo=0&rel=0";
+      $(theModal + ' iframe').attr('src', videoSRCauto);
+      $(theModal + ' button.close').click(function () {
+        $(theModal + ' iframe').attr('src', videoSRC);
+      });
+  }
 
 });
 
