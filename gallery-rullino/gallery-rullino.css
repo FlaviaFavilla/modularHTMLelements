@@ -171,6 +171,7 @@
       .component-galleryRoll .item-list > iframe {
         width: 100%;
         height: 248px;
+        pointer-events: auto;
       }
      .component-galleryRoll .carousel-showmanymoveone .cloneditem-1, 
      .component-galleryRoll .carousel-showmanymoveone .cloneditem-2, 
@@ -251,6 +252,7 @@
       .component-galleryRoll .item-list > iframe{
         width: 480px;
         height: 317px;
+        pointer-events: auto;
       }
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth{ width: 400%; }
 
@@ -545,35 +547,37 @@
     }
 }
 
+/*  ------ MODAL VIDEO ----- */
 
-
-
-.modal-backdrop.in {
+.item-list-video > iframe{
+  pointer-events: none
+}
+.modals-gallery .modal-backdrop.in {
   opacity: .75;
 }
-.modal.in .modal-dialog{
+.modals-gallery .modal.in .modal-dialog{
   width: fit-content;
 }
-.modal-content{
+.modals-gallery .modal-content{
   background-color: #ffffff00;
   box-shadow: 0 0 0 0;
   border: 0;
 }
-.modal-body {
+.modals-gallery .modal-body {
   padding: 15px 0 0 0;
   background: #000000;
 }
-.modal-body button.close{
+.modals-gallery .modal-body button.close{
   color: #ffffff;
   opacity: 1;
   margin-right: 15px;
 }
-iframe{
+.modals-gallery iframe{
   width: 900px;
   height: 529px;
+  pointer-events: none
 }
-iframe.size
-{
+.modals-gallery iframe.size{
 width: 100%;
 height:100%;
 border-top-width: 0px;
