@@ -67,9 +67,10 @@ body{
     .cta-button{
         width: 220px;
         height: 40px;
+    }
+    .cta-button span{
         font-size: 12px;
     }
-
 } 
 
 /* ----- Tablet Portrait & Mobile (Viewport below 989px) ----- */

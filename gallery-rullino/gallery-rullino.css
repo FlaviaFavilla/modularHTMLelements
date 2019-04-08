@@ -131,7 +131,7 @@
 .component-galleryRoll .carousel-indicators li {
   background: #DDDDDD;
   border: 1px solid #DDDDDD;
-  margin-left: 30px;
+  margin: 0 15px;
 }
 .carousel-inner-cloned, .carousel-inner-cloned  * {
   display: none;
