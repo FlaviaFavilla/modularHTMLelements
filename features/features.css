@@ -1,8 +1,8 @@
 .component-features{
-  margin: 80px auto;
+  margin: 40px auto;
 }
 .component-features > h3.component-features-title{
-    margin: 80px auto 40px;
+    margin: 0 auto 40px;
     font-family: OpenSans-Bold;
     font-size: 22px;
     text-transform: uppercase;

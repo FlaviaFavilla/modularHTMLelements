@@ -1,3 +1,6 @@
+.component-canvas{
+    margin-bottom: 40px;
+}
 /* Immagine e testo su immagine */
 .component-canvas .component-canvas-image-txtReview{
     position: absolute;
@@ -14,7 +17,7 @@
 
 /* descrizione offerta */
 .component-canvas .component-canvas-text{
-    margin: 30px 0 80px;
+    margin: 30px 0 0;
 }
 .component-canvas .component-canvas-text p{
     max-width: 445px;
