@@ -1,5 +1,5 @@
 .component-galleryRoll .component-galleryRoll-row{
-  margin: 40px auto;
+  margin: 80px auto;
   height: 357px;
 }
 .component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-img{
@@ -98,6 +98,12 @@
 .component-galleryRoll .carousel-controls{
   position: absolute;
 }
+.carousel-controls > .carousel-control.control-active > svg #svg_gallery_arrow_navigate{
+  fill: #AD0C33;
+} 
+.carousel-controls > .carousel-control.control-inactive > svg #svg_gallery_arrow_navigate{
+  fill: #DDDDDD;
+} 
 .component-galleryRoll .carousel-controls > .carousel-control {
   background-image: none;
   position: relative;
