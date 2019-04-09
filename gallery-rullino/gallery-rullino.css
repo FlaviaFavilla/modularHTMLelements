@@ -4,10 +4,11 @@
 }
 .component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-img{
   padding-left: 0;
+  text-align: right;
 }
 .component-galleryRoll .component-galleryRoll-row.toLeft > .component-galleryRoll-row-img{
   padding-right: 0;
-  text-align: right;
+  /* text-align: right; */
 }
 
 .component-galleryRoll .component-galleryRoll-row-text > div{
@@ -28,7 +29,7 @@
   background: #ffffff;
 }
 .component-galleryRoll .toLeft .carousel-fullWidth {
-  left: 30px;
+  /* left: 30px; */
 }
 .component-galleryRoll .item-list {
   float: left;
@@ -59,11 +60,11 @@
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   z-index: 1000;
-  left: 44px;
+  left: 15px;
 }
 .component-galleryRoll .component-galleryRoll-row.toRight .carousel-close{
   border-radius: 5px 0 0 5px;
-  right: 44px;
+  right: 15px;
   left: auto;
 }
 .component-galleryRoll .component-galleryRoll-row-arrow { 
@@ -75,17 +76,17 @@
   position: absolute;
   bottom: 20px;
   cursor: pointer;
-  padding-top: 7px;
+  padding-top: 4px;
   z-index: 200000;
 }
 .component-galleryRoll .component-galleryRoll-row.toLeft .component-galleryRoll-row-arrow { 
   border-radius: 5px 0 0px 5px;
-  left: 9px;
+  left: -21px;
 }
 
 .component-galleryRoll .component-galleryRoll-row.toRight .component-galleryRoll-row-arrow { 
   border-radius: 0 5px 5px 0;
-  right: 9px;
+  right: -20px;;
 }
 .component-galleryRoll .transition{
   -webkit-transition: 1s;
@@ -388,7 +389,7 @@
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-8{ width: 800%; }
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-9{ width: 900%; }
 
-      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-2 { transform: translate(-600px); }
+      .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-2 { transform: translate(-570px); }
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-3 { transform: translate(-1170px); }
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-4 { transform: translate(-1740px); }
       .component-galleryRoll .toRight .carousel-fullWidth.carousel-fullWidth-5 { transform: translate(-2310px); }
