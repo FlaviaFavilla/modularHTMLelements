@@ -273,7 +273,7 @@
       .component-galleryRoll .carousel-showmanymoveone .cloneditem-7, 
       .component-galleryRoll .carousel-showmanymoveone .cloneditem-8,
       .component-galleryRoll .carousel-showmanymoveone .cloneditem-9 {
-         display: none!important;
+         /* display: none!important; */
        }
        .component-galleryRoll .carousel-showmanymoveone .item > .cloneditem-last {
         display: block!important;
@@ -461,6 +461,14 @@
               transform: translate3d(500px, 0, 0);
       left: 0;
     }
+    /* .item-aPiu{
+        -webkit-transform: translate3d(1000px, 0, 0);
+              transform: translate3d(1000px, 0, 0);
+    }
+    .item-aMeno{
+        -webkit-transform: translate3d(-1000px, 0, 0);
+              transform: translate3d(-1000px, 0, 0);
+    } */
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.active.left,
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.prev {
       -webkit-transform: translate3d(-500px, 0, 0);
