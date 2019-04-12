@@ -22,7 +22,7 @@ $(".item-list-video").each(function(item){
     var rowContainer = self.find(".carousel.carousel-showmanymoveone.carousel-fullWidth");
     var carouselOpen = self.find(".component-galleryRoll-row-arrow");
     var carouselControls =  self.find(".carousel-controls");
-    var carouselControlsLink =  self.find(".carousel-controls > a");
+    var carouselControlsLink =  self.find(".carousel-controls > button");
     var nexToLeft = self.find('.carousel-controls-toLeft .right.carousel-control');
     var prevToLeft = self.find('.carousel-controls-toLeft .left.carousel-control');
     var nexToRight = self.find('.carousel-controls-toRight .right.carousel-control');
@@ -184,43 +184,48 @@ $(".item-list-video").each(function(item){
     carouselControlsLink.attr('href', '#slider-' + index);
 
 
+
+
     // -----------  apertura slider -----------
-    (rowContainer, carouselOpen).on("click", function(e){
-      e.stopPropagation();
-      e.preventDefault();
+    function openCarousel(){
+      carouselOpen.add(carouselItems).on("click", function(e){
+        e.stopPropagation();
+        e.preventDefault();
+        carouselItems.off("click");
 
-      // --- calcolo la translazione in px  -----
-      var limitContainer = $(".limit-container").offset();
-      // var limitContainerWidth = $(".limit-container").width();
-
-
-      var limiTransitiontoLeft = $(".component-galleryRoll-row.multImg.toLeft .slide.carousel-fullWidth").offset();
-      var limiTransitiontoRight = $(".component-galleryRoll-row.multImg.toRight > .component-galleryRoll-row-text").offset();
-      var calcToLef = Math.abs(limitContainer.left - limiTransitiontoLeft.left);
-      if(limitContainerWidth > 1199){
-        var calcToRight = Math.abs(limitContainer.left - limiTransitiontoRight.left -30 -15);
-      }else {
-        var calcToRight = Math.abs(limitContainer.left - limiTransitiontoRight.left -10);
-      }
-
-      rowToLeft ? self.css('transform', 'translate( -'+ calcToLef +'px )') : self.css('transform', 'translate( '+ calcToRight +'px )');
-
-      // --- a fine animazione modifica visibiltà elementi  -----
-      parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
-        function(event) {
-          carouselOpen.addClass('hidden');
-          carouselClose.removeClass('hidden');
-          if(limitContainerWidth >= 1680 && carouselItems.length > 3){
-            carouselControls.removeClass('hidden');
-          }
-          if(limitContainerWidth < 1680  && carouselItems.length > 2){
-            carouselControls.removeClass('hidden');
-          }
-        });
-    });
+        // --- calcolo la translazione in px  -----
+        var limitContainer = $(".limit-container").offset();
+        // var limitContainerWidth = $(".limit-container").width();
 
 
+        var limiTransitiontoLeft = $(".component-galleryRoll-row.multImg.toLeft .slide.carousel-fullWidth").offset();
+        var limiTransitiontoRight = $(".component-galleryRoll-row.multImg.toRight > .component-galleryRoll-row-text").offset();
+        var calcToLef = Math.abs(limitContainer.left - limiTransitiontoLeft.left);
+        if(limitContainerWidth > 1199){
+          var calcToRight = Math.abs(limitContainer.left - limiTransitiontoRight.left -30 -15);
+        }else {
+          var calcToRight = Math.abs(limitContainer.left - limiTransitiontoRight.left -10);
+        }
+
+        rowToLeft ? self.css('transform', 'translate( -'+ calcToLef +'px )') : self.css('transform', 'translate( '+ calcToRight +'px )');
+
+        // --- a fine animazione modifica visibiltà elementi  -----
+        parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+          function(event) {
+            carouselOpen.addClass('hidden');
+            carouselClose.removeClass('hidden');
+            if(limitContainerWidth >= 1680 && carouselItems.length > 3){
+              carouselControls.removeClass('hidden');
+            }
+            if(limitContainerWidth < 1680  && carouselItems.length > 2){
+              carouselControls.removeClass('hidden');
+            }
+          });
+      });
+    }
+    openCarousel();
     // -----------  chiusura slider -----------
+    function closeCarousel(){
     carouselClose.on("click", function(e){
       e.stopPropagation();
       
@@ -234,8 +239,14 @@ $(".item-list-video").each(function(item){
           carouselControls.addClass('hidden');
           carouselClose.addClass('hidden');
         });
+        
+      carouselItems.on("click", openCarousel());
+
     });
-    
+    }
+    closeCarousel();
+
+
 
 
     // carouselItems.each(function(item){

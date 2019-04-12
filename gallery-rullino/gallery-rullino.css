@@ -111,6 +111,7 @@
   font-size: inherit;
   top: 20px;
   left: 20px;
+  padding: 0;
 }
 .carousel-control, .carousel-control:focus, .carousel-control:hover {
   opacity: 1;
@@ -122,8 +123,8 @@
 .component-galleryRoll .carousel-control.right {
   margin-left: 22px;
 }
-.component-galleryRoll .carousel-controls.carousel-controls-toLeft > a.right.carousel-control > svg,
-.component-galleryRoll .carousel-controls.carousel-controls-toRight > a.left.carousel-control > svg{
+.component-galleryRoll .carousel-controls.carousel-controls-toLeft > button.right.carousel-control > svg,
+.component-galleryRoll .carousel-controls.carousel-controls-toRight > button.left.carousel-control > svg{
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
