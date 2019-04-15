@@ -229,8 +229,14 @@ $(".item-list-video").each(function(item){
     carouselClose.on("click", function(e){
       e.stopPropagation();
       
+      // rowToLeft ? self.css('transform', '') : self.css('transform', '');
+      self.css('transform', '');
 
-      rowToLeft ? self.css('transform', '') : self.css('transform', '');
+      carouselItems.each(function(item){
+        item == 0 ? $(this).addClass("active") : $(this).removeClass("active");
+
+        
+      });
 
       // --- a fine animazione modifica visibiltà elementi  -----
       parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
@@ -246,14 +252,11 @@ $(".item-list-video").each(function(item){
     }
     closeCarousel();
 
+    carouselItems.each(function(item){
+      // console.log(item);
+      $(this).addClass("item-" + item);
 
-
-
-    // carouselItems.each(function(item){
-    //   // console.log(item);
-    //   $(this).addClass("item-" + item);
-
-    // });
+    });
 
 
     // -----------  gestione controller slider ToLeft -----------
@@ -281,15 +284,26 @@ $(".item-list-video").each(function(item){
           self.find(".item-last2 .cloneditem-3").addClass("hidden");
         }
       }
-
+      prevToLeft.css("pointer-events" , "auto");
+      prevToLeft.addClass("control-active").removeClass("control-inactive");
     })
+
     prevToLeft.on('click', function(){
+      var firstActive = self.find(".carousel-inner-toLeft .active.item-1");
+
       nexToLeft.css("pointer-events" , "auto");
       nexToLeft.addClass("control-active").removeClass("control-inactive");
+      if(firstActive.length == 1){
+        prevToLeft.css("pointer-events" , "none");
+        prevToLeft.addClass("control-inactive").removeClass("control-active");
+      }
     })
 
     // -----------  gestione controller slider ToRight -----------
     prevToRight.on('click', function(){
+      nexToRight.css("pointer-events" , "auto");
+      nexToRight.addClass("control-active").removeClass("control-inactive");
+      
       var itemActiveLast3 =  self.find(".carousel-inner-toRight .item-last3.active");
       var itemActiveLast4 =  self.find(".carousel-inner-toRight .item-last4.active");
       var limitContainerWidth = $(".limit-container").width();
@@ -306,12 +320,18 @@ $(".item-list-video").each(function(item){
           prevToRight.addClass("control-inactive").removeClass("control-active");
         }
       }
-
     })
+
     nexToRight.on('click', function(){
-      // prevToRight.show();
+      var firstActive = self.find(".carousel-inner-toRight .active.item-1");
+
       prevToRight.css("pointer-events" , "auto");
       prevToRight.addClass("control-active").removeClass("control-inactive");
+
+      if(firstActive.length == 1){
+        nexToRight.css("pointer-events" , "none");
+        nexToRight.addClass("control-inactive").removeClass("control-active");
+      }
     })
 
 

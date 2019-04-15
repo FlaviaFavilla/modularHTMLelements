@@ -124,7 +124,7 @@
   margin-left: 22px;
 }
 .component-galleryRoll .carousel-controls.carousel-controls-toLeft > button.right.carousel-control > svg,
-.component-galleryRoll .carousel-controls.carousel-controls-toRight > button.left.carousel-control > svg{
+.component-galleryRoll .carousel-controls.carousel-controls-toRight > button.right.carousel-control > svg{
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
