@@ -1,5 +1,5 @@
-.component-features{
-  margin: 40px auto;
+.component-features {
+  margin: 0 auto!important;
 }
 .component-features > h3.component-features-title{
     margin: 0 auto 40px;
