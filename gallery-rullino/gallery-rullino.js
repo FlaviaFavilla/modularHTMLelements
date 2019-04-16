@@ -34,8 +34,15 @@ $(".item-list-video").each(function(item){
 
     var limitContainerWidth = $(".limit-container").width();
 
+
+    // ----------- Genera ID degli sliders  -----------
+    carousel.attr('id', 'slider-' + index);
+    carouselControlsLink.attr('href', '#slider-' + index);
+
+
     // -----------  genera la dimesione del container per le slides  -----------
     rowContainer.addClass("carousel-fullWidth-"+ carouselItems.length );
+
 
     // -----------  generazione cloni immagine slider  -----------
     carouselItems.each(function(item){
@@ -65,16 +72,28 @@ $(".item-list-video").each(function(item){
       // segno l'ultimo elemento clonato per il positioning in tablet portrait
       $(this).children().last().addClass('cloneditem-last');
     
+      $(this).addClass("item-" + item);
+
     });
 
-      // --- swipe del carosello  -----
-      $(".carousel").swipe({
-        swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
-          if (direction == 'left') $(this).carousel('next');
-          if (direction == 'right') $(this).carousel('prev');
-        },
-        allowPageScroll:"vertical"
-      });
+
+    // -----------  generazione degli Indicators dello slider  -----------
+    function generateIdicators(item){
+      carouselIndicators.append("<li data-slide-to='"+ item +"' data-target='#slider-"+ index +"'></li>" );
+      if(item === 0) {
+        carouselIndicators.children().first().addClass('active');
+      }
+    }
+
+
+    // --- swipe del carosello  -----
+    $(".carousel").swipe({
+      swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+        if (direction == 'left') $(this).carousel('next');
+        if (direction == 'right') $(this).carousel('prev');
+      },
+      allowPageScroll:"vertical"
+    });
 
 
     // animazione all'Hover sull'imagine gallery in desktop
@@ -178,14 +197,6 @@ $(".item-list-video").each(function(item){
     });
 
 
-
-    // ----------- Genera ID degli sliders  -----------
-    carousel.attr('id', 'slider-' + index);
-    carouselControlsLink.attr('href', '#slider-' + index);
-
-
-
-
     // -----------  apertura slider -----------
     function openCarousel(){
       carouselOpen.add(carouselItems).on("click", function(e){
@@ -227,6 +238,8 @@ $(".item-list-video").each(function(item){
       });
     }
     openCarousel();
+
+
     // -----------  chiusura slider -----------
     function closeCarousel(){
     carouselClose.on("click", function(e){
@@ -266,12 +279,6 @@ $(".item-list-video").each(function(item){
     }
     closeCarousel();
 
-    carouselItems.each(function(item){
-      // console.log(item);
-      $(this).addClass("item-" + item);
-
-    });
-
 
     // -----------  gestione controller slider ToLeft -----------
     nexToLeft.on('click', function(){
@@ -280,23 +287,31 @@ $(".item-list-video").each(function(item){
       var itemActiveLast2 =  self.find(".carousel-inner-toLeft .item-last3.active");
       var limitContainerWidth = $(".limit-container").width();
 
+      console.log(itemActiveLast3.length, itemActiveLast2.length);
+
       if(limitContainerWidth >= 1680){
         if(itemActiveLast3 && itemActiveLast3.length) {
-          // nexToLeft.hide();
           nexToLeft.css("pointer-events", "none");
           nexToLeft.addClass("control-inactive").removeClass("control-active");
 
           self.find(".item-last3 .cloneditem-3").addClass("hidden");
+
         }
       }
       if(limitContainerWidth < 1680){
-        if(itemActiveLast2 && itemActiveLast2.length) {
-          // nexToLeft.hide();
+        if(itemActiveLast3 && itemActiveLast3.length) {
+          carouselInner.css({"transform" : "translateX(-160px)", "transition-duration" : "0.7s"});
           nexToLeft.css("pointer-events" , "none");
           nexToLeft.addClass("control-inactive").removeClass("control-active");
           self.find(".item-last3 .cloneditem-3").addClass("hidden");
           self.find(".item-last2 .cloneditem-3").addClass("hidden");
         }
+        // if(itemActiveLast2 && itemActiveLast2.length) {
+        //   nexToLeft.css("pointer-events" , "none");
+        //   nexToLeft.addClass("control-inactive").removeClass("control-active");
+        //   self.find(".item-last3 .cloneditem-3").addClass("hidden");
+        //   self.find(".item-last2 .cloneditem-3").addClass("hidden");
+        // }
       }
       prevToLeft.css("pointer-events" , "auto");
       prevToLeft.addClass("control-active").removeClass("control-inactive");
@@ -305,6 +320,7 @@ $(".item-list-video").each(function(item){
     prevToLeft.on('click', function(){
       var firstActive = self.find(".carousel-inner-toLeft .active.item-1");
 
+      carouselInner.css({"transform" : "translateX(0px)", "transition-duration" : "0.7s"});
       nexToLeft.css("pointer-events" , "auto");
       nexToLeft.addClass("control-active").removeClass("control-inactive");
       if(firstActive.length == 1){
@@ -312,6 +328,7 @@ $(".item-list-video").each(function(item){
         prevToLeft.addClass("control-inactive").removeClass("control-active");
       }
     })
+
 
     // -----------  gestione controller slider ToRight -----------
     prevToRight.on('click', function(){
@@ -329,15 +346,25 @@ $(".item-list-video").each(function(item){
         }
       }
       if(limitContainerWidth < 1680){
-        if(itemActiveLast3 && itemActiveLast3.length) {
+        if(itemActiveLast4 && itemActiveLast4.length) {
           prevToRight.css("pointer-events" , "none");
           prevToRight.addClass("control-inactive").removeClass("control-active");
+
+          carouselInner.css({"transform" : "translateX(140px)", "transition-duration" : "0.7s"});
         }
+//         if(itemActiveLast3 && itemActiveLast3.length) {
+//           prevToRight.css("pointer-events" , "none");
+//           prevToRight.addClass("control-inactive").removeClass("control-active");
+// console.log("ok")
+          
+//             carouselInner.css({"transform" : "translateX(140px)", "transition-duration" : "0.7s"});
+//         }
       }
     })
 
     nexToRight.on('click', function(){
       var firstActive = self.find(".carousel-inner-toRight .active.item-1");
+      carouselInner.css({"transform" : "translateX(0px)", "transition-duration" : "0.7s"});
 
       prevToRight.css("pointer-events" , "auto");
       prevToRight.addClass("control-active").removeClass("control-inactive");
@@ -349,25 +376,23 @@ $(".item-list-video").each(function(item){
     })
 
 
-
-
-    
-  autoPlayYouTubeModal();
-  function autoPlayYouTubeModal() {
-    var trigger = self.find('[data-toggle="modal"]');
-    // console.log(trigger);
-    trigger.click(function () {
-      var theModal = $(this).data("target");
-      var videoSRC = $(this).attr("data-theVideo");
-      var videoSRCauto = videoSRC + "?&theme=dark&autoplay=1&autohide=2&modestbranding=1&showinfo=0&rel=0";
-      console.log(theModal, videoSRC, videoSRCauto);
-      $(theModal + ' iframe').attr('src', videoSRCauto);
-      $(theModal + ' button.close').click(function () {
-        $(theModal + ' iframe').attr('src', videoSRC);
+    // -----------  video youtube modal -----------    
+    autoPlayYouTubeModal();
+    function autoPlayYouTubeModal() {
+      var trigger = self.find('[data-toggle="modal"]');
+      // console.log(trigger);
+      trigger.click(function () {
+        var theModal = $(this).data("target");
+        var videoSRC = $(this).attr("data-theVideo");
+        var videoSRCauto = videoSRC + "?&theme=dark&autoplay=1&autohide=2&modestbranding=1&showinfo=0&rel=0";
+        console.log(theModal, videoSRC, videoSRCauto);
+        $(theModal + ' iframe').attr('src', videoSRCauto);
+        $(theModal + ' button.close').click(function () {
+          $(theModal + ' iframe').attr('src', videoSRC);
+        });
+        // console.log(theModal);
       });
-      // console.log(theModal);
-    });
-  }
+    }
 
 
   });
