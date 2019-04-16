@@ -202,7 +202,7 @@ $(".item-list-video").each(function(item){
         var limiTransitiontoRight = $(".component-galleryRoll-row.multImg.toRight > .component-galleryRoll-row-text").offset();
         var calcToLef = Math.abs(limitContainer.left - limiTransitiontoLeft.left);
         if(limitContainerWidth > 1199){
-          var calcToRight = Math.abs(limitContainer.left - limiTransitiontoRight.left -30 -15);
+          var calcToRight = Math.abs(limitContainer.left - limiTransitiontoRight.left -15);
         }else {
           var calcToRight = Math.abs(limitContainer.left - limiTransitiontoRight.left -10);
         }
@@ -214,6 +214,9 @@ $(".item-list-video").each(function(item){
           function(event) {
             carouselOpen.addClass('hidden');
             carouselClose.removeClass('hidden');
+            carouselClose.css("animation", "showClose 250ms ease-in-out both");
+            rowToLeft ? carouselClose.css("animation", "showCloseLeft 250ms ease-in-out both") : carouselClose.css("animation", "showCloseRight 250ms ease-in-out both");;
+
             if(limitContainerWidth >= 1680 && carouselItems.length > 3){
               carouselControls.removeClass('hidden');
             }
@@ -228,21 +231,32 @@ $(".item-list-video").each(function(item){
     function closeCarousel(){
     carouselClose.on("click", function(e){
       e.stopPropagation();
-      
-      // rowToLeft ? self.css('transform', '') : self.css('transform', '');
-      self.css('transform', '');
 
+      var itamActive;
+      carouselItems.each(function(item){
+        var active = $(this).hasClass("active"); 
+        if(active == true) { return itamActive = item; }
+      });
+
+      self.css('transform', '');
+      carouselOpen.removeClass('hidden');
+      carouselControls.addClass('hidden');
+      // carouselClose.css("animation", "showCloseClose 250ms ease-in-out both");
+      rowToLeft ? carouselClose.css("animation", "showCloseCloseLeft 250ms ease-in-out both") : carouselClose.css("animation", "showCloseCloseRight 250ms ease-in-out both");;
+      
       carouselItems.each(function(item){
         item == 0 ? $(this).addClass("active") : $(this).removeClass("active");
-
-        
       });
+      prevToLeft.css("pointer-events" , "none");
+      prevToLeft.addClass("control-inactive").removeClass("control-active");
+      nexToRight.css("pointer-events" , "none");
+      nexToRight.addClass("control-inactive").removeClass("control-active");
+
 
       // --- a fine animazione modifica visibiltà elementi  -----
       parent.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
         function(event) {
-          carouselOpen.removeClass('hidden');
-          carouselControls.addClass('hidden');
+          carouselClose.css("animation", "");
           carouselClose.addClass('hidden');
         });
         
