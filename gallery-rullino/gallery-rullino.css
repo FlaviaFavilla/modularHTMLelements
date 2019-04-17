@@ -575,6 +575,11 @@
 .modals-gallery .modal-backdrop.in {
   opacity: .75;
 }
+.modals-gallery .modal.fade.in{ 
+  display: flex!important;
+  align-items: center;
+  justify-content: center;
+}
 .modals-gallery .modal.in .modal-dialog{
   width: fit-content;
 }
