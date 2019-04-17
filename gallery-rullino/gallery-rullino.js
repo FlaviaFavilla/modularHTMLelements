@@ -16,6 +16,7 @@ $(".item-list-video").each(function(item){
     var self = $(this);
     var parent = self.parent(); 
     var rowToLeft = self.parents().hasClass('toLeft'); 
+    var rowToRight = self.parents().hasClass('toRight'); 
 
     var rowImage =  self.parent().find(".component-galleryRoll-row-img"); 
     var carousel = self.find(".carousel.carousel-showmanymoveone");
@@ -68,6 +69,7 @@ $(".item-list-video").each(function(item){
       if(item === carouselItems.length-2)  $(this).addClass('item-last2');
       if(item === carouselItems.length-3)  $(this).addClass('item-last3');
       if(item === carouselItems.length-4)  $(this).addClass('item-last4');
+      if(item === carouselItems.length-5)  $(this).addClass('item-last5');
 
       // segno l'ultimo elemento clonato per il positioning in tablet portrait
       $(this).children().last().addClass('cloneditem-last');
@@ -197,6 +199,53 @@ $(".item-list-video").each(function(item){
     });
 
 
+
+
+
+function slideArrowForwardActive(){
+  if(rowToLeft){
+    nexToLeft.css("pointer-events" , "auto");
+    nexToLeft.addClass("control-active").removeClass("control-inactive");
+  }
+  if(rowToRight){
+    prevToRight.css("pointer-events" , "auto");
+    prevToRight.addClass("control-active").removeClass("control-inactive");
+  }
+}
+function slideArrowForwardInactive(){
+  if(rowToLeft){
+    nexToLeft.css("pointer-events" , "none");
+    nexToLeft.addClass("control-inactive").removeClass("control-active");
+  }
+  if(rowToRight){
+    prevToRight.css("pointer-events" , "none");
+    prevToRight.addClass("control-inactive").removeClass("control-active");
+  }
+}
+function slideArrowBackwardActive(){
+  if(rowToLeft){
+    prevToLeft.css("pointer-events" , "auto");
+    prevToLeft.addClass("control-active").removeClass("control-inactive");
+  }
+  if(rowToRight){
+    nexToRight.css("pointer-events" , "auto");
+    nexToRight.addClass("control-active").removeClass("control-inactive");
+  }
+}
+function slideArrowBackwardInctive(){
+  if(rowToLeft){
+    prevToLeft.css("pointer-events" , "none");
+    prevToLeft.addClass("control-inactive").removeClass("control-active");
+  }
+  if(rowToRight){
+    nexToRight.css("pointer-events" , "none");
+    nexToRight.addClass("control-inactive").removeClass("control-active");
+  }
+}
+
+
+
+
     // -----------  apertura slider -----------
     function openCarousel(){
       carouselOpen.add(carouselItems).on("click", function(e){
@@ -228,6 +277,8 @@ $(".item-list-video").each(function(item){
             carouselClose.css("animation", "showClose 250ms ease-in-out both");
             rowToLeft ? carouselClose.css("animation", "showCloseLeft 250ms ease-in-out both") : carouselClose.css("animation", "showCloseRight 250ms ease-in-out both");;
 
+            slideArrowForwardActive();
+
             if(limitContainerWidth >= 1680 && carouselItems.length > 3){
               carouselControls.removeClass('hidden');
             }
@@ -250,6 +301,7 @@ $(".item-list-video").each(function(item){
         var active = $(this).hasClass("active"); 
         if(active == true) { return itamActive = item; }
       });
+      carouselInner.css({"transform" : "translateX(0px)", "transition-duration" : "0.7s"});
 
       self.css('transform', '');
       carouselOpen.removeClass('hidden');
@@ -281,99 +333,190 @@ $(".item-list-video").each(function(item){
 
 
     // -----------  gestione controller slider ToLeft -----------
-    nexToLeft.on('click', function(){
-
-      var itemActiveLast3 =  self.find(".carousel-inner-toLeft .item-last4.active");
-      var itemActiveLast2 =  self.find(".carousel-inner-toLeft .item-last3.active");
+    function slideBack(firstActive){
+      carouselInner.css({"transform" : "translateX(0px)", "transition-duration" : "0.7s"});
+      if(rowToLeft){
+        // nexToLeft.css("pointer-events" , "auto");
+        // nexToLeft.addClass("control-active").removeClass("control-inactive");
+        slideArrowForwardActive();
+        if(firstActive.length == 1){
+          // prevToLeft.css("pointer-events" , "none");
+          // prevToLeft.addClass("control-inactive").removeClass("control-active");
+          slideArrowBackwardInctive();
+        }
+      }
+      if(rowToRight){
+        // prevToRight.css("pointer-events" , "auto");
+        // prevToRight.addClass("control-active").removeClass("control-inactive");
+        slideArrowForwardActive();
+  
+        if(firstActive.length == 1){
+          slideArrowBackwardInctive();
+          // nexToRight.css("pointer-events" , "none");
+          // nexToRight.addClass("control-inactive").removeClass("control-active");
+        }
+      }
+    };
+    function slideForward(itemActiveLast3, itemActiveLast4, itemActiveLast5){
       var limitContainerWidth = $(".limit-container").width();
 
-      console.log(itemActiveLast3.length, itemActiveLast2.length);
+      if(rowToLeft){
+        // prevToLeft.css("pointer-events" , "auto");
+        // prevToLeft.addClass("control-active").removeClass("control-inactive");
+        slideArrowBackwardActive();
 
-      if(limitContainerWidth >= 1680){
-        if(itemActiveLast3 && itemActiveLast3.length) {
-          nexToLeft.css("pointer-events", "none");
-          nexToLeft.addClass("control-inactive").removeClass("control-active");
-
-          self.find(".item-last3 .cloneditem-3").addClass("hidden");
-
+        if(limitContainerWidth >= 1680){
+          if(itemActiveLast4 && itemActiveLast4.length) {
+            carouselInner.css({"transform" : "translateX(-297px)", "transition-duration" : "0.7s"});
+            // nexToLeft.css("pointer-events", "none");
+            // nexToLeft.addClass("control-inactive").removeClass("control-active");
+            slideArrowForwardInactive();
+            self.find(".item-last3 .cloneditem-3").addClass("hidden");
+          }
+        }
+        if(limitContainerWidth < 1680){
+          if(itemActiveLast3 && itemActiveLast3.length) {
+            carouselInner.css({"transform" : "translateX(-160px)", "transition-duration" : "0.7s"});
+            // nexToLeft.css("pointer-events" , "none");
+            // nexToLeft.addClass("control-inactive").removeClass("control-active");
+            slideArrowForwardInactive();
+            self.find(".item-last3 .cloneditem-3").addClass("hidden");
+            self.find(".item-last2 .cloneditem-3").addClass("hidden");
+          }
         }
       }
-      if(limitContainerWidth < 1680){
-        if(itemActiveLast3 && itemActiveLast3.length) {
-          carouselInner.css({"transform" : "translateX(-160px)", "transition-duration" : "0.7s"});
-          nexToLeft.css("pointer-events" , "none");
-          nexToLeft.addClass("control-inactive").removeClass("control-active");
-          self.find(".item-last3 .cloneditem-3").addClass("hidden");
-          self.find(".item-last2 .cloneditem-3").addClass("hidden");
+
+      if(rowToRight){
+        // nexToRight.css("pointer-events" , "auto");
+        // nexToRight.addClass("control-active").removeClass("control-inactive");
+        slideArrowBackwardActive();
+
+        if(limitContainerWidth >= 1680){
+          if(itemActiveLast5 && itemActiveLast5.length) {
+            // prevToRight.css("pointer-events" , "none");
+            // prevToRight.addClass("control-inactive").removeClass("control-active");
+            slideArrowForwardInactive();
+
+            carouselInner.css({"transform" : "translateX(300px)", "transition-duration" : "0.7s"});
+          }
         }
-        // if(itemActiveLast2 && itemActiveLast2.length) {
-        //   nexToLeft.css("pointer-events" , "none");
-        //   nexToLeft.addClass("control-inactive").removeClass("control-active");
-        //   self.find(".item-last3 .cloneditem-3").addClass("hidden");
-        //   self.find(".item-last2 .cloneditem-3").addClass("hidden");
-        // }
-      }
-      prevToLeft.css("pointer-events" , "auto");
-      prevToLeft.addClass("control-active").removeClass("control-inactive");
+        if(limitContainerWidth < 1680){
+          if(itemActiveLast4 && itemActiveLast4.length) {
+            // prevToRight.css("pointer-events" , "none");
+            // prevToRight.addClass("control-inactive").removeClass("control-active");
+            slideArrowForwardInactive();
+
+  
+            carouselInner.css({"transform" : "translateX(140px)", "transition-duration" : "0.7s"});
+          }
+        }
+      };
+    };
+
+    nexToLeft.on('click', function(){
+
+      var itemActiveLast4 =  self.find(".carousel-inner-toLeft .item-last5.active");
+      var itemActiveLast3 =  self.find(".carousel-inner-toLeft .item-last4.active");
+      var itemActiveLast2 =  self.find(".carousel-inner-toLeft .item-last3.active");
+      // console.log(itemActiveLast3.length , itemActiveLast4.length);
+      slideForward(itemActiveLast3, itemActiveLast4, "");
+
+      // var limitContainerWidth = $(".limit-container").width();
+
+      // console.log(itemActiveLast3.length, itemActiveLast2.length);
+
+      // if(limitContainerWidth >= 1680){
+      //   if(itemActiveLast3 && itemActiveLast3.length) {
+      //     nexToLeft.css("pointer-events", "none");
+      //     nexToLeft.addClass("control-inactive").removeClass("control-active");
+
+      //     self.find(".item-last3 .cloneditem-3").addClass("hidden");
+
+      //   }
+      // }
+      // if(limitContainerWidth < 1680){
+      //   if(itemActiveLast3 && itemActiveLast3.length) {
+      //     carouselInner.css({"transform" : "translateX(-160px)", "transition-duration" : "0.7s"});
+      //     nexToLeft.css("pointer-events" , "none");
+      //     nexToLeft.addClass("control-inactive").removeClass("control-active");
+      //     self.find(".item-last3 .cloneditem-3").addClass("hidden");
+      //     self.find(".item-last2 .cloneditem-3").addClass("hidden");
+      //   }
+      //   // if(itemActiveLast2 && itemActiveLast2.length) {
+      //   //   nexToLeft.css("pointer-events" , "none");
+      //   //   nexToLeft.addClass("control-inactive").removeClass("control-active");
+      //   //   self.find(".item-last3 .cloneditem-3").addClass("hidden");
+      //   //   self.find(".item-last2 .cloneditem-3").addClass("hidden");
+      //   // }
+      // }
+      // prevToLeft.css("pointer-events" , "auto");
+      // prevToLeft.addClass("control-active").removeClass("control-inactive");
     })
 
     prevToLeft.on('click', function(){
       var firstActive = self.find(".carousel-inner-toLeft .active.item-1");
 
-      carouselInner.css({"transform" : "translateX(0px)", "transition-duration" : "0.7s"});
-      nexToLeft.css("pointer-events" , "auto");
-      nexToLeft.addClass("control-active").removeClass("control-inactive");
-      if(firstActive.length == 1){
-        prevToLeft.css("pointer-events" , "none");
-        prevToLeft.addClass("control-inactive").removeClass("control-active");
-      }
+      slideBack(firstActive);
+
+      // carouselInner.css({"transform" : "translateX(0px)", "transition-duration" : "0.7s"});
+      // nexToLeft.css("pointer-events" , "auto");
+      // nexToLeft.addClass("control-active").removeClass("control-inactive");
+      // if(firstActive.length == 1){
+      //   prevToLeft.css("pointer-events" , "none");
+      //   prevToLeft.addClass("control-inactive").removeClass("control-active");
+      // }
     })
 
 
     // -----------  gestione controller slider ToRight -----------
     prevToRight.on('click', function(){
-      nexToRight.css("pointer-events" , "auto");
-      nexToRight.addClass("control-active").removeClass("control-inactive");
-      
       var itemActiveLast3 =  self.find(".carousel-inner-toRight .item-last3.active");
       var itemActiveLast4 =  self.find(".carousel-inner-toRight .item-last4.active");
-      var limitContainerWidth = $(".limit-container").width();
+      var itemActiveLast5 =  self.find(".carousel-inner-toRight .item-last5.active");
+      slideForward("", itemActiveLast4, itemActiveLast5);
+      // var limitContainerWidth = $(".limit-container").width();
 
-      if(limitContainerWidth >= 1680){
-        if(itemActiveLast4 && itemActiveLast4.length) {
-          prevToRight.css("pointer-events" , "none");
-          prevToRight.addClass("control-inactive").removeClass("control-active");
-        }
-      }
-      if(limitContainerWidth < 1680){
-        if(itemActiveLast4 && itemActiveLast4.length) {
-          prevToRight.css("pointer-events" , "none");
-          prevToRight.addClass("control-inactive").removeClass("control-active");
-
-          carouselInner.css({"transform" : "translateX(140px)", "transition-duration" : "0.7s"});
-        }
-//         if(itemActiveLast3 && itemActiveLast3.length) {
+//       nexToRight.css("pointer-events" , "auto");
+//       nexToRight.addClass("control-active").removeClass("control-inactive");
+      
+//       if(limitContainerWidth >= 1680){
+//         if(itemActiveLast4 && itemActiveLast4.length) {
 //           prevToRight.css("pointer-events" , "none");
 //           prevToRight.addClass("control-inactive").removeClass("control-active");
-// console.log("ok")
-          
-//             carouselInner.css({"transform" : "translateX(140px)", "transition-duration" : "0.7s"});
 //         }
-      }
+//       }
+//       if(limitContainerWidth < 1680){
+//         if(itemActiveLast4 && itemActiveLast4.length) {
+//           prevToRight.css("pointer-events" , "none");
+//           prevToRight.addClass("control-inactive").removeClass("control-active");
+
+//           carouselInner.css({"transform" : "translateX(140px)", "transition-duration" : "0.7s"});
+//         }
+// //         if(itemActiveLast3 && itemActiveLast3.length) {
+// //           prevToRight.css("pointer-events" , "none");
+// //           prevToRight.addClass("control-inactive").removeClass("control-active");
+// // console.log("ok")
+          
+// //             carouselInner.css({"transform" : "translateX(140px)", "transition-duration" : "0.7s"});
+// //         }
+//       }
     })
 
     nexToRight.on('click', function(){
       var firstActive = self.find(".carousel-inner-toRight .active.item-1");
-      carouselInner.css({"transform" : "translateX(0px)", "transition-duration" : "0.7s"});
 
-      prevToRight.css("pointer-events" , "auto");
-      prevToRight.addClass("control-active").removeClass("control-inactive");
+      slideBack(firstActive);
+      // carouselInner.css({"transform" : "translateX(0px)", "transition-duration" : "0.7s"});
 
-      if(firstActive.length == 1){
-        nexToRight.css("pointer-events" , "none");
-        nexToRight.addClass("control-inactive").removeClass("control-active");
-      }
+      // prevToRight.css("pointer-events" , "auto");
+      // prevToRight.addClass("control-active").removeClass("control-inactive");
+
+      // if(firstActive.length == 1){
+      //   nexToRight.css("pointer-events" , "none");
+      //   nexToRight.addClass("control-inactive").removeClass("control-active");
+      // }
     })
+
 
 
     // -----------  video youtube modal -----------    
