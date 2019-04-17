@@ -309,6 +309,14 @@
         width: 480px;
         height: 317px;
       }
+      .component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-img.transition:hover{
+        transform: translate(15px);
+        cursor : pointer;
+      }
+      .component-galleryRoll .component-galleryRoll-row.toLeft > .component-galleryRoll-row-img.transition:hover{
+        transform: translate(-15px);
+        cursor : pointer;
+      }
 
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-2{ width: 250%; }
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-3{ width: 350%; }
@@ -389,6 +397,14 @@
         width: 540px;
         height: 357px;
       }
+      .component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-img.transition:hover{
+        transform: translate(15px);
+        cursor : pointer;
+      }
+      .component-galleryRoll .component-galleryRoll-row.toLeft > .component-galleryRoll-row-img.transition:hover{
+        transform: translate(-15px);
+        cursor : pointer;
+      }
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-2{ width: 200%; }
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-3{ width: 300%; }
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-4{ width: 400%; }
@@ -440,7 +456,7 @@
 
 
   @media all and (min-width: 768px) {
-    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.left,
+    /* .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.left,
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .prev {
       left: -500px;
     }
@@ -452,39 +468,126 @@
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .prev.right,
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active {
       left: 0;
-    }
+    } */
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner .cloneditem-1 {
       display: block;
     }
   }
   @media all and (min-width: 768px) and (transform-3d), all and (min-width: 768px) and (-webkit-transform-3d) {
+
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.active.right,
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.next {
       -webkit-transform: translate3d(500px, 0, 0);
               transform: translate3d(500px, 0, 0);
       left: 0;
     }
-    /* .item-aPiu{
-        -webkit-transform: translate3d(1000px, 0, 0);
-              transform: translate3d(1000px, 0, 0);
-    }
-    .item-aMeno{
-        -webkit-transform: translate3d(-1000px, 0, 0);
-              transform: translate3d(-1000px, 0, 0);
-    } */
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.active.left,
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.prev {
       -webkit-transform: translate3d(-500px, 0, 0);
               transform: translate3d(-500px, 0, 0);
       left: 0;
     }
-    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.left,
+
+
+    .component-galleryRoll .carousel-showmanymoveone.carouselSwipe1 .carousel-inner > .item.active.right,
+    .component-galleryRoll .carousel-showmanymoveone.carouselSwipe1 .carousel-inner > .item.next.left{
+      -webkit-transform: translate3d(500px, 0, 0)!important;
+              transform: translate3d(500px, 0, 0)!important;
+      left: 0;
+      transition-delay: 0.6s!important;
+      transition-duration: 0.7s!important;
+    }
+    .component-galleryRoll .carousel-showmanymoveone.carouselSwipe1 .carousel-inner > .item.active.left,
+    .component-galleryRoll .carousel-showmanymoveone.carouselSwipe1 .carousel-inner > .item.prev {
+      -webkit-transform: translate3d(-500px, 0, 0)!important;
+              transform: translate3d(-500px, 0, 0)!important;
+      left: 0;
+      transition-delay: 0.6s!important;
+      transition-duration: 0.7s!important;
+    }
+    .component-galleryRoll .carousel-showmanymoveone.carouselSwipe2 .carousel-inner > .item.active.right,
+    .component-galleryRoll .carousel-showmanymoveone.carouselSwipe2 .carousel-inner > .item.next {
+      -webkit-transform: translate3d(1000px, 0, 0)!important;
+              transform: translate3d(1000px, 0, 0)!important;
+      left: 0;
+      transition-delay: 0.6s!important;
+      transition-duration: 0.7s!important;
+    }
+    .component-galleryRoll .carousel-showmanymoveone.carouselSwipe2 .carousel-inner > .item.active.left,
+    .component-galleryRoll .carousel-showmanymoveone.carouselSwipe2 .carousel-inner > .item.prev {
+      -webkit-transform: translate3d(-1000px, 0, 0)!important;
+              transform: translate3d(-1000px, 0, 0)!important;
+      left: 0;
+      transition-delay: 0.6s!important;
+      transition-duration: 0.7s!important;
+    }
+    .component-galleryRoll .carousel-showmanymoveone.carouselSwipe3 .carousel-inner > .item.active.left,
+    .component-galleryRoll .carousel-showmanymoveone.carouselSwipe3 .carousel-inner > .item.prev {
+      -webkit-transform: translate3d(-1500px, 0, 0)!important;
+              transform: translate3d(-1500px, 0, 0)!important;
+      left: 0;
+      transition-delay: 0.6s!important;
+      transition-duration: 0.7s!important;
+    }
+    .component-galleryRoll .carousel-showmanymoveone.carouselSwipe3 .carousel-inner > .item.active.right,
+    .component-galleryRoll .carousel-showmanymoveone.carouselSwipe3 .carousel-inner > .item.next {
+      -webkit-transform: translate3d(1500px, 0, 0)!important;
+              transform: translate3d(1500px, 0, 0)!important;
+      left: 0;
+      transition-delay: 0.6s!important;
+      transition-duration: 0.7s!important;
+    }
+
+
+
+
+    .component-galleryRoll .carousel-showmanymoveone.carouselSwipe4 .carousel-inner > .next {
+      -webkit-transform: translate3d(2000px, 0, 0)!important;
+              transform: translate3d(2000px, 0, 0)!important;
+      left: 0;
+      /* transition-delay: 0s!important;
+      transition-duration: 0.6s!important; */
+    }
+    .component-galleryRoll .carousel-showmanymoveone.carouselSwipe4 .carousel-inner > .active.right {
+      -webkit-transform: translate3d(2000px, 0, 0)!important;
+              transform: translate3d(2000px, 0, 0)!important;
+      left: 0;
+      /* transition-delay: 0s!important;
+      transition-duration: 2s!important; */
+    }
+
+    .component-galleryRoll .carousel-showmanymoveone.carouselSwipe4 .carousel-inner > .prev {
+      -webkit-transform: translate3d(-2000px, 0, 0)!important;
+              transform: translate3d(-2000px, 0, 0)!important;
+      left: 0;
+      /* transition-delay: 0s!important;
+      transition-duration: 0.6s!important; */
+    }
+    .component-galleryRoll .carousel-showmanymoveone.carouselSwipe4 .carousel-inner > .active.left{
+      -webkit-transform: translate3d(-2000px, 0, 0)!important;
+              transform: translate3d(-2000px, 0, 0)!important;
+      left: 0;
+      /* transition-delay: 0s!important;
+      transition-duration: 2s!important; */
+    }
+
+
+
+
+
+
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.next.left,
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.prev.right,
     .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .item.active {
       -webkit-transform: translate3d(0, 0, 0);
               transform: translate3d(0, 0, 0);
       left: 0;
     }
+
+    /* .component-galleryRoll .carousel-showmanymoveone .carousel-inner .item.prev, 
+    .component-galleryRoll .carousel-showmanymoveone .carousel-inner .item.next
+     { transition:none!important; } */
+
   }
   @media all and (min-width: 992px) {
    .component-galleryRoll .carousel-showmanymoveone .carousel-inner > .active.left,
