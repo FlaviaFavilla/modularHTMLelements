@@ -58,70 +58,71 @@
 <!-- -----------------  \\\\\\\  SLIDER  TEMPLATE  ///////  ------------------- -->
                     <div class="row component-galleryRoll-row multImg toLeft">
                         <div class="col-sm-12 col-md-6 col-md-push-6 component-galleryRoll-row-img transition">
-                            <button class="btn component-galleryRoll-row-arrow hidden-xs hidden-sm">
-                                <!-- <img src="../images/Gallery_Arrow_Open.svg"> -->
-                                <svg width="16px" height="7px" viewBox="0 0 16 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <g id="Gallery" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <g id="svg_gallery_arrow_open" transform="translate(-775.000000, -846.000000)" fill="#000000" fill-rule="nonzero">
-                                            <path d="M785,849 L785,846 L791,849.5 L785,853 L785,850 L775,850 L775,849 L785,849 Z" id="Combined-Shape"></path>
+                            <div class="component-galleryRoll-row-carousel-hover transition">
+                                <button class="btn component-galleryRoll-row-arrow hidden-xs hidden-sm">
+                                    <!-- <img src="../images/Gallery_Arrow_Open.svg"> -->
+                                    <svg width="16px" height="7px" viewBox="0 0 16 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g id="Gallery" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="svg_gallery_arrow_open" transform="translate(-775.000000, -846.000000)" fill="#000000" fill-rule="nonzero">
+                                                <path d="M785,849 L785,846 L791,849.5 L785,853 L785,850 L775,850 L775,849 L785,849 Z" id="Combined-Shape"></path>
+                                            </g>
                                         </g>
-                                    </g>
-                                </svg>
-                            </button>
-                            <!-- chiusura carosello -->
-                            <button class="btn carousel-close hidden hidden-xs hidden-sm">
-                                <!-- <img src="../images/Gallery_Cross_Close.svg"> -->
-                                <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <g id="svg_gallery_cross_close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <path d="M6.70710678,5.29289322 L12,3.55271368e-15 L13.4142136,1.41421356 L8.12132034,6.70710678 L13.4142136,12 L12,13.4142136 L6.70710678,8.12132034 L1.41421356,13.4142136 L0,12 L5.29289322,6.70710678 L0,1.41421356 L1.41421356,3.55271368e-15 L6.70710678,5.29289322 Z" id="Combined-Shape" fill="#AD0C33" fill-rule="nonzero"></path>
-                                    </g>
-                                </svg>
-                            </button>
-                            <div class="carousel carousel-showmanymoveone slide carousel-fullWidth"  data-keyboard="true"   data-wrap="false" data-interval="false">
+                                    </svg>
+                                </button>
+                                <!-- chiusura carosello -->
+                                <button class="btn carousel-close hidden hidden-xs hidden-sm">
+                                    <!-- <img src="../images/Gallery_Cross_Close.svg"> -->
+                                    <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g id="svg_gallery_cross_close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <path d="M6.70710678,5.29289322 L12,3.55271368e-15 L13.4142136,1.41421356 L8.12132034,6.70710678 L13.4142136,12 L12,13.4142136 L6.70710678,8.12132034 L1.41421356,13.4142136 L0,12 L5.29289322,6.70710678 L0,1.41421356 L1.41421356,3.55271368e-15 L6.70710678,5.29289322 Z" id="Combined-Shape" fill="#AD0C33" fill-rule="nonzero"></path>
+                                        </g>
+                                    </svg>
+                                </button>
+                                <div class="carousel carousel-showmanymoveone slide carousel-fullWidth"  data-keyboard="true"   data-wrap="false" data-interval="false">
 
-                                <!-- immagini carosello -->
-                                <div class="carousel-inner carousel-inner-toLeft">
-                                    <div class="item active">
-                                        <div class="item-list"><img src="../images/540px_357px.png" class="img-responsive"></div>
+                                    <!-- immagini carosello -->
+                                    <div class="carousel-inner carousel-inner-toLeft">
+                                        <div class="item active">
+                                            <div class="item-list"><img src="../images/540px_357px.png" class="img-responsive"></div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="item-list"><img src="../images/480px_317px.png" class="img-responsive"></div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="item-list"><img src="../images/608px_350px.png" class="img-responsive"></div>
+                                        </div>     
+                                        <div class="item">
+                                            <div class="item-list"><img src="../images/logo1.png" class="img-responsive"></div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="item-list"><img src="../images/logo2.png" class="img-responsive"></div>
+                                        </div>                    
                                     </div>
-                                    <div class="item">
-                                        <div class="item-list"><img src="../images/480px_317px.png" class="img-responsive"></div>
+
+                                    <!-- controlli carosello -->
+                                    <div class="carousel-controls carousel-controls-toLeft hidden hidden-xs hidden-sm">
+                                        <button class="btn left carousel-control control-inactive"  data-slide="prev">
+                                            <!-- <img src="../images/Gallery_Arrow_Navigate.svg" class=""> -->
+                                            <svg width="10px" height="18px" viewBox="0 0 10 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <g id="Gallery" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon id="svg_gallery_arrow_navigate" fill="" fill-rule="nonzero" points="9.78125915 16.4621105 8.31914862 17.826747 0 8.91337352 8.31914862 0 9.78125915 1.3646365 2.73577127 8.91337352"></polygon>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <button class="btn right carousel-control control-active" data-slide="next">
+                                            <!-- <img src="../images/Gallery_Arrow_Navigate.svg" class=""> -->
+                                            <svg width="10px" height="18px" viewBox="0 0 10 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <g id="Gallery" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon id="svg_gallery_arrow_navigate" fill="" fill-rule="nonzero" points="9.78125915 16.4621105 8.31914862 17.826747 0 8.91337352 8.31914862 0 9.78125915 1.3646365 2.73577127 8.91337352"></polygon>
+                                                </g>
+                                            </svg>
+                                        </button>
                                     </div>
-                                    <div class="item">
-                                        <div class="item-list"><img src="../images/608px_350px.png" class="img-responsive"></div>
-                                    </div>     
-                                    <div class="item">
-                                        <div class="item-list"><img src="../images/logo1.png" class="img-responsive"></div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="item-list"><img src="../images/logo2.png" class="img-responsive"></div>
-                                    </div>                    
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators hidden-md hidden-lg">
+                                    </ol>
+
                                 </div>
-
-                                <!-- controlli carosello -->
-                                <div class="carousel-controls carousel-controls-toLeft hidden hidden-xs hidden-sm">
-                                    <button class="btn left carousel-control control-inactive"  data-slide="prev">
-                                        <!-- <img src="../images/Gallery_Arrow_Navigate.svg" class=""> -->
-                                        <svg width="10px" height="18px" viewBox="0 0 10 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <g id="Gallery" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <polygon id="svg_gallery_arrow_navigate" fill="" fill-rule="nonzero" points="9.78125915 16.4621105 8.31914862 17.826747 0 8.91337352 8.31914862 0 9.78125915 1.3646365 2.73577127 8.91337352"></polygon>
-                                            </g>
-                                        </svg>
-                                    </a>
-                                    <button class="btn right carousel-control control-active" data-slide="next">
-                                        <!-- <img src="../images/Gallery_Arrow_Navigate.svg" class=""> -->
-                                        <svg width="10px" height="18px" viewBox="0 0 10 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <g id="Gallery" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <polygon id="svg_gallery_arrow_navigate" fill="" fill-rule="nonzero" points="9.78125915 16.4621105 8.31914862 17.826747 0 8.91337352 8.31914862 0 9.78125915 1.3646365 2.73577127 8.91337352"></polygon>
-                                            </g>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <!-- Indicators -->
-                                <ol class="carousel-indicators hidden-md hidden-lg">
-                                </ol>
-                            
-
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-pull-6 col-md-offset-0 component-galleryRoll-row-text">
@@ -136,89 +137,91 @@
                     </div>
                     <div class="row component-galleryRoll-row multImg toRight">
                         <div class="col-sm-12 col-md-6 component-galleryRoll-row-img transition">
-                            <button class="btn component-galleryRoll-row-arrow hidden-xs hidden-sm">
-                                <!-- <img src="../images/Gallery_Arrow_Open.svg"> -->
-                                <svg width="16px" height="7px" viewBox="0 0 16 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <g id="Gallery" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <g id="svg_gallery_arrow_open" transform="translate(-775.000000, -846.000000)" fill="#000000" fill-rule="nonzero">
-                                            <path d="M785,849 L785,846 L791,849.5 L785,853 L785,850 L775,850 L775,849 L785,849 Z" id="Combined-Shape"></path>
+                            <div class="component-galleryRoll-row-carousel-hover transition">
+                                <button class="btn component-galleryRoll-row-arrow hidden-xs hidden-sm">
+                                    <!-- <img src="../images/Gallery_Arrow_Open.svg"> -->
+                                    <svg width="16px" height="7px" viewBox="0 0 16 7" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g id="Gallery" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <g id="svg_gallery_arrow_open" transform="translate(-775.000000, -846.000000)" fill="#000000" fill-rule="nonzero">
+                                                <path d="M785,849 L785,846 L791,849.5 L785,853 L785,850 L775,850 L775,849 L785,849 Z" id="Combined-Shape"></path>
+                                            </g>
                                         </g>
-                                    </g>
-                                </svg>
-                            </button>
-                            <!-- chiusura carosello -->
-                            <button class="btn carousel-close hidden hidden-xs hidden-sm">
-                                <!-- <img src="../images/Gallery_Cross_Close.svg"> -->
-                                <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                    <g id="svg_gallery_cross_close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                        <path d="M6.70710678,5.29289322 L12,3.55271368e-15 L13.4142136,1.41421356 L8.12132034,6.70710678 L13.4142136,12 L12,13.4142136 L6.70710678,8.12132034 L1.41421356,13.4142136 L0,12 L5.29289322,6.70710678 L0,1.41421356 L1.41421356,3.55271368e-15 L6.70710678,5.29289322 Z" id="Combined-Shape" fill="#AD0C33" fill-rule="nonzero"></path>
-                                    </g>
-                                </svg>
-                            </button>
-                            <div class="carousel carousel-showmanymoveone slide carousel-fullWidth"  data-keyboard="true" data-wrap="false" data-interval="false">
+                                    </svg>
+                                </button>
+                                <!-- chiusura carosello -->
+                                <button class="btn carousel-close hidden hidden-xs hidden-sm">
+                                    <!-- <img src="../images/Gallery_Cross_Close.svg"> -->
+                                    <svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g id="svg_gallery_cross_close" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                            <path d="M6.70710678,5.29289322 L12,3.55271368e-15 L13.4142136,1.41421356 L8.12132034,6.70710678 L13.4142136,12 L12,13.4142136 L6.70710678,8.12132034 L1.41421356,13.4142136 L0,12 L5.29289322,6.70710678 L0,1.41421356 L1.41421356,3.55271368e-15 L6.70710678,5.29289322 Z" id="Combined-Shape" fill="#AD0C33" fill-rule="nonzero"></path>
+                                        </g>
+                                    </svg>
+                                </button>
+                                <div class="carousel carousel-showmanymoveone slide carousel-fullWidth"  data-keyboard="true" data-wrap="false" data-interval="false">
 
-                                <!-- immagini carosello -->
-                                <div class="carousel-inner carousel-inner-toRight">
-                                    <div class="item active">
-                                        <div class="item-list"><img src="../images/540px_357px.png" class="img-responsive"></div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="item-list"><img src="../images/480px_317px.png" class="img-responsive"></div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="item-list"><img src="../images/608px_350px.png" class="img-responsive"></div>
-                                    </div>    
-                                    <div class="item">
-                                        <div class="item-list"><img src="../images/480px_317px.png" class="img-responsive"></div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="item-list"><img src="../images/608px_350px.png" class="img-responsive"></div>
-                                    </div> 
-                                    <div class="item">
-                                        <div class="item-list"><img src="../images/480px_317px.png" class="img-responsive"></div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="item-list"><img src="../images/480px_317px.png" class="img-responsive"></div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="item-list"><img src="../images/608px_350px.png" class="img-responsive"></div>
-                                    </div> 
-                                    <div class="item">
-                                        <div class="item-list item-list-video"  data-toggle="modal" data-target="" data-theVideo="http://www.youtube.com/embed/FIAyz8DHGUA" >
-                                            <iframe src="https://www.youtube.com/embed/FIAyz8DHGUA" 
-                                                    frameborder="0" 
-                                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                                                    allowfullscreen
-                                            ></iframe>
+                                    <!-- immagini carosello -->
+                                    <div class="carousel-inner carousel-inner-toRight">
+                                        <div class="item active">
+                                            <div class="item-list"><img src="../images/540px_357px.png" class="img-responsive"></div>
                                         </div>
-                                    </div>    
-                                    
+                                        <div class="item">
+                                            <div class="item-list"><img src="../images/480px_317px.png" class="img-responsive"></div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="item-list"><img src="../images/608px_350px.png" class="img-responsive"></div>
+                                        </div>    
+                                        <div class="item">
+                                            <div class="item-list"><img src="../images/480px_317px.png" class="img-responsive"></div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="item-list"><img src="../images/608px_350px.png" class="img-responsive"></div>
+                                        </div> 
+                                        <div class="item">
+                                            <div class="item-list"><img src="../images/480px_317px.png" class="img-responsive"></div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="item-list"><img src="../images/480px_317px.png" class="img-responsive"></div>
+                                        </div>
+                                        <div class="item">
+                                            <div class="item-list"><img src="../images/608px_350px.png" class="img-responsive"></div>
+                                        </div> 
+                                        <div class="item">
+                                            <div class="item-list item-list-video"  data-toggle="modal" data-target="" data-theVideo="http://www.youtube.com/embed/FIAyz8DHGUA" >
+                                                <iframe src="https://www.youtube.com/embed/FIAyz8DHGUA" 
+                                                        frameborder="0" 
+                                                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                                                        allowfullscreen
+                                                ></iframe>
+                                            </div>
+                                        </div>    
+                                        
+                                    </div>
+
+                                    <!-- controlli carosello -->
+                                    <div class="carousel-controls carousel-controls-toRight hidden hidden-xs hidden-sm">
+                                        <button class="btn left carousel-control control-active" data-slide="prev">
+                                            <!-- <img src="../images/Gallery_Arrow_Navigate.svg" class=""> -->
+                                            <svg width="10px" height="18px" viewBox="0 0 10 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <g id="Gallery" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon id="svg_gallery_arrow_navigate" fill="" fill-rule="nonzero" points="9.78125915 16.4621105 8.31914862 17.826747 0 8.91337352 8.31914862 0 9.78125915 1.3646365 2.73577127 8.91337352"></polygon>
+                                                </g>
+                                            </svg>
+                                        </button>
+                                        <button class="btn right carousel-control control-inactive" data-slide="next">
+                                            <!-- <img src="../images/Gallery_Arrow_Navigate.svg" class=""> -->
+                                            <svg width="10px" height="18px" viewBox="0 0 10 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <g id="Gallery" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon id="svg_gallery_arrow_navigate" fill="" fill-rule="nonzero" points="9.78125915 16.4621105 8.31914862 17.826747 0 8.91337352 8.31914862 0 9.78125915 1.3646365 2.73577127 8.91337352"></polygon>
+                                                </g>
+                                            </svg>
+                                        </button>
+
+
+                                    </div>
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators hidden-md hidden-lg">
+                                    </ol>
                                 </div>
-
-                                <!-- controlli carosello -->
-                                <div class="carousel-controls carousel-controls-toRight hidden hidden-xs hidden-sm">
-                                    <button class="btn left carousel-control control-active" data-slide="prev">
-                                        <!-- <img src="../images/Gallery_Arrow_Navigate.svg" class=""> -->
-                                        <svg width="10px" height="18px" viewBox="0 0 10 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <g id="Gallery" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <polygon id="svg_gallery_arrow_navigate" fill="" fill-rule="nonzero" points="9.78125915 16.4621105 8.31914862 17.826747 0 8.91337352 8.31914862 0 9.78125915 1.3646365 2.73577127 8.91337352"></polygon>
-                                            </g>
-                                        </svg>
-                                    </button>
-                                    <button class="btn right carousel-control control-inactive" data-slide="next">
-                                        <!-- <img src="../images/Gallery_Arrow_Navigate.svg" class=""> -->
-                                        <svg width="10px" height="18px" viewBox="0 0 10 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <g id="Gallery" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <polygon id="svg_gallery_arrow_navigate" fill="" fill-rule="nonzero" points="9.78125915 16.4621105 8.31914862 17.826747 0 8.91337352 8.31914862 0 9.78125915 1.3646365 2.73577127 8.91337352"></polygon>
-                                            </g>
-                                        </svg>
-                                    </button>
-
-
-                                </div>
-                                <!-- Indicators -->
-                                <ol class="carousel-indicators hidden-md hidden-lg">
-                                </ol>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0 component-galleryRoll-row-text">

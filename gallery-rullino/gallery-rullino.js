@@ -19,6 +19,7 @@ $(".item-list-video").each(function(item){
     var rowToRight = self.parents().hasClass('toRight'); 
 
     var rowImage =  self.parent().find(".component-galleryRoll-row-img"); 
+    var carouselHover =  self.parent().find(".component-galleryRoll-row-carousel-hover"); 
     var carousel = self.find(".carousel.carousel-showmanymoveone");
     var rowContainer = self.find(".carousel.carousel-showmanymoveone.carousel-fullWidth");
     var carouselOpen = self.find(".component-galleryRoll-row-arrow");
@@ -34,6 +35,7 @@ $(".item-list-video").each(function(item){
     var carouselItems =  self.find(".carousel-inner > .item");
 
     var limitContainerWidth = $(".limit-container").width();
+    var carouselHoverClick = false;
 
 
     // ----------- Genera ID degli sliders  -----------
@@ -99,24 +101,18 @@ $(".item-list-video").each(function(item){
       allowPageScroll:"vertical"
     });
 
-    // var hasBeenClicked = false;
-    // rowImage.on("click", function () {
-    //     hasBeenClicked = true;
-    //     console.log(hasBeenClicked)
-
-    // });
 
     // animazione all'Hover sull'imagine gallery in desktop
-    // if(limitContainerWidth > 1182){
-    //   rowImage.on({
-    //     mouseenter: function () {
-    //       rowToLeft ? rowImage.css({"transform": "translate(-15px)", "cursor": "pointer"}) : rowImage.css({"transform": "translate(15px)", "cursor": "pointer"});
-    //     },
-    //     mouseleave: function () {
-    //       rowImage.css("transform", "translate(0)");
-    //     }
-    //   })
-    // }
+    if(limitContainerWidth > 1182){
+      carouselHover.on({
+        mouseenter: function () {
+          carouselHoverClick == true ? "" : rowToLeft ? carouselHover.css("transform", "translate(-15px)") : carouselHover.css("transform", "translate(15px)");
+        },
+        mouseleave: function () {
+          carouselHoverClick == true ? "" : carouselHover.css("transform", "translate(0)");
+        }
+      })
+    }
 
 
     var carouselIndicatorLi =  self.find(".carousel-indicators li");
@@ -304,6 +300,8 @@ $(".item-list-video").each(function(item){
         e.preventDefault();
         carouselItems.off("click");
 
+        carouselHoverClick = true;
+
         // --- calcolo la translazione in px  -----
         var limitContainer = $(".limit-container").offset();
         // var limitContainerWidth = $(".limit-container").width();
@@ -343,16 +341,17 @@ $(".item-list-video").each(function(item){
 
 
     // -----------  chiusura slider -----------
-    function closeCarousel(){
+    function closeCarouselFunc(){
     carouselClose.on("click", function(e){
       e.stopPropagation();
 
+        carouselHoverClick = false;
       var itamActive;
       carouselItems.each(function(item){
         var active = $(this).hasClass("active"); 
         if(active == true) { return itamActive = item; }
       });
-      carouselInner.css({"transform" : "translateX(0px)", "transition-duration" : "0.7s"});
+      lastItemTranslate == true ? carouselInner.css({"transform" : "translateX(0px)", "transition-duration" : "0.7s"}) : "";
 
       self.css('transform', '');
 
@@ -381,10 +380,11 @@ $(".item-list-video").each(function(item){
     }
     closeCarouselFunc();
 
+    // -----------  gestione controller slider  -----------
+    var lastItemTranslate = false;
 
-    // -----------  gestione controller slider ToLeft -----------
     function slideBack(firstActive){
-      carouselInner.css({"transform" : "translateX(0px)", "transition-duration" : "0.7s"});
+      lastItemTranslate == true ? carouselInner.css({"transform" : "translateX(0px)", "transition-duration" : "0.7s"}) : "";
       if(rowToLeft){
         slideArrowForwardActive();
         if(firstActive.length == 1){
@@ -400,13 +400,13 @@ $(".item-list-video").each(function(item){
     };
     function slideForward(itemActiveLast3, itemActiveLast4, itemActiveLast5){
       var limitContainerWidth = $(".limit-container").width();
-
       if(rowToLeft){
         slideArrowBackwardActive();
 
         if(limitContainerWidth >= 1680){
           if(itemActiveLast4 && itemActiveLast4.length) {
             carouselInner.css({"transform" : "translateX(-297px)", "transition-duration" : "0.7s"});
+            lastItemTranslate = true;
             slideArrowForwardInactive();
             self.find(".item-last3 .cloneditem-3").addClass("hidden");
           }
@@ -414,6 +414,7 @@ $(".item-list-video").each(function(item){
         if(limitContainerWidth < 1680){
           if(itemActiveLast3 && itemActiveLast3.length) {
             carouselInner.css({"transform" : "translateX(-160px)", "transition-duration" : "0.7s"});
+            lastItemTranslate = true;
             slideArrowForwardInactive();
             self.find(".item-last3 .cloneditem-3").addClass("hidden");
             self.find(".item-last2 .cloneditem-3").addClass("hidden");
@@ -448,6 +449,8 @@ $(".item-list-video").each(function(item){
       };
     };
 
+
+    // -----------  gestione controller slider ToLeft -----------
     nexToLeft.on('click', function(){
 
       var itemActiveLast4 =  self.find(".carousel-inner-toLeft .item-last5.active");

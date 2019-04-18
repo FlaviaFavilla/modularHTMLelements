@@ -10,6 +10,10 @@
   padding-right: 0;
   /* text-align: right; */
 }
+.component-galleryRoll-row-carousel-hover{
+  position: relative;
+  cursor: pointer;
+}
 
 .component-galleryRoll .component-galleryRoll-row-text > div{
   padding: 0;
@@ -309,14 +313,14 @@
         width: 480px;
         height: 317px;
       }
-      .component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-img.transition:hover{
+      /* .component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-img > .component-galleryRoll-row-carousel-hover:hover{
         transform: translate(15px);
         cursor : pointer;
       }
-      .component-galleryRoll .component-galleryRoll-row.toLeft > .component-galleryRoll-row-img.transition:hover{
+      .component-galleryRoll .component-galleryRoll-row.toLeft > .component-galleryRoll-row-img > .component-galleryRoll-row-carousel-hover:hover{
         transform: translate(-15px);
         cursor : pointer;
-      }
+      } */
 
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-2{ width: 250%; }
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-3{ width: 350%; }
@@ -397,14 +401,14 @@
         width: 540px;
         height: 357px;
       }
-      .component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-img.transition:hover{
+      /* .component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-img > .component-galleryRoll-row-carousel-hover:hover{
         transform: translate(15px);
         cursor : pointer;
       }
-      .component-galleryRoll .component-galleryRoll-row.toLeft > .component-galleryRoll-row-img.transition:hover{
+      .component-galleryRoll .component-galleryRoll-row.toLeft > .component-galleryRoll-row-img > .component-galleryRoll-row-carousel-hover:hover{
         transform: translate(-15px);
         cursor : pointer;
-      }
+      } */
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-2{ width: 200%; }
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-3{ width: 300%; }
       .component-galleryRoll .carousel-fullWidth.carousel-fullWidth-4{ width: 400%; }
