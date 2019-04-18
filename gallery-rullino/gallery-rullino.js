@@ -306,14 +306,14 @@ $(".item-list-video").each(function(item){
         var limitContainer = $(".limit-container").offset();
         // var limitContainerWidth = $(".limit-container").width();
 
-
+console.log(limitContainerWidth)
         var limiTransitiontoLeft = $(".component-galleryRoll-row.multImg.toLeft .slide.carousel-fullWidth").offset();
         var limiTransitiontoRight = $(".component-galleryRoll-row.multImg.toRight > .component-galleryRoll-row-text").offset();
         var calcToLef = Math.abs(limitContainer.left - limiTransitiontoLeft.left);
         if(limitContainerWidth > 1199){
-          var calcToRight = Math.abs(limitContainer.left - limiTransitiontoRight.left -15);
+          var calcToRight = Math.abs(limitContainer.left - limiTransitiontoRight.left );
         }else {
-          var calcToRight = Math.abs(limitContainer.left - limiTransitiontoRight.left -10);
+          var calcToRight = Math.abs(limitContainer.left - limiTransitiontoRight.left -5);
         }
 
         rowToLeft ? self.css('transform', 'translate( -'+ calcToLef +'px )') : self.css('transform', 'translate( '+ calcToRight +'px )');

@@ -85,12 +85,12 @@
 }
 .component-galleryRoll .component-galleryRoll-row.toLeft .component-galleryRoll-row-arrow { 
   border-radius: 5px 0 0px 5px;
-  left: -21px;
+  left: -36px;
 }
 
 .component-galleryRoll .component-galleryRoll-row.toRight .component-galleryRoll-row-arrow { 
   border-radius: 0 5px 5px 0;
-  right: -20px;;
+  right: -36px;
 }
 .component-galleryRoll .transition{
   -webkit-transition: 1s;
@@ -291,6 +291,16 @@
 
 /* ----- Tablet landscape (Viewport between 990px and 1199px) ----- */
 @media only screen and (min-width: 993px) and (max-width : 1199px) {
+
+  @keyframes showCloseRight {
+    from {opacity: 0; right: -22px;}
+    to {opacity: 1; right:-10px;}
+  }
+  @keyframes showCloseCloseRight {
+    from {opacity: 1; right:15px;}
+    to {opacity: 0; right: -22px;}
+  }
+
       .component-galleryRoll .component-galleryRoll-row-img > img, 
       .component-galleryRoll .component-galleryRoll-row-img > iframe,
       .component-galleryRoll .item-list,
@@ -300,7 +310,7 @@
         height: 317px;
       }
       .component-galleryRoll .component-galleryRoll-row.toLeft .component-galleryRoll-row-arrow {
-        left: -20px;
+        left: -36px;
       }
       .component-galleryRoll .toLeft .carousel-fullWidth {
         left: 0;
@@ -345,7 +355,7 @@
         right: 24px;
       }
       .component-galleryRoll .component-galleryRoll-row.toRight .component-galleryRoll-row-arrow { 
-        right: -30px;
+        right: -46px;
       }
       .component-galleryRoll .component-galleryRoll-row.toRight .carousel-close {
         right: 5px;
@@ -365,7 +375,6 @@
         display: none;
       }
       
-
       .component-galleryRoll .carousel-showmanymoveone .item-last > .cloneditem {
         display: none!important;
       }
@@ -390,6 +399,16 @@
 
 /* Desktop (Viewport above 1200px) */
 @media only screen and (min-width: 1200px) {
+
+  @keyframes showCloseRight {
+    from {opacity: 0; right: -22px;}
+    to {opacity: 1; right:0px;}
+  }
+  @keyframes showCloseCloseRight {
+    from {opacity: 1; right:15px;}
+    to {opacity: 0; right: -22px;}
+  }
+
       .component-galleryRoll .item-list{
         width: 540px;
       }
@@ -721,17 +740,9 @@ border-left-width: 0px;
 
 @keyframes showCloseLeft {
   from {opacity: 0; left: -22px;}
-  to {opacity: 1; left:15px;}
+  to {opacity: 1; left:0px;}
 }
 @keyframes showCloseCloseLeft {
   from {opacity: 1; left:15px;}
   to {opacity: 0; left: -22px;}
-}
-@keyframes showCloseRight {
-  from {opacity: 0; right: -22px;}
-  to {opacity: 1; right:15px;}
-}
-@keyframes showCloseCloseRight {
-  from {opacity: 1; right:15px;}
-  to {opacity: 0; right: -22px;}
 }
