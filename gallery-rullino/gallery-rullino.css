@@ -258,9 +258,11 @@
       .component-galleryRoll .item-list{
         width: 480px;
       }
-      .component-galleryRoll .component-galleryRoll-row.toLeft > .component-galleryRoll-row-img {
+      .component-galleryRoll .component-galleryRoll-row.toLeft > .component-galleryRoll-row-img,
+      .component-galleryRoll .component-galleryRoll-row.toRight > .component-galleryRoll-row-img {
         text-align: center;
       }
+
       .component-galleryRoll .component-galleryRoll-row-img > img, 
       .component-galleryRoll .component-galleryRoll-row-img > iframe,
       .component-galleryRoll .item-list,
