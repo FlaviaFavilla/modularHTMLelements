@@ -379,7 +379,8 @@ $(".item-list-video").each(function(item){
           });
       });
     }
-    openCarouselFunc();
+    // if(limitContainerWidth > 756) openCarouselFunc();
+ openCarouselFunc();
 
 
     // -----------  chiusura slider -----------
