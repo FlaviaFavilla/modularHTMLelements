@@ -18,6 +18,7 @@ $(".item-list-video").each(function(item){
     var rowToLeft = self.parents().hasClass('toLeft'); 
     var rowToRight = self.parents().hasClass('toRight'); 
 
+    var carousel = self.find(".carousel");
     var rowImage =  self.parent().find(".component-galleryRoll-row-img"); 
     var carouselHover =  self.parent().find(".component-galleryRoll-row-carousel-hover"); 
     var carousel = self.find(".carousel.carousel-showmanymoveone");
@@ -36,6 +37,7 @@ $(".item-list-video").each(function(item){
 
     var limitContainerWidth = $(".limit-container").width();
     var carouselHoverClick = false;
+    var lastItemTranslate = false;
 
 
     // ----------- Genera ID degli sliders  -----------
@@ -91,16 +93,57 @@ $(".item-list-video").each(function(item){
 
 
     // --- swipe del carosello  -----
-    $(".carousel").swipe({
+    carousel.swipe({
       swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
-        // if (direction == 'left') slideForward(itemActiveLast3, itemActiveLast4, "");
-        if (direction == 'right') $(this).carousel('prev');
-        if (direction == 'left') $(this).carousel('next');
-        // if (direction == 'right') $(this).carousel('prev');
+
+        var limitContainerWidth = $(".limit-container").width();
+        
+        if(rowToLeft){
+          var itemActiveLast4 =  $(this).find(".carousel-inner-toLeft .item-last5.active");
+          var itemActiveLast3 =  $(this).find(".carousel-inner-toLeft .item-last4.active");
+          var itemActiveLast2 =  $(this).find(".carousel-inner-toLeft .item-last3.active");
+          var firstActive = $(this).find(".carousel-inner-toLeft .active.item-0");
+        }
+        if(rowToRight){
+          var itemActiveLast3 =  self.find(".carousel-inner-toRight .item-last3.active");
+          var itemActiveLast4 =  self.find(".carousel-inner-toRight .item-last4.active");
+          var itemActiveLast5 =  self.find(".carousel-inner-toRight .item-last5.active");
+          var firstActive = self.find(".carousel-inner-toRight .active.item-0");
+        }
+
+// row ToLeft
+        if (direction == 'left' && rowToLeft) {
+          slideArrowBackwardActive();
+          if(limitContainerWidth >= 1680){
+            itemActiveLast3.length ? slideForward(itemActiveLast2, itemActiveLast3, "", false) : $(this).carousel('next');
+          }
+          if(limitContainerWidth < 1680){
+            itemActiveLast2.length ? slideForward(itemActiveLast2, itemActiveLast3, "", false) : $(this).carousel('next');
+          }
+        }
+        if (direction == 'right' && rowToLeft) {
+          slideArrowForwardActive();
+          firstActive.length ? slideBack(firstActive) :  $(this).carousel('prev');
+        }
+
+// row ToRight
+        if (direction == 'right' && rowToRight) {
+          slideArrowBackwardActive();
+
+          if(limitContainerWidth >= 1680){
+            itemActiveLast4.length ? slideForward("", itemActiveLast4, itemActiveLast5, true) : $(this).carousel('prev');
+          }
+          if(limitContainerWidth < 1680){
+            itemActiveLast3.length ? slideForward(itemActiveLast3, itemActiveLast4, itemActiveLast5, true) : $(this).carousel('prev');
+          }
+        }
+        if (direction == 'left' && rowToRight) {
+          slideArrowForwardActive();
+          firstActive.length ? slideBack(firstActive) :  $(this).carousel('next');
+        }
       },
       allowPageScroll:"vertical"
     });
-
 
     // animazione all'Hover sull'imagine gallery in desktop
     if(limitContainerWidth > 1182){
@@ -306,10 +349,9 @@ $(".item-list-video").each(function(item){
         var limitContainer = $(".limit-container").offset();
         // var limitContainerWidth = $(".limit-container").width();
 
-console.log(limitContainerWidth)
         var limiTransitiontoLeft = $(".component-galleryRoll-row.multImg.toLeft .slide.carousel-fullWidth").offset();
         var limiTransitiontoRight = $(".component-galleryRoll-row.multImg.toRight > .component-galleryRoll-row-text").offset();
-        var calcToLef = Math.abs(limitContainer.left - limiTransitiontoLeft.left);
+        var calcToLef = Math.abs(limitContainer.left - limiTransitiontoLeft.left +10);
         if(limitContainerWidth > 1199){
           var calcToRight = Math.abs(limitContainer.left - limiTransitiontoRight.left );
         }else {
@@ -341,11 +383,11 @@ console.log(limitContainerWidth)
 
 
     // -----------  chiusura slider -----------
-    function closeCarouselFunc(){
+    // function closeCarouselFunc(){
     carouselClose.on("click", function(e){
       e.stopPropagation();
 
-        carouselHoverClick = false;
+      carouselHoverClick = false;
       var itamActive;
       carouselItems.each(function(item){
         var active = $(this).hasClass("active"); 
@@ -358,7 +400,6 @@ console.log(limitContainerWidth)
       carouselOpen.removeClass('hidden');
       carouselControls.addClass('hidden');
 
-      // carouselClose.css("animation", "showCloseClose 250ms ease-in-out both");
       rowToLeft ? carouselClose.css("animation", "showCloseCloseLeft 250ms ease-in-out both") : carouselClose.css("animation", "showCloseCloseRight 250ms ease-in-out both");;
       
       carouselItems.each(function(item){
@@ -377,12 +418,11 @@ console.log(limitContainerWidth)
        carouselItems.on("click", openCarouselFunc());
 
     });
-    }
-    closeCarouselFunc();
+    // }
+    // closeCarouselFunc();
+
 
     // -----------  gestione controller slider  -----------
-    var lastItemTranslate = false;
-
     function slideBack(firstActive){
       lastItemTranslate == true ? carouselInner.css({"transform" : "translateX(0px)", "transition-duration" : "0.7s"}) : "";
       if(rowToLeft){
@@ -398,7 +438,7 @@ console.log(limitContainerWidth)
         }
       }
     };
-    function slideForward(itemActiveLast3, itemActiveLast4, itemActiveLast5){
+    function slideForward(itemActiveLast3, itemActiveLast4, itemActiveLast5, swipe){
       var limitContainerWidth = $(".limit-container").width();
       if(rowToLeft){
         slideArrowBackwardActive();
@@ -423,27 +463,23 @@ console.log(limitContainerWidth)
       }
 
       if(rowToRight){
-        // nexToRight.css("pointer-events" , "auto");
-        // nexToRight.addClass("control-active").removeClass("control-inactive");
         slideArrowBackwardActive();
 
         if(limitContainerWidth >= 1680){
-          if(itemActiveLast5 && itemActiveLast5.length) {
-            // prevToRight.css("pointer-events" , "none");
-            // prevToRight.addClass("control-inactive").removeClass("control-active");
+          if(itemActiveLast5 && itemActiveLast5.length || swipe == true && itemActiveLast4 && itemActiveLast4.length) {
             slideArrowForwardInactive();
 
             carouselInner.css({"transform" : "translateX(300px)", "transition-duration" : "0.7s"});
+            lastItemTranslate = true;
           }
         }
         if(limitContainerWidth < 1680){
-          if(itemActiveLast4 && itemActiveLast4.length) {
-            // prevToRight.css("pointer-events" , "none");
-            // prevToRight.addClass("control-inactive").removeClass("control-active");
-            slideArrowForwardInactive();
+          if(itemActiveLast4 && itemActiveLast4.length && swipe == false || swipe == true && itemActiveLast3 && itemActiveLast3.length) {
 
+            slideArrowForwardInactive();
   
             carouselInner.css({"transform" : "translateX(140px)", "transition-duration" : "0.7s"});
+            lastItemTranslate = true;
           }
         }
       };
@@ -457,7 +493,7 @@ console.log(limitContainerWidth)
       var itemActiveLast3 =  self.find(".carousel-inner-toLeft .item-last4.active");
       var itemActiveLast2 =  self.find(".carousel-inner-toLeft .item-last3.active");
 
-      slideForward(itemActiveLast3, itemActiveLast4, "");
+      slideForward(itemActiveLast3, itemActiveLast4, "", false);
     })
 
     prevToLeft.on('click', function(){
@@ -473,7 +509,7 @@ console.log(limitContainerWidth)
       var itemActiveLast4 =  self.find(".carousel-inner-toRight .item-last4.active");
       var itemActiveLast5 =  self.find(".carousel-inner-toRight .item-last5.active");
 
-      slideForward("", itemActiveLast4, itemActiveLast5);
+      slideForward("", itemActiveLast4, itemActiveLast5, false);
     })
 
     nexToRight.on('click', function(){
@@ -487,7 +523,7 @@ console.log(limitContainerWidth)
     autoPlayYouTubeModal();
     function autoPlayYouTubeModal() {
       var trigger = self.find('[data-toggle="modal"]');
-      // console.log(trigger);
+
       trigger.click(function () {
         var theModal = $(this).data("target");
         var videoSRC = $(this).attr("data-theVideo");
@@ -497,7 +533,6 @@ console.log(limitContainerWidth)
         $(theModal + ' button.close').click(function () {
           $(theModal + ' iframe').attr('src', videoSRC);
         });
-        // console.log(theModal);
       });
     }
 
