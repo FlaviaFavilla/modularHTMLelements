@@ -92,56 +92,64 @@ $(".item-list-video").each(function(item){
     }
 
 
+
     // --- swipe del carosello  -----
     carousel.swipe({
       swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
 
         var limitContainerWidth = $(".limit-container").width();
-        
-        if(rowToLeft){
-          var itemActiveLast4 =  $(this).find(".carousel-inner-toLeft .item-last5.active");
-          var itemActiveLast3 =  $(this).find(".carousel-inner-toLeft .item-last4.active");
-          var itemActiveLast2 =  $(this).find(".carousel-inner-toLeft .item-last3.active");
-          var firstActive = $(this).find(".carousel-inner-toLeft .active.item-0");
-        }
-        if(rowToRight){
-          var itemActiveLast3 =  self.find(".carousel-inner-toRight .item-last3.active");
-          var itemActiveLast4 =  self.find(".carousel-inner-toRight .item-last4.active");
-          var itemActiveLast5 =  self.find(".carousel-inner-toRight .item-last5.active");
-          var firstActive = self.find(".carousel-inner-toRight .active.item-0");
-        }
 
-// row ToLeft
-        if (direction == 'left' && rowToLeft) {
-          slideArrowBackwardActive();
-          if(limitContainerWidth >= 1680){
-            itemActiveLast3.length ? slideForward(itemActiveLast2, itemActiveLast3, "", false) : $(this).carousel('next');
+        if(limitContainerWidth > 757){
+          console.log("noo")
+          if(rowToLeft){
+            var itemActiveLast4 =  $(this).find(".carousel-inner-toLeft .item-last5.active");
+            var itemActiveLast3 =  $(this).find(".carousel-inner-toLeft .item-last4.active");
+            var itemActiveLast2 =  $(this).find(".carousel-inner-toLeft .item-last3.active");
+            var firstActive = $(this).find(".carousel-inner-toLeft .active.item-0");
           }
-          if(limitContainerWidth < 1680){
-            itemActiveLast2.length ? slideForward(itemActiveLast2, itemActiveLast3, "", false) : $(this).carousel('next');
+          if(rowToRight){
+            var itemActiveLast3 =  self.find(".carousel-inner-toRight .item-last3.active");
+            var itemActiveLast4 =  self.find(".carousel-inner-toRight .item-last4.active");
+            var itemActiveLast5 =  self.find(".carousel-inner-toRight .item-last5.active");
+            var firstActive = self.find(".carousel-inner-toRight .active.item-0");
+          }
+  
+  // row ToLeft
+          if (direction == 'left' && rowToLeft) {
+            slideArrowBackwardActive();
+            if(limitContainerWidth >= 1680){
+              itemActiveLast3.length ? slideForward(itemActiveLast2, itemActiveLast3, "", false) : $(this).carousel('next');
+            }
+            if(limitContainerWidth < 1680){
+              itemActiveLast2.length ? slideForward(itemActiveLast2, itemActiveLast3, "", false) : $(this).carousel('next');
+            }
+          }
+          if (direction == 'right' && rowToLeft) {
+            slideArrowForwardActive();
+            firstActive.length ? slideBack(firstActive) :  $(this).carousel('prev');
+          }
+  
+  // row ToRight
+          if (direction == 'right' && rowToRight) {
+            slideArrowBackwardActive();
+  
+            if(limitContainerWidth >= 1680){
+              itemActiveLast4.length ? slideForward("", itemActiveLast4, itemActiveLast5, true) : $(this).carousel('prev');
+            }
+            if(limitContainerWidth < 1680){
+              itemActiveLast3.length ? slideForward(itemActiveLast3, itemActiveLast4, itemActiveLast5, true) : $(this).carousel('prev');
+            }
+          }
+          if (direction == 'left' && rowToRight) {
+            slideArrowForwardActive();
+            firstActive.length ? slideBack(firstActive) :  $(this).carousel('next');
           }
         }
-        if (direction == 'right' && rowToLeft) {
-          slideArrowForwardActive();
-          firstActive.length ? slideBack(firstActive) :  $(this).carousel('prev');
+        if(limitContainerWidth <= 756){
+          if (direction == 'left') $(this).carousel('next');
+          if (direction == 'right') $(this).carousel('prev');
         }
-
-// row ToRight
-        if (direction == 'right' && rowToRight) {
-          slideArrowBackwardActive();
-
-          if(limitContainerWidth >= 1680){
-            itemActiveLast4.length ? slideForward("", itemActiveLast4, itemActiveLast5, true) : $(this).carousel('prev');
-          }
-          if(limitContainerWidth < 1680){
-            itemActiveLast3.length ? slideForward(itemActiveLast3, itemActiveLast4, itemActiveLast5, true) : $(this).carousel('prev');
-          }
-        }
-        if (direction == 'left' && rowToRight) {
-          slideArrowForwardActive();
-          firstActive.length ? slideBack(firstActive) :  $(this).carousel('next');
-        }
-      },
+    },
       allowPageScroll:"vertical"
     });
 
@@ -161,35 +169,12 @@ $(".item-list-video").each(function(item){
     var carouselIndicatorLi =  self.find(".carousel-indicators li");
     carouselIndicatorLi.on("mouseenter", function(){
 
-      var itemPrev =  self.find(".item.prev");
-      var itemNext =  self.find(".item.next");
-      var active = self.find('.active.item');
       var indicatorActive = self.find(".carousel-indicators .active");
       var indicatorSlidefrom = indicatorActive.data("slide-to");
       var indicatorSlideTo = $(this).data("slide-to");
 
-      console.log({self});
-      console.log({active});
-      console.log({itemPrev}, {itemNext});
-
-      console.log( "from: " + indicatorSlidefrom + " - to: " + indicatorSlideTo);
       var differenza = indicatorSlideTo - indicatorSlidefrom;
       var differenza = Math.abs(indicatorSlidefrom - indicatorSlideTo);
-      console.log(differenza);
-      // var traslz = differenza * 500;
-
-      // differenza == 2 ? rightNext.addClass("item-a") : "";
-      // rightNext.addClass("item-a")
-      // console.log(traslz);
-  
-      
-      // $('.item').removeClass('activeSwipe1');
-      // $('.item').removeClass('activeSwipe2');
-      // $('.item').removeClass('activeSwipe3');
-      // $('.item').removeClass('activeSwipe4');
-      // $('.item').removeClass('activeSwipe5');
-      // $('.item').removeClass('activeSwipe6');
-      // $('.item').removeClass('activeSwipe7');
 
       carousel.removeClass('carouselSwipe1')
       carousel.removeClass('carouselSwipe2')
@@ -201,52 +186,35 @@ $(".item-list-video").each(function(item){
 
       switch (differenza) {
         case 2:
-          console.log('case2'); 
-          // active.addClass('activeSwipe2');  
+          console.log('case2');   
           carousel.addClass('carouselSwipe2')
           break;
         case 3:
-          console.log('case 3'); 
-          // active.addClass('activeSwipe3');
           carousel.addClass('carouselSwipe3')
           break;
         case 4:
-          console.log('case 4'); 
-          // active.addClass('activeSwipe4');
           carousel.addClass('carouselSwipe4')
           break;
         case 5:
-          console.log('case 5'); 
-          // active.addClass('activeSwipe5');
           carousel.addClass('carouselSwipe5')
           break;
         case 6:
-          console.log('case 6'); 
-          // active.addClass('activeSwipe6');
           carousel.addClass('carouselSwipe6')
           break;
         case 7:
-          console.log('case 7'); 
-          carousel.addClass('activeSwipe7');
+          carousel.addClass('carouselSwipe7');
+          break;
+        case 8:
+          carousel.addClass('carouselSwipe8');
           break;
         default:
-          console.log('case basic'); 
-          // active.addClass('activeSwipe1');
           carousel.addClass('carouselSwipe1')
       }
 
-
-      // (leftActive, itemPrev).css({"transform": "translate3d(-"+ traslz +"px, 0, 0)!important", 'color': 'naviblue'});
-      // (rightActive, itemNext).css("transform", "translate3d("+ traslz +"px, 0, 0)!important");
-      // (rightNext, rightActive).addClass("item-a");
-
-      // active.css({"transform": "translate3d(-"+ traslz +"px, 0, 0)!important", 'color': 'naviblue'});
-      // $('.item').removeClass('activeTest')
-      // active.addClass('activeTest')
     });
-    carouselIndicatorLi.on("click", function(){
-      console.log({carouselItems});
-    });
+    // carouselIndicatorLi.on("click", function(){
+    //   console.log({carouselItems});
+    // });
 
 
     // -----------  inverto gli elementi clonati nello slider a destra -----------

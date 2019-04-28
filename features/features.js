@@ -60,9 +60,20 @@ $(document).ready(function(){
 
         // ----------- Genera ID degli sliders  -----------
         carousel.attr('id', 'slider-features-' + index);    
+
+        // --- swipe del carosello  -----
+        carousel.swipe({
+          swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+            if (direction == 'left') {
+               $(this).carousel('next');
+            }
+            if (direction == 'right') {
+              $(this).carousel('prev');
+            }
+          }
     
       });
     
     });
     
-    
+  });
