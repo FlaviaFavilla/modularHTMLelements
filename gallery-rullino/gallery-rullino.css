@@ -186,7 +186,7 @@
       .component-galleryRoll .item-list,
       .component-galleryRoll .item-list > img,
       .component-galleryRoll .item-list > iframe {
-        width: 100%;
+        width: 100vw;
         height: 248px;
         pointer-events: auto;
       }
@@ -209,13 +209,6 @@
       .component-galleryRoll .toLeft .carousel-fullWidth {
         left: 0;
     }
-    /* .component-galleryRoll .carousel-fullWidth.carousel-fullWidth {
-      width: 1000px;
-  } */
-  .component-galleryRoll .item-list{
-    width: 480px;
-  }
-  /* .component-galleryRoll .carousel-fullWidth.carousel-fullWidth{ width: 400%; } */
 
 } 
 

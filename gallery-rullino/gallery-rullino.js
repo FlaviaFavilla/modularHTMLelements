@@ -185,7 +185,6 @@ $(".item-list-video").each(function(item){
 
       switch (differenza) {
         case 2:
-          console.log('case2');   
           carousel.addClass('carouselSwipe2')
           break;
         case 3:
@@ -496,7 +495,7 @@ $(".item-list-video").each(function(item){
         var theModal = $(this).data("target");
         var videoSRC = $(this).attr("data-theVideo");
         var videoSRCauto = videoSRC + "?&theme=dark&autoplay=1&autohide=2&modestbranding=1&showinfo=0&rel=0";
-        console.log(theModal, videoSRC, videoSRCauto);
+        // console.log(theModal, videoSRC, videoSRCauto);
         $(theModal + ' iframe').attr('src', videoSRCauto);
         $(theModal + ' button.close').click(function () {
           $(theModal + ' iframe').attr('src', videoSRC);
