@@ -100,7 +100,6 @@ $(".item-list-video").each(function(item){
         var limitContainerWidth = $(".limit-container").width();
 
         if(limitContainerWidth > 757){
-          console.log("noo")
           if(rowToLeft){
             var itemActiveLast4 =  $(this).find(".carousel-inner-toLeft .item-last5.active");
             var itemActiveLast3 =  $(this).find(".carousel-inner-toLeft .item-last4.active");
@@ -319,7 +318,7 @@ $(".item-list-video").each(function(item){
 
         var limiTransitiontoLeft = $(".component-galleryRoll-row.multImg.toLeft .slide.carousel-fullWidth").offset();
         var limiTransitiontoRight = $(".component-galleryRoll-row.multImg.toRight > .component-galleryRoll-row-text").offset();
-        var calcToLef = Math.abs(limitContainer.left - limiTransitiontoLeft.left +10);
+        var calcToLef = Math.abs(limitContainer.left - limiTransitiontoLeft.left );
         if(limitContainerWidth > 1199){
           var calcToRight = Math.abs(limitContainer.left - limiTransitiontoRight.left );
         }else {

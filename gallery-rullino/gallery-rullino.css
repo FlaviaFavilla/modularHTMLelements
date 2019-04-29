@@ -172,6 +172,9 @@
       .component-galleryRoll .item-list{
         width: 100%;
       }
+      .component-galleryRoll .carousel-inner > .item {
+        width: max-content;
+      }
       .component-galleryRoll .toRight .item-list{
         margin-left: 0;
       }
@@ -187,7 +190,7 @@
         height: 248px;
         pointer-events: auto;
       }
-     .component-galleryRoll .carousel-showmanymoveone .cloneditem-1, 
+     /* .component-galleryRoll .carousel-showmanymoveone .cloneditem-1, 
      .component-galleryRoll .carousel-showmanymoveone .cloneditem-2, 
      .component-galleryRoll .carousel-showmanymoveone .cloneditem-3, 
      .component-galleryRoll .carousel-showmanymoveone .cloneditem-4,
@@ -197,7 +200,7 @@
      .component-galleryRoll .carousel-showmanymoveone .cloneditem-8,
      .component-galleryRoll .carousel-showmanymoveone .cloneditem-9 {
         display: none;
-      }
+      } */
       .component-galleryRoll .carousel-indicators {
         /* margin-left: -7%; */
         left: 0;
@@ -206,6 +209,14 @@
       .component-galleryRoll .toLeft .carousel-fullWidth {
         left: 0;
     }
+    /* .component-galleryRoll .carousel-fullWidth.carousel-fullWidth {
+      width: 1000px;
+  } */
+  .component-galleryRoll .item-list{
+    width: 480px;
+  }
+  /* .component-galleryRoll .carousel-fullWidth.carousel-fullWidth{ width: 400%; } */
+
 } 
 
 /* ----- Tablet Portrait & Mobile (Viewport below 989px) ----- */
@@ -498,7 +509,8 @@
       display: block;
     }
   }
-  @media all and (min-width: 768px) and (transform-3d), all and (min-width: 768px) and (-webkit-transform-3d) {
+  @media all and (transform-3d), all  and (-webkit-transform-3d) {
+  /* @media all and (min-width: 768px) and (transform-3d), all and (min-width: 768px) and (-webkit-transform-3d) { */
 
      .component-galleryRoll .carousel-showmanymoveone.carouselSwipe1 .carousel-inner > .item.active.right,
      .component-galleryRoll .carousel-showmanymoveone.carouselSwipe1 .carousel-inner > .item.next {
